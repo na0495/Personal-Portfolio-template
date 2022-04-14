@@ -15,8 +15,10 @@ import SwitchMode from './SwitchMode';
 const useStyles = createStyles((theme) => ({
   header: {
     paddingTop: theme.spacing.sm,
-    backgroundColor: theme.colors[theme.primaryColor][6],
-    borderBottom: `1px solid ${theme.colors[theme.primaryColor][6]}`,
+    // set gradient background
+    // backgroundColor: theme.colorScheme === 'dark' ? "#3A3845" : "#78938A",
+    backgroundColor: theme.colorScheme === 'dark' ? '#3A3845' : '#78938A',
+    borderBottom: `1px solid` + theme.colorScheme === 'dark' ? "#3A3845" : "#78938A",
     marginBottom: 120,
   },
 
@@ -48,14 +50,14 @@ const useStyles = createStyles((theme) => ({
     color: `${theme.white} !important`,
 
     '&:hover': {
-      backgroundColor: theme.colors[theme.primaryColor][theme.colorScheme === 'dark' ? 7 : 5],
+      backgroundColor: theme.colorScheme === 'dark' ? "#826F66" : "#92BA92",
     },
   },
 
   tabControlActive: {
     color: `${theme.colorScheme === 'dark' ? theme.white : theme.black} !important`,
-    borderColor: `${theme.colors[theme.primaryColor][6]} !important`,
-  },
+    borderColor: `${theme.colorScheme === 'dark' ? theme.white : theme.black} !important`,
+  }
 }));
 
 interface CustomHeaderProps {
@@ -79,6 +81,7 @@ export function CustomHeader({ tabs }: CustomHeaderProps) {
       <Container className={classes.mainSection}>
         <Group position="apart">
           {/* <MantineLogo variant="white" /> */}
+          Napholio
           <SwitchMode />
           <LanguagePopover />
           <Burger

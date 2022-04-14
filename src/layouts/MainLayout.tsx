@@ -34,14 +34,14 @@ export default function MainLayout(): JSX.Element {
       header={
         <CustomHeader tabs={tabs} />
       }
-      styles={(theme) => ({
-        main: {
-          backgroundColor:
-            theme.colorScheme === "dark"
-              ? theme.colors.dark[6]
-              : theme.colors.gray[0],
-        },
-      })}
+      // styles={(theme) => ({
+      //   main: {
+      //     backgroundColor:
+      //       theme.colorScheme === "dark"
+      //         ? theme.colors.dark[6]
+      //         : theme.colors.gray[0],
+      //   },
+      // })}
     >
       <Outlet />
     </AppShell>
