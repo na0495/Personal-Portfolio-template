@@ -9,7 +9,6 @@ import FallbackLoader from "../components/animations/FallbackLoader";
 // ----------------------------------------------------------------------
 
 const Loadable = (Component: ElementType) => (props: any) => {
-
   return (
     <Suspense fallback={<FallbackLoader />}>
       <Component {...props} />
@@ -22,14 +21,9 @@ export default function Routes() {
     // Auth Routes
     {
       path: "/",
-      element: (
-          <MainLayout />
-      ),
-      children: [
-        { path: "", element: < > </> },
-      ],
+      element: <MainLayout />,
+      children: [{ path: "", element: <> </> }],
     },
-
 
     // Main Routes
     {

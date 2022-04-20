@@ -1,4 +1,3 @@
-
 // define theme object
 export const themeColors: any = {
   white: [
@@ -12,7 +11,7 @@ export const themeColors: any = {
     "#404040",
     "#262626",
     "#0d0d0d",
-  ]
+  ],
 };
 
 export const themeBreakpoints: any = {

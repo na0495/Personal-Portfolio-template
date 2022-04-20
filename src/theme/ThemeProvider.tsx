@@ -33,7 +33,11 @@ export default function ThemeProvider(props: Props) {
       toggleColorScheme={toggleColorScheme}
     >
       <MantineProvider
-        theme={{ colorScheme, colors: { ...themeColors }, breakpoints: { ...themeBreakpoints} }}
+        theme={{
+          colorScheme,
+          colors: { ...themeColors },
+          breakpoints: { ...themeBreakpoints },
+        }}
         styles={{
           Button: (theme, params: ButtonStylesParams) => ({
             root: {
@@ -46,7 +50,7 @@ export default function ThemeProvider(props: Props) {
           ActionIcon: (theme, params: ActionIconStylesParams) => ({
             root: {
               "&:hover": {
-                boxShadow: `${theme.shadows.md} !important`,
+                boxShadow: `${theme.shadows.lg} !important`,
                 transform: "scale(1.05)",
               },
             },

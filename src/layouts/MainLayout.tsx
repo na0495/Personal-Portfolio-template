@@ -1,29 +1,25 @@
 // React
 import { Outlet } from "react-router-dom";
 // Manatine UI
-import {
-  AppShell,
-  Header,
-  Text,
-  useMantineTheme,
-} from "@mantine/core";
+import { AppShell, Header, Text, useMantineTheme } from "@mantine/core";
 // header
 import SwitchMode from "./header/SwitchMode";
 import LanguagePopover from "./header/LanguagePopover";
-import { CustomHeader } from "./header/CustomHeader";
+import PotfolioHeader from "./header/PotfolioHeader";
+import ParticlesWrapper from "../components/animations/ParticlesWrapper";
 
 //-----------------------------------------------------------------------------
 
-const tabs = [
+const links = [
   {
     label: "Home",
-    path: "/",
+    link: "/",
   },
   {
     label: "About",
-    path: "/about",
-  }
-]
+    link: "/about",
+  },
+];
 
 export default function MainLayout(): JSX.Element {
   const theme = useMantineTheme();
@@ -31,17 +27,7 @@ export default function MainLayout(): JSX.Element {
     <AppShell
       navbarOffsetBreakpoint={theme.breakpoints.sm}
       fixed
-      header={
-        <CustomHeader tabs={tabs} />
-      }
-      // styles={(theme) => ({
-      //   main: {
-      //     backgroundColor:
-      //       theme.colorScheme === "dark"
-      //         ? theme.colors.dark[6]
-      //         : theme.colors.gray[0],
-      //   },
-      // })}
+      header={<PotfolioHeader links={links} />}
     >
       <Outlet />
     </AppShell>

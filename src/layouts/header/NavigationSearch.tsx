@@ -1,9 +1,5 @@
 import { Search } from "tabler-icons-react";
-import {
-  UnstyledButton,
-  Text,
-  Group,
-} from "@mantine/core";
+import { UnstyledButton, Text, Group } from "@mantine/core";
 import { useOs } from "@mantine/hooks";
 import { useSpotlight } from "@mantine/spotlight";
 

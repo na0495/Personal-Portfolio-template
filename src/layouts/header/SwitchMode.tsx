@@ -1,7 +1,16 @@
-import { createStyles, Switch, useMantineColorScheme } from "@mantine/core";
+// Mantine
+import {
+  ActionIcon,
+  createStyles,
+  Switch,
+  useMantineColorScheme,
+} from "@mantine/core";
+// Motion
+import { AnimatePresence, motion } from "framer-motion";
+// Icons
 import { Sun, MoonStars } from "tabler-icons-react";
+// sounds
 import useSound from "use-sound";
-// import lightswitch from "/src/assets/audio/lightswitch.mp3?url";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -36,7 +45,9 @@ export default function SwitchMode() {
   const { classes, cx } = useStyles();
   const dark = colorScheme === "dark";
 
-  // sound effects on click
+  // const lightswitch = require("src/assets/sounds/lightswitch.mp3");
+
+  // // sound effects on click
   // const [play] = useSound(lightswitch, {
   //   volume: 0.25,
   //   sprite: {
@@ -51,15 +62,25 @@ export default function SwitchMode() {
   };
 
   return (
-    <div className={classes.root}>
-      <Sun className={cx(classes.icon, classes.iconLight)} size={22} />
-      <MoonStars className={cx(classes.icon, classes.iconDark)} size={22} />
-      <Switch
-        color={dark ? "" : "yellow"}
-        checked={colorScheme !== "dark"}
-        onChange={() => handleClick()}
-        size="lg"
-      />
-    </div>
+    <AnimatePresence exitBeforeEnter initial={false}>
+      <motion.div
+        style={{ display: "inline-block" }}
+        key={colorScheme}
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 20, opacity: 0 }}
+        transition={{ duration: 0.2 }}
+      >
+        <ActionIcon
+          size="xl"
+          color={dark ? "grape" : "yellow"}
+          onClick={handleClick}
+          variant="filled"
+          radius="xl"
+        >
+          {colorScheme !== "dark" ? <Sun size={24} /> : <MoonStars />}
+        </ActionIcon>
+      </motion.div>
+    </AnimatePresence>
   );
 }
