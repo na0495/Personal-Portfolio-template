@@ -22,7 +22,7 @@ export default function Routes() {
     {
       path: "/",
       element: <MainLayout />,
-      children: [{ path: "", element: <> </> }],
+      children: [{ path: "", element: <LandingPage /> }],
     },
 
     // Main Routes
@@ -46,3 +46,4 @@ const ComingSoon = Loadable(lazy(() => import("../pages/ComingSoon")));
 const Maintenance = Loadable(lazy(() => import("../pages/Maintenance")));
 const Page500 = Loadable(lazy(() => import("../pages/Page500")));
 const NotFound = Loadable(lazy(() => import("../pages/Page404")));
+const LandingPage = Loadable(lazy(() => import("../pages/LandingPage")));
