@@ -1,18 +1,14 @@
-
 # Portfolio
 
 ![Logo](src/assets/developer_activity.svg)
-
 
 ## Demo
 
 ???
 
-
 ## Tech Stack
 
 React, TypeScript, Mantine-Ui, Vitejs
-
 
 ## Run Locally
 

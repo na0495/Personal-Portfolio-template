@@ -11,6 +11,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Sun, MoonStars } from "tabler-icons-react";
 // sounds
 import useSound from "use-sound";
+// mp3
+import LightSwitch from "/src/assets/sounds/lightswitch.mp3?url";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -42,22 +44,19 @@ const useStyles = createStyles((theme) => ({
 
 export default function SwitchMode() {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-  const { classes, cx } = useStyles();
   const dark = colorScheme === "dark";
 
-  // const lightswitch = require("src/assets/sounds/lightswitch.mp3");
-
-  // // sound effects on click
-  // const [play] = useSound(lightswitch, {
-  //   volume: 0.25,
-  //   sprite: {
-  //     on: [0, 300],
-  //     off: [500, 300],
-  //   },
-  // });
+  // sound effects on click
+  const [play] = useSound(LightSwitch, {
+    volume: 0.25,
+    sprite: {
+      on: [0, 300],
+      off: [500, 300],
+    },
+  });
 
   const handleClick = () => {
-    // colorScheme === "dark" ? play({ id: "on" }) : play({ id: "off" });
+    colorScheme === "dark" ? play({ id: "on" }) : play({ id: "off" });
     toggleColorScheme();
   };
 
