@@ -19,6 +19,7 @@ import {
 } from "tabler-icons-react";
 import SwitchMode from "./SwitchMode";
 import LanguagePopover from "./LanguagePopover";
+import MusicMode from "./MusicMode";
 
 // -------------------------------------------------
 
@@ -150,6 +151,7 @@ export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
           </ActionIcon>
         </Group>
         <SwitchMode />
+        <MusicMode />
         <LanguagePopover />
       </Container>
     </Header>
