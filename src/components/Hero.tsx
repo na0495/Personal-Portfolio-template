@@ -6,13 +6,9 @@ import {
   Title,
   Button,
   Group,
-  Text,
-  List,
-  ThemeIcon,
   Grid,
 } from "@mantine/core";
 // icons
-import { Check, Point } from "tabler-icons-react";
 import Type from "./animations/Type";
 // svg
 import HeroSvg from "/src/assets/hero.svg?url";
@@ -41,6 +37,12 @@ const useStyles = createStyles((theme) => ({
         ? theme.colors.yellow[4]
         : theme.colors.orange[2],
     color: theme.colorScheme === "dark" ? theme.colors.gray[9] : theme.white,
+    "&:hover": {
+      background:
+        theme.colorScheme === "dark"
+          ? theme.colors.yellow[5]
+          : theme.colors.orange[3],
+    },
   },
 
   image: {
@@ -65,7 +67,7 @@ const useStyles = createStyles((theme) => ({
 export function Hero() {
   const { classes } = useStyles();
   return (
-    <Container mt={100} px="lg">
+    <Container px="lg">
       <Grid grow justify="center">
         <Grid.Col md={5} mt={75}>
           <Title className={classes.title}>

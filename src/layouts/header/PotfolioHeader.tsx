@@ -24,7 +24,6 @@ import MusicMode from "./MusicMode";
 // -------------------------------------------------
 
 const useStyles = createStyles((theme) => ({
-
   header: {
     backdropFilter: "blur(50px)",
     position: "-webkit-sticky",
@@ -32,7 +31,7 @@ const useStyles = createStyles((theme) => ({
     zIndex: 3,
     boxShadow: `${theme.shadows.md} !important`,
   },
-  
+
   inner: {
     display: "flex",
     justifyContent: "space-between",
