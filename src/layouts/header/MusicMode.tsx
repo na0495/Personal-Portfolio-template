@@ -1,44 +1,34 @@
+import { useState } from "react";
 // Mantine
-import {
-  ActionIcon,
-  createStyles,
-  Switch,
-  useMantineColorScheme,
-} from "@mantine/core";
+import { ActionIcon } from "@mantine/core";
 // Motion
 import { AnimatePresence, motion } from "framer-motion";
 // Icons
-import { Sun, MoonStars } from "tabler-icons-react";
+import { PlayerPlay, PlayerPause } from "tabler-icons-react";
 // sounds
 import useSound from "use-sound";
 // mp3
-import LightSwitch from "/src/assets/sounds/lightswitch.mp3?url";
+import Chill from "/src/assets/sounds/chill.mp3?url";
 
 // ------------------------------------------------------------
 
-export default function SwitchMode() {
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-  const dark = colorScheme === "dark";
+export default function MusicMode() {
+  const [playMode, setPlayMode] = useState(true);
 
   // sound effects on click
-  const [play] = useSound(LightSwitch, {
-    volume: 0.25,
-    sprite: {
-      on: [0, 300],
-      off: [500, 300],
-    },
-  });
+  const [play, { stop }] = useSound(Chill);
 
   const handleClick = () => {
-    colorScheme === "dark" ? play({ id: "on" }) : play({ id: "off" });
-    toggleColorScheme();
+    // check the playMode value to play to stop the music
+    playMode ? play() : stop();
+    setPlayMode(!playMode);
   };
 
   return (
     <AnimatePresence exitBeforeEnter initial={false}>
       <motion.div
         style={{ display: "inline-block" }}
-        key={colorScheme}
+        key={playMode.toString()}
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 20, opacity: 0 }}
@@ -46,12 +36,11 @@ export default function SwitchMode() {
       >
         <ActionIcon
           size="xl"
-          color={dark ? "grape" : "yellow"}
           onClick={handleClick}
           variant="filled"
           radius="xl"
         >
-          {colorScheme !== "dark" ? <Sun size={24} /> : <MoonStars />}
+          {playMode === true ? <PlayerPlay size={24} /> : <PlayerPause />}
         </ActionIcon>
       </motion.div>
     </AnimatePresence>

@@ -6,13 +6,9 @@ import {
   Title,
   Button,
   Group,
-  Text,
-  List,
-  ThemeIcon,
   Grid,
 } from "@mantine/core";
 // icons
-import { Check, Point } from "tabler-icons-react";
 import Type from "./animations/Type";
 // svg
 import HeroSvg from "/src/assets/hero.svg?url";
@@ -36,8 +32,17 @@ const useStyles = createStyles((theme) => ({
     [theme.fn.smallerThan("xs")]: {
       flex: 1,
     },
-    background: theme.colorScheme === "dark" ? theme.colors.yellow[4] : theme.colors.orange[2],
+    background:
+      theme.colorScheme === "dark"
+        ? theme.colors.yellow[4]
+        : theme.colors.orange[2],
     color: theme.colorScheme === "dark" ? theme.colors.gray[9] : theme.white,
+    "&:hover": {
+      background:
+        theme.colorScheme === "dark"
+          ? theme.colors.yellow[5]
+          : theme.colors.orange[3],
+    },
   },
 
   image: {
@@ -52,9 +57,9 @@ const useStyles = createStyles((theme) => ({
     position: "relative",
     backgroundColor:
       theme.colorScheme === "dark"
-        ? theme.fn.rgba(theme.colors.orange[6], 0.55)
+        ? theme.fn.rgba(theme.colors.yellow[6], 0.55)
         : theme.colors.orange[2],
-    borderRadius: theme.radius.md,
+    borderRadius: theme.radius.lg,
     padding: "4px 12px",
   },
 }));
@@ -62,28 +67,28 @@ const useStyles = createStyles((theme) => ({
 export function Hero() {
   const { classes } = useStyles();
   return (
-    <Container mt={100} px="lg">
+    <Container px="lg">
       <Grid grow justify="center">
         <Grid.Col md={5} mt={75}>
           <Title className={classes.title}>
             I'm <span className={classes.highlight}>Mrabet saâd</span> a <br />{" "}
           </Title>
-            <Title sx={(theme) => ({
-                marginTop: 25,
-                color: theme.colorScheme === "dark" ? theme.colors.yellow[2] : theme.colors.orange[3],
+          <Title
+            sx={(theme) => ({
+              marginTop: 25,
+              color:
+                theme.colorScheme === "dark"
+                  ? theme.colors.yellow[2]
+                  : theme.colors.orange[3],
             })}
-            >
-                <Type />
-            </Title>
+          >
+            <Type />
+          </Title>
           <Group mt={30}>
             <Button radius="xl" size="md" className={classes.control}>
               Find out
             </Button>
-            <Button
-              variant="default"
-              radius="xl"
-              size="md"
-            >
+            <Button variant="default" radius="xl" size="md">
               Download cv
             </Button>
           </Group>

@@ -19,10 +19,19 @@ import {
 } from "tabler-icons-react";
 import SwitchMode from "./SwitchMode";
 import LanguagePopover from "./LanguagePopover";
+import MusicMode from "./MusicMode";
 
 // -------------------------------------------------
 
 const useStyles = createStyles((theme) => ({
+  header: {
+    backdropFilter: "blur(50px)",
+    position: "-webkit-sticky",
+    top: "0",
+    zIndex: 3,
+    boxShadow: `${theme.shadows.md} !important`,
+  },
+
   inner: {
     display: "flex",
     justifyContent: "space-between",
@@ -69,7 +78,7 @@ const useStyles = createStyles((theme) => ({
     color:
       theme.colorScheme === "dark"
         ? theme.colors.dark[0]
-        : theme.colors.gray[7],
+        : theme.colors.white[7],
     fontSize: theme.fontSizes.sm,
     fontWeight: 600,
 
@@ -88,10 +97,26 @@ const useStyles = createStyles((theme) => ({
     "&, &:hover": {
       backgroundColor:
         theme.colorScheme === "dark"
-          ? theme.fn.rgba(theme.colors.green[9], 0.25)
+          ? theme.colors.yellow[6]
           : theme.colors.orange[1],
       borderRadius: theme.radius.sm,
+      color: theme.colors.white[9],
+      fontWeight: 600,
+      transform: "scale(1.10)",
     },
+  },
+  logo: {
+    border: `2px solid`,
+    borderColor:
+      theme.colorScheme === "dark"
+        ? theme.colors.gray[2]
+        : theme.colors.gray[0],
+    padding: theme.spacing.xs,
+    borderRadius: theme.radius.md,
+    backgroundColor:
+      theme.colorScheme === "dark" ? theme.white : theme.colors.gray[7],
+    color: theme.colorScheme === "dark" ? theme.black : theme.white,
+    boxShadow: `${theme.shadows.md} !important`,
   },
 }));
 
@@ -121,7 +146,7 @@ export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
   ));
 
   return (
-    <Header height={70} mb={120}>
+    <Header height={70} mb={120} className={classes.header}>
       <Container className={classes.inner}>
         <Burger
           opened={opened}
@@ -133,9 +158,9 @@ export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
           {items}
         </Group>
 
-        <Group>
+        <Group className={classes.logo}>
           <DeviceLaptop size={24} />
-          <Text weight={800}>Na0495 Portfolio</Text>
+          <Text weight={900}>Na0495 Portfolio</Text>
         </Group>
 
         <Group spacing={0} className={classes.social} position="right" noWrap>
@@ -150,6 +175,7 @@ export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
           </ActionIcon>
         </Group>
         <SwitchMode />
+        <MusicMode />
         <LanguagePopover />
       </Container>
     </Header>
