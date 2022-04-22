@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Techenology",
+    "data": [
+      "python",
+      "js",
+      "typescript",
+      "html",
+      "css",
+      "golang",
+      "bash",
+      "react",
+      "angular",
+      "redux",
+      "bootstrap",
+      "tailwind",
+      "django",
+      "django-rest-framework",
+      "postgresql",
+      "mysql",
+      "sqlite",
+      "git",
+      "github",
+      "azure",
+      "netlify",
+      "google_cloud",
+      "docker",
+      "heroku"
+    ]
+  }
+]

@@ -1,12 +1,15 @@
+import { useRef, useState } from "react";
 // Mantine
-import { ActionIcon, Button, createStyles } from "@mantine/core";
+import { ActionIcon, createStyles } from "@mantine/core";
+import { useWindowScroll } from "@mantine/hooks";
 // parallex
 import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
-import { debug } from "console";
-import { useEffect, useRef, useState } from "react";
 import { ArrowDown, ArrowUp } from "tabler-icons-react";
+import About from "../components/About";
+import BoxWrapper from "../components/BoxWrapper";
 // components
 import { Hero } from "../components/Hero";
+import Skills from "../components/Skills";
 
 // -------------------------------------------------
 
@@ -37,9 +40,7 @@ export default function LandingPage() {
   const { classes } = useStyles();
   const alignCenter = { display: "flex", alignItems: "center" };
   const [currentOffset, setCurrentOffset] = useState(0);
-  const parallax = useRef<IParallax>(null!)
-  const containerRef = useRef();
-
+  const parallax = useRef<IParallax>(null!);
 
   const handleParallaxNavigationDown = () => {
     // get the current parallax offset and then navigate to the next layer
@@ -54,10 +55,19 @@ export default function LandingPage() {
     console.log(offset);
     parallax.current.scrollTo(offset - 1);
     setCurrentOffset(offset - 1);
-  }
+  };
 
   return (
-    <Parallax pages={3} ref={parallax} style={{ top: "0", left: "0" }}>
+    <Parallax
+      pages={3}
+      ref={parallax}
+      style={{
+        top: "0",
+        left: "0",
+        // remove the scrollbar
+        overflow: "hidden",
+      }}
+    >
       <ParallaxLayer
         offset={0}
         speed={2.5}
@@ -101,10 +111,10 @@ export default function LandingPage() {
         </ActionIcon>
       </ParallaxLayer>
       <ParallaxLayer offset={1} speed={2} className={classes.about}>
-        <p>Coming soon ...</p>
+        <About />
       </ParallaxLayer>
       <ParallaxLayer offset={2} speed={2} className={classes.about}>
-        <p>Coming soon ...</p>
+        <Skills />
       </ParallaxLayer>
     </Parallax>
   );
