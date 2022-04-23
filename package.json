@@ -23,7 +23,7 @@
     "prettier": "^2.6.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-helmeand i'm also familiar with the followingt-async": "^1.3.0",
+    "react-helmet-async": "^1.3.0",
     "react-i18next": "^11.16.6",
     "react-router-dom": "^6.3.0",
     "react-spring": "^9.4.4",
