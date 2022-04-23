@@ -1,5 +1,11 @@
 // Mantine
-import { Container, Title, Text, Grid, SimpleGrid } from "@mantine/core";
+import {
+  Container,
+  Title,
+  Text,
+  SimpleGrid,
+  createStyles,
+} from "@mantine/core";
 // Components
 import BoxWrapper from "./BoxWrapper";
 // motion
@@ -9,7 +15,27 @@ import tech from "../_mock/tech.json";
 
 // ----------------------------------------------------------------------------
 
+const useStyles = createStyles((theme) => ({
+  title: {
+    color:
+      theme.colorScheme === "dark"
+        ? theme.colors.yellow[4]
+        : theme.colors.orange[4],
+    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontSize: theme.fontSizes.lg,
+    marginTop: theme.spacing.lg,
+    marginBottom: theme.spacing.lg,
+    lineHeight: 1.2,
+    fontWeight: 800,
+
+    [theme.fn.smallerThan("xs")]: {
+      fontSize: 28,
+    },
+  },
+}));
+
 export default function Skills() {
+  const { classes } = useStyles();
   return (
     <Container px="xl" size="lg">
       <BoxWrapper>
@@ -28,23 +54,28 @@ export default function Skills() {
             >
               {item.title}
             </Title>
-            <SimpleGrid cols={6}>
-              {item.data.map((sc: any) => (
-                <motion.img
-                  key={sc}
-                  style={{
-                    width: 65,
-                    height: 65,
-                    borderRadius: 15,
-                    marginRight: 5,
-                  }}
-                  whileHover={{ scale: 1.3 }}
-                  whileTap={{ scale: 0.8 }}
-                  src={"/src/assets/language/" + sc + ".png"}
-                  alt={sc}
-                />
-              ))}
-            </SimpleGrid>
+            <Text>{item.description}</Text>
+            {item.data.map((dataItem: any, index: number) => (
+              <div key={index}>
+                <Text className={classes.title}>{dataItem.type}</Text>
+                <SimpleGrid cols={12}>
+                  {dataItem.png.map((subDataitem: any) => (
+                    <motion.img
+                      key={subDataitem}
+                      style={{
+                        width: 65,
+                        height: 65,
+                        borderRadius: 15,
+                      }}
+                      whileHover={{ scale: 1.3 }}
+                      whileTap={{ scale: 0.8 }}
+                      src={"/src/assets/language/" + subDataitem + ".png"}
+                      alt={subDataitem}
+                    />
+                  ))}
+                </SimpleGrid>
+              </div>
+            ))}
           </div>
         ))}
       </BoxWrapper>

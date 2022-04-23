@@ -1,0 +1,43 @@
+{
+  "image": "/src/assets/farm.jpg",
+  "title": "Full-stack Engineer",
+  "company": "@ SOWIT | Ag Intelligence",
+  "description": " SOWIT develops a decision-making platform to help farmers and Ag organisations (Food, Financial, Gov) make decisions and manage risk and performance.",
+  "badges": [
+    {
+      "label": "Python",
+      "png": "python"
+    },
+    {
+      "label": "Django",
+      "png": "django"
+    },
+    {
+      "label": "React",
+      "png": "react"
+    },
+    {
+      "label": "Azure",
+      "png": "azure"
+    },
+    {
+      "label": "Vite",
+      "png": "vite"
+    },
+    {
+      "label": "Postgres",
+      "png": "postgres"
+    },
+    {
+      "label": "TypeScript",
+      "png": "typescript"
+    },
+    {
+      "label": "JavaScript",
+      "png": "js"
+    },
+    {
+        "label": "..."
+    }
+  ]
+}

@@ -1,31 +1,29 @@
 [
   {
-    "title": "Techenology",
+    "title": "Techenology & Tools",
+    "description": "Those are some of the tools I use in my daily work, and I really enjoy using them on the different project that i'm working on.",
     "data": [
-      "python",
-      "js",
-      "typescript",
-      "html",
-      "css",
-      "golang",
-      "bash",
-      "react",
-      "angular",
-      "redux",
-      "bootstrap",
-      "tailwind",
-      "django",
-      "django-rest-framework",
-      "postgresql",
-      "mysql",
-      "sqlite",
-      "git",
-      "github",
-      "azure",
-      "netlify",
-      "google_cloud",
-      "docker",
-      "heroku"
+      {
+        "type": "Programming languages",
+        "png": ["python", "js", "typescript", "html", "css", "golang", "bash"]
+      },
+      {
+        "type": "Frameworks & libraries",
+        "png": ["react", "redux", "tailwind", "django", "django-rest-framework"]
+      },
+      {
+        "type": "Tools & services",
+        "png": [
+          "postgresql",
+          "sqlite",
+          "git",
+          "github",
+          "azure",
+          "netlify",
+          "docker",
+          "vite"
+        ]
+      }
     ]
   }
 ]

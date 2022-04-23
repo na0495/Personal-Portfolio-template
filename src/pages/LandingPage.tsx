@@ -11,6 +11,7 @@ import { Hero } from "../components/Hero";
 import Footer from "../components/Footer";
 import Page from "../components/Page";
 import Skills from "../components/Skills";
+import Path from "../components/Path";
 
 // -------------------------------------------------
 
@@ -73,30 +74,11 @@ export default function LandingPage() {
       <Page withBackground={true}>
         <About />
       </Page>
-      {/* <ActionIcon
-        variant="filled"
-        color="gray"
-        radius={50}
-        onClick={handleParallaxNavigationDown}
-        disabled={currentOffset >= 2}
-        size={45}
-        mr={25}
-      >
-        <ArrowDown />
-      </ActionIcon>
-      <ActionIcon
-        variant="filled"
-        color="gray"
-        radius={50}
-        onClick={handleParallaxNavigationUp}
-        disabled={currentOffset <= 0}
-        size={45}
-      >
-        <ArrowUp />
-      </ActionIcon> */}
-
       <Page withBackground={false}>
-          <Skills />
+        <Skills />
+      </Page>
+      <Page withBackground={true}>
+        <Path />
       </Page>
     </>
   );
