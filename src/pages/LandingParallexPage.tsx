@@ -10,8 +10,6 @@ import BoxWrapper from "../components/BoxWrapper";
 // components
 import { Hero } from "../components/Hero";
 import Footer from "../components/Footer";
-// mock
-import footer from "../_mock/footer.json";
 
 // -------------------------------------------------
 
