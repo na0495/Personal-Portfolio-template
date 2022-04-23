@@ -7,6 +7,7 @@ import SwitchMode from "./header/SwitchMode";
 import LanguagePopover from "./header/LanguagePopover";
 import PotfolioHeader from "./header/PotfolioHeader";
 import ParticlesWrapper from "../components/animations/ParticlesWrapper";
+import Footer from "../components/Footer";
 
 //-----------------------------------------------------------------------------
 
@@ -30,6 +31,7 @@ export default function MainLayout(): JSX.Element {
       header={<PotfolioHeader links={links} />}
     >
       <Outlet />
+      <Footer />
     </AppShell>
   );
 }

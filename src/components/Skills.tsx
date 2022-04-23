@@ -38,7 +38,7 @@ export default function Skills() {
                     borderRadius: 15,
                     marginRight: 5,
                   }}
-                  whileHover={{ scale: 1.8 }}
+                  whileHover={{ scale: 1.3 }}
                   whileTap={{ scale: 0.8 }}
                   src={"/src/assets/language/" + sc + ".png"}
                   alt={sc}
