@@ -52,9 +52,7 @@ const useStyles = createStyles((theme) => ({
     fontSize: theme.fontSizes.xs,
     fontWeight: 700,
   },
-  badge: {
-
-  },
+  badge: {},
 }));
 
 export default function Path() {
