@@ -1,5 +1,6 @@
 {
   "image": "/src/assets/farm.jpg",
+  "start": "2021-10-01",
   "title": "Full-stack Engineer",
   "company": "@ SOWIT | Ag Intelligence",
   "description": " SOWIT develops a decision-making platform to help farmers and Ag organisations (Food, Financial, Gov) make decisions and manage risk and performance.",

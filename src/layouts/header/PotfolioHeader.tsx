@@ -176,7 +176,7 @@ export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
         </Group>
         <SwitchMode />
         <MusicMode />
-        <LanguagePopover />
+        {/* <LanguagePopover /> */}
       </Container>
     </Header>
   );
