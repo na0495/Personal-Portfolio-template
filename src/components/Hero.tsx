@@ -7,11 +7,13 @@ import {
   Button,
   Group,
   Grid,
+  Box,
+  Center,
 } from "@mantine/core";
 // icons
 import Type from "./animations/Type";
 // svg
-import HeroSvg from "/src/assets/hero.svg?url";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 // --------------------------------------------------
 
@@ -67,36 +69,51 @@ const useStyles = createStyles((theme) => ({
 export function Hero() {
   const { classes } = useStyles();
   return (
-    <Container px="lg">
+    <Group>
       <Grid grow justify="center">
-        <Grid.Col md={5} mt={75}>
-          <Title className={classes.title}>
-            I'm <span className={classes.highlight}>Mrabet saâd</span> a <br />{" "}
-          </Title>
-          <Title
-            sx={(theme) => ({
-              marginTop: 25,
-              color:
-                theme.colorScheme === "dark"
-                  ? theme.colors.yellow[2]
-                  : theme.colors.orange[3],
-            })}
-          >
-            <Type />
-          </Title>
-          <Group mt={30}>
-            <Button radius="xl" size="md" className={classes.control}>
-              Find out
-            </Button>
-            <Button variant="default" radius="xl" size="md">
-              Download cv
-            </Button>
-          </Group>
+        <Grid.Col md={4} mt={150} sm={10}>
+          <Center>
+            <div>
+              <Title className={classes.title}>
+                I'm <span className={classes.highlight}>Mrabet saâd</span> a{" "}
+                <br />{" "}
+              </Title>
+              <Title
+                sx={(theme) => ({
+                  marginTop: 25,
+                  color:
+                    theme.colorScheme === "dark"
+                      ? theme.colors.yellow[2]
+                      : theme.colors.orange[3],
+                })}
+              >
+                <Type />
+              </Title>
+              <Group mt={30}>
+                <Button radius="xl" size="md" className={classes.control}>
+                  Find out
+                </Button>
+                <Button variant="default" radius="xl" size="md">
+                  Download cv
+                </Button>
+              </Group>
+            </div>
+          </Center>
         </Grid.Col>
-        <Grid.Col md={5}>
-          <Image src={HeroSvg} className={classes.image} />
+        <Grid.Col md={7} sm={10} xs={8}>
+          <Player
+            autoplay
+            loop
+            src="https://assets1.lottiefiles.com/packages/lf20_fwfumdog.json"
+            style={{
+              height: "650px",
+              width: "650px",
+              marginTop: -100,
+              backgroundColor: "transparent",
+            }}
+          />
         </Grid.Col>
       </Grid>
-    </Container>
+    </Group>
   );
 }

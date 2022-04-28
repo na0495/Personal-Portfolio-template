@@ -38,8 +38,7 @@ const useStyles = createStyles((theme) => ({
 
     "&:hover": {
       boxShadow: `${theme.shadows.lg} !important`,
-      transform: 'scale(1.02)',
-      
+      transform: "scale(1.02)",
     },
   },
 
@@ -126,11 +125,11 @@ export default function Path() {
                       alt={"sowit"}
                     />
 
-                      <Text size="lg" weight={500}>
-                        {path.title}
-                      </Text>
+                    <Text size="lg" weight={500}>
+                      {path.title}
+                    </Text>
                   </Group>
-                    <Text size="md">{path.company}</Text>
+                  <Text size="md">{path.company}</Text>
                 </Group>
                 <Group position="apart">
                   <Text size="md" weight={500}>

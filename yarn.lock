@@ -362,6 +362,13 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@lottiefiles/react-lottie-player@^3.4.4":
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/@lottiefiles/react-lottie-player/-/react-lottie-player-3.4.4.tgz#00d47e8dd33fb7a2a67a2e016ff3cbc56023eb90"
+  integrity sha512-FwidRwQy7JMlyQrgpcOcAo8le2e8XJSlFfOh5GHGwAXwY608Ihh2r2uRYzV2ea3JAbMgKhGMNPuL4gpVXEjnGQ==
+  dependencies:
+    lottie-web "^5.7.8"
+
 "@mantine/core@^4.1.3":
   version "4.1.3"
   resolved "https://registry.yarnpkg.com/@mantine/core/-/core-4.1.3.tgz#71265ae157f7f6b7b42c33e5b47a4e7f45356ce8"
@@ -1310,6 +1317,11 @@ loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
+
+lottie-web@^5.7.8:
+  version "5.9.3"
+  resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.9.3.tgz#d84e0176d785fcc373095ad085e3ae4e6da032d6"
+  integrity sha512-QKA31Lu57SMfS09oUvuheEL+BkzjWHuzi7VkO9gSBaynK8tOMF2EwBgRdvcn3vXvX79/Y9RFlm75mjsS8je2+w==
 
 magic-string@^0.25.7:
   version "0.25.9"

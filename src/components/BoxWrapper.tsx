@@ -13,7 +13,7 @@ const BoxWrapper = forwardRef<HTMLDivElement, any>(
               ? theme.colors.dark[7]
               : theme.colors.white[0],
           textAlign: align,
-          padding: theme.spacing.xl *2,
+          padding: theme.spacing.xl * 2,
           borderRadius: theme.radius.md,
           marginTop: theme.spacing.xl,
           marginBottom: theme.spacing.xl,

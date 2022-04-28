@@ -158,10 +158,10 @@ export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
           {items}
         </Group>
 
-        <Group className={classes.logo}>
+        {/* <Group className={classes.logo}>
           <DeviceLaptop size={24} />
           <Text weight={900}>Na0495 Portfolio</Text>
-        </Group>
+        </Group> */}
 
         <Group spacing={0} className={classes.social} position="right" noWrap>
           <ActionIcon size="lg" ml={20}>
@@ -174,8 +174,10 @@ export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
             <BrandLinkedin size={24} />
           </ActionIcon>
         </Group>
-        <SwitchMode />
-        <MusicMode />
+        <Group>
+          <SwitchMode />
+          <MusicMode />
+        </Group>
         {/* <LanguagePopover /> */}
       </Container>
     </Header>
