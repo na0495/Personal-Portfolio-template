@@ -1,27 +1,23 @@
+import { useEffect, useState } from "react";
 // Mantine
 import {
   Container,
   Card,
   Image,
-  Avatar,
-  Title,
   Text,
   Grid,
   Group,
   Badge,
-  Button,
-  ActionIcon,
   createStyles,
   useMantineTheme,
 } from "@mantine/core";
+// motion
+import { motion } from "framer-motion";
 // Components
 import BoxWrapper from "./BoxWrapper";
-// icons
-import { Heart } from "tabler-icons-react";
 // _mock
 import path from "../_mock/path.json";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+// lib
 import CountUp from "react-countup";
 
 // ----------------------------------------------------------------------------
@@ -36,10 +32,10 @@ const useStyles = createStyles((theme) => ({
     boxShadow: `${theme.shadows.md} !important`,
     // on hover scale up and make the animation smoother
 
-    "&:hover": {
-      boxShadow: `${theme.shadows.lg} !important`,
-      transform: "scale(1.02)",
-    },
+    // "&:hover": {
+    //   boxShadow: `${theme.shadows.lg} !important`,
+    //   transform: "scale(1.02)",
+    // },
   },
 
   section: {
@@ -79,13 +75,13 @@ export default function Path() {
   useEffect(() => {
     // calculate the total working month based on path.start and today date
     const today = new Date();
-    const start = new Date(path.start);
+    const start = new Date(path.current.start);
     setTotalMonth(monthDiff(start, today));
-  }, [path.start]);
+  }, [path.current.start]);
 
   console.log(totalMonth);
 
-  const features = path.badges.map((badge) => (
+  const features = path.current.badges.map((badge) => (
     <Badge
       className={classes.badge}
       color={theme.colorScheme === "dark" ? "dark" : "gray"}
@@ -97,15 +93,19 @@ export default function Path() {
   return (
     <Container px="xl" size="lg">
       <BoxWrapper withBackground={false}>
-        <Grid>
-          <Grid.Col xs={12} md={6}>
+        <Grid grow>
+          <Grid.Col xs={12} sm={8} md={5}>
             <Card withBorder radius="lg" p="md" className={classes.card}>
               <Card.Section>
-                <Image src={path.image} alt={path.title} height={180} />
+                <Image
+                  src={path.current.image}
+                  alt={path.current.title}
+                  height={200}
+                />
               </Card.Section>
 
               <Card.Section className={classes.section} mt="md">
-                <Group position="apart" mb={10}>
+                <Group mb={10} position="apart">
                   <Group>
                     <motion.img
                       style={{
@@ -124,21 +124,23 @@ export default function Path() {
                       src={"/src/assets/sowit.png"}
                       alt={"sowit"}
                     />
-
-                    <Text size="lg" weight={500}>
-                      {path.title}
+                    <Group direction="column">
+                      <Text size="lg" weight={500} mb={-10}>
+                        {path.current.title}
+                      </Text>
+                      <Text size="md">{path.current.company}</Text>
+                    </Group>
+                  </Group>
+                  <Group position="right">
+                    <Text size="md" weight={500}>
+                      {path.current.start} to <br /> today (
+                      <CountUp start={0} end={totalMonth} duration={2} />{" "}
+                      months)
                     </Text>
                   </Group>
-                  <Text size="md">{path.company}</Text>
-                </Group>
-                <Group position="apart">
-                  <Text size="md" weight={500}>
-                    {path.start} to today (
-                    <CountUp start={0} end={totalMonth} duration={2} /> months)
-                  </Text>
                 </Group>
                 <Text size="sm" mt="xs">
-                  {path.description}
+                  {path.current.description}
                 </Text>
               </Card.Section>
 
@@ -150,16 +152,69 @@ export default function Path() {
                   {features}
                 </Group>
               </Card.Section>
-
-              <Group mt="xs">
-                <Button radius="md" style={{ flex: 1 }}>
-                  Show details
-                </Button>
-                <ActionIcon variant="default" radius="md" size={36}>
-                  <Heart size={18} className={classes.like} />
-                </ActionIcon>
-              </Group>
             </Card>
+          </Grid.Col>
+          <Grid.Col xs={12} sm={8} md={5}>
+            {path.past.map((past) => (
+              <Card
+                key={past.title}
+                withBorder
+                radius="lg"
+                p="md"
+                className={classes.card}
+                mb={15}
+              >
+                <Card.Section className={classes.section} mt="md">
+                  <Group mb={10} position="apart">
+                    <Group>
+                      <motion.div
+                        style={{
+                          width: 65,
+                          height: 65,
+                          borderRadius: 15,
+                          margin: 2,
+                          border: `1px solid ${
+                            theme.colorScheme === "dark"
+                              ? theme.colors.dark[4]
+                              : theme.colors.gray[3]
+                          }`,
+                        }}
+                        whileHover={{ scale: 1.3 }}
+                        whileTap={{ scale: 0.8 }}
+                      />
+                      <Group direction="column">
+                        <Text size="lg" weight={500} mb={-10}>
+                          {past.title}
+                        </Text>
+                        <Text size="md">{past.company}</Text>
+                      </Group>
+                    </Group>
+                    <Group position="right">
+                      <Text size="md" weight={500}>
+                        {past.start} to <br /> {past.end}
+                      </Text>
+                    </Group>
+                  </Group>
+                </Card.Section>
+
+                <Card.Section className={classes.section}>
+                  <Text mt="md" className={classes.label} color="dimmed">
+                    Technologies
+                  </Text>
+                  <Group spacing={7} mt={5}>
+                    {past.badges.map((badge) => (
+                      <Badge
+                        className={classes.badge}
+                        color={theme.colorScheme === "dark" ? "dark" : "gray"}
+                        key={badge.label}
+                      >
+                        {badge.label}
+                      </Badge>
+                    ))}
+                  </Group>
+                </Card.Section>
+              </Card>
+            ))}
           </Grid.Col>
         </Grid>
       </BoxWrapper>

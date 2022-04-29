@@ -1,44 +1,158 @@
 {
-  "image": "/src/assets/farm.jpg",
-  "start": "2021-10-01",
-  "title": "Full-stack Engineer",
-  "company": "@ SOWIT | Ag Intelligence",
-  "description": " SOWIT develops a decision-making platform to help farmers and Ag organisations (Food, Financial, Gov) make decisions and manage risk and performance.",
-  "badges": [
+  "current": {
+    "image": "/src/assets/farm.jpg",
+    "start": "2021-10-01",
+    "title": "Full-stack Engineer",
+    "company": "@ SOWIT | Ag Intelligence",
+    "description": " SOWIT develops a decision-making platform to help farmers and Ag organisations (Food, Financial, Gov) make decisions and manage risk and performance.",
+    "badges": [
+      {
+        "label": "Python",
+        "png": "python"
+      },
+      {
+        "label": "Django",
+        "png": "django"
+      },
+      {
+        "label": "React",
+        "png": "react"
+      },
+      {
+        "label": "Azure",
+        "png": "azure"
+      },
+      {
+        "label": "Vite",
+        "png": "vite"
+      },
+      {
+        "label": "Postgres",
+        "png": "postgres"
+      },
+      {
+        "label": "TypeScript",
+        "png": "typescript"
+      },
+      {
+        "label": "JavaScript",
+        "png": "js"
+      },
+      {
+        "label": "Angular",
+        "png": "angular"
+      },
+      {
+        "label": "HTML",
+        "png": "html"
+      },
+      {
+        "label": "CSS",
+        "png": "css"
+      },
+      {
+        "label": "..."
+      }
+    ]
+  },
+  "past": [
     {
-      "label": "Python",
-      "png": "python"
+      "start": "2021-08-01",
+      "end": "2021-09-26",
+      "title": "Full-stack Engineer",
+      "company": "Atkana It Solution",
+      "badges": [
+        {
+          "label": "Python",
+          "png": "python"
+        },
+        {
+          "label": "Django",
+          "png": "django"
+        },
+        {
+          "label": "Angular",
+          "png": "angular"
+        },
+        {
+          "label": "Github",
+          "png": "github"
+        },
+        {
+          "label": "Postgres",
+          "png": "postgres"
+        },
+        {
+          "label": "TypeScript",
+          "png": "typescript"
+        },
+        {
+          "label": "JavaScript",
+          "png": "js"
+        },
+        {
+          "label": "PostgreSQL",
+          "png": "postgres"
+        },
+        {
+          "label": "HTML",
+          "png": "html"
+        },
+        {
+          "label": "CSS",
+          "png": "css"
+        },
+        {
+          "label": "..."
+        }
+      ]
     },
     {
-      "label": "Django",
-      "png": "django"
-    },
-    {
-      "label": "React",
-      "png": "react"
-    },
-    {
-      "label": "Azure",
-      "png": "azure"
-    },
-    {
-      "label": "Vite",
-      "png": "vite"
-    },
-    {
-      "label": "Postgres",
-      "png": "postgres"
-    },
-    {
-      "label": "TypeScript",
-      "png": "typescript"
-    },
-    {
-      "label": "JavaScript",
-      "png": "js"
-    },
-    {
-      "label": "..."
+      "start": "2021-03-08",
+      "end": "2021-08-29",
+      "title": "Full-stack Engineer (Intern)",
+      "company": "PULL4YOU SERIVICE S.A.R.L",
+      "badges": [
+        {
+          "label": "Python",
+          "png": "python"
+        },
+        {
+          "label": "Django",
+          "png": "django"
+        },
+        {
+          "label": "React",
+          "png": "react"
+        },
+        {
+          "label": "Github",
+          "png": "github"
+        },
+        {
+          "label": "Postgres",
+          "png": "postgres"
+        },
+        {
+          "label": "TypeScript",
+          "png": "typescript"
+        },
+        {
+          "label": "JavaScript",
+          "png": "js"
+        },
+        {
+          "label": "HTML",
+          "png": "html"
+        },
+        {
+          "label": "CSS",
+          "png": "css"
+        },
+        {
+          "label": "..."
+        }
+      ]
     }
   ]
 }
