@@ -56,7 +56,12 @@ const useStyles = createStyles((theme) => ({
     fontSize: theme.fontSizes.xs,
     fontWeight: 700,
   },
-  badge: {},
+  badge: {
+    backgroundColor:
+      theme.colorScheme === "dark"
+        ? theme.colors.gray[7]
+        : theme.colors.gray[3],
+  },
 }));
 
 export default function Path() {
@@ -178,6 +183,7 @@ export default function Path() {
                               ? theme.colors.dark[4]
                               : theme.colors.gray[3]
                           }`,
+                          backgroundColor: "gray"
                         }}
                         whileHover={{ scale: 1.3 }}
                         whileTap={{ scale: 0.8 }}
