@@ -96,7 +96,7 @@ export default function Path() {
   ));
   return (
     <Container px="xl" size="lg">
-      <BoxWrapper>
+      <BoxWrapper withBackground={false}>
         <Grid>
           <Grid.Col xs={12} md={6}>
             <Card withBorder radius="lg" p="md" className={classes.card}>

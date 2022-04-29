@@ -14,6 +14,8 @@ import {
 import Type from "./animations/Type";
 // svg
 import { Player } from "@lottiefiles/react-lottie-player";
+//
+import CodingJson from "/src/assets/animations/coding.json?url";
 
 // --------------------------------------------------
 
@@ -104,7 +106,7 @@ export function Hero() {
           <Player
             autoplay
             loop
-            src="https://assets1.lottiefiles.com/packages/lf20_fwfumdog.json"
+            src={CodingJson}
             style={{
               height: "650px",
               width: "650px",

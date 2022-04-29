@@ -38,7 +38,7 @@ export default function Skills() {
   const { classes } = useStyles();
   return (
     <Container px="xl" size="lg">
-      <BoxWrapper>
+      <BoxWrapper withBackground={true}>
         {tech.map((item: any, index: number) => (
           <div key={index}>
             <Title

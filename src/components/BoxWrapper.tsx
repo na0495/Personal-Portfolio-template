@@ -4,14 +4,10 @@ import { forwardRef } from "react";
 // ----------------------------------------------------------------------------
 
 const BoxWrapper = forwardRef<HTMLDivElement, any>(
-  ({ children, align, ...props }, ref) => {
+  ({ children, align, withBackground, ...props }, ref) => {
     return (
       <Box
         sx={(theme) => ({
-          backgroundColor:
-            theme.colorScheme === "dark"
-              ? theme.colors.dark[7]
-              : theme.colors.white[0],
           textAlign: align,
           padding: theme.spacing.xl * 2,
           borderRadius: theme.radius.md,
@@ -23,6 +19,13 @@ const BoxWrapper = forwardRef<HTMLDivElement, any>(
               : theme.colors.gray[3]
           }`,
           boxShadow: `${theme.shadows.md} !important`,
+          backgroundColor: withBackground
+            ? theme.colorScheme === "dark"
+              ? theme.colors.gray[8]
+              : theme.colors.gray[3]
+            : theme.colorScheme === "dark"
+            ? theme.colors.dark[7]
+            : theme.colors.white[0],
         })}
         ref={ref}
         {...props}
