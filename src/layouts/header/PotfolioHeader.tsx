@@ -63,7 +63,7 @@ const useStyles = createStyles((theme) => ({
       backgroundColor:
         theme.colorScheme === "dark"
           ? theme.colors.dark[6]
-          : theme.colors.gray[0],
+          : theme.colors.gray[2],
       boxShadow: `${theme.shadows.md} !important`,
       transform: "scale(1.10)",
       borderRadius: theme.radius.sm,
@@ -182,9 +182,6 @@ export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
           size="sm"
           className={classes.burger}
         />
-        <Group className={classes.links} spacing={5}>
-          {items}
-        </Group>
         <Group spacing={0} className={classes.social} position="right" noWrap>
           {socialLinks.map((link) => (
             <ActionIcon
@@ -200,6 +197,9 @@ export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
               {link.icon}
             </ActionIcon>
           ))}
+        </Group>
+        <Group className={classes.links} spacing={5}>
+          {items}
         </Group>
         <Group>
           <SwitchMode />
