@@ -85,7 +85,7 @@ export default function Footer() {
     <footer className={classes.footer}>
       <Container className={classes.afterFooter}>
         <Text color="dimmed" size="sm">
-          © 2022 na0495 All rights reserved.
+          Copyright © 2022 na0495 All rights reserved.
         </Text>
 
         <Group spacing={0} className={classes.social} position="right" noWrap>
