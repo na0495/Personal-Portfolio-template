@@ -139,6 +139,19 @@ export default function Github() {
         <BoxWrapper withBackground={true}>
           <GitHubCalendar username="na0495" />
         </BoxWrapper>
+        <Title
+          order={3}
+          sx={(theme) => ({
+            marginBottom: 25,
+            color:
+              theme.colorScheme === "dark"
+                ? theme.colors.yellow[5]
+                : theme.colors.orange[5],
+          })}
+        >
+          {github.project}
+        </Title>
+        <BoxWrapper withBackground={true}></BoxWrapper>
       </BoxWrapper>
     </Container>
   );

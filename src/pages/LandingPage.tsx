@@ -1,89 +1,76 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 // Mantine
-import { ActionIcon, createStyles } from "@mantine/core";
-import { useWindowScroll } from "@mantine/hooks";
-// parallex
-import { ArrowDown, ArrowUp } from "tabler-icons-react";
-import About from "../components/About";
-import BoxWrapper from "../components/BoxWrapper";
+import { ActionIcon, createStyles, Text } from "@mantine/core";
+import { useScrollIntoView } from "@mantine/hooks";
 // components
 import { Hero } from "../components/Hero";
-import Footer from "../components/Footer";
+import About from "../components/About";
 import Page from "../components/Page";
-import Skills from "../components/Skills";
+// import Skills from "../components/Skills";
 import Path from "../components/Path";
 import Github from "../components/Github";
+// icons
+import { ArrowDown, ArrowUp } from "tabler-icons-react";
 
 // -------------------------------------------------
 
 const useStyles = createStyles((theme) => ({
-  skills: {
-    backgroundColor:
-      theme.colorScheme === "dark"
-        ? theme.colors.gray[9]
-        : theme.colors.gray[8],
-  },
-  about: {
-    backgroundColor:
-      theme.colorScheme === "dark"
-        ? theme.colors.yellow[3]
-        : theme.colors.orange[3],
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  navigation: {
-    position: "absolute",
+  sticky: {
+    position: "sticky",
+    zIndex: 9999,
+    // // fix the content on the bottom right corner of the page when the page is scrolled
     bottom: "0",
     right: "0",
-  },
-  footer: {
-    backgroundColor:
-      theme.colorScheme === "dark"
-        ? theme.colors.yellow[3]
-        : theme.colors.orange[3],
-    bottom: "0",
+    // make the content visible when the page is scrolled
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    paddingBottom: 75,
+    marginRight: 75,
   },
 }));
 
 export default function LandingPage() {
-  const { classes } = useStyles();
-  const alignCenter = { display: "flex", alignItems: "center" };
   const [currentOffset, setCurrentOffset] = useState(0);
-  //   const parallax = useRef<IParallax>(null!);
+  const { scrollIntoView, targetRef } = useScrollIntoView<HTMLDivElement>({
+    offset: 60,
+  });
+  const { classes } = useStyles();
 
-  const handleParallaxNavigationDown = () => {
-    // get the current parallax offset and then navigate to the next layer
-    // const offset = parallax.current.offset;
-    // console.log(offset);
-    // parallax.current.scrollTo(offset + 1);
-    // setCurrentOffset(offset + 1);
-  };
   const handleParallaxNavigationUp = () => {
-    // get the current parallax offset and then navigate to the next layer
-    // const offset = parallax.current.offset;
-    // console.log(offset);
-    // parallax.current.scrollTo(offset - 1);
-    // setCurrentOffset(offset - 1);
+    scrollIntoView({ alignment: "center" });
   };
 
   return (
     <>
-      <Page withBackground={false} isFirst={true}>
+      <Page ref={targetRef} withBackground={false} isFirst={true}>
         <Hero />
       </Page>
       <Page withBackground={true}>
         <About />
       </Page>
-      <Page withBackground={false}>
+      {/* <Page withBackground={false}>
         <Skills />
+      </Page> */}
+      <Page withBackground={true} height={"200hv"}>
+        <Github />
       </Page>
       <Page withBackground={true}>
         <Path />
-      </Page>      
-      <Page withBackground={false}>
-        <Github />
       </Page>
+      <div className={classes.sticky}>
+        <ActionIcon
+          variant="filled"
+          color="gray"
+          radius={50}
+          onClick={handleParallaxNavigationUp}
+          // disabled={currentOffset >= 2}
+          size={45}
+          mr={25}
+        >
+          <ArrowUp />
+        </ActionIcon>
+      </div>
     </>
   );
 }
