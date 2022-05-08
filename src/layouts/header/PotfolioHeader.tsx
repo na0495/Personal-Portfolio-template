@@ -52,11 +52,21 @@ const useStyles = createStyles((theme) => ({
   },
 
   social: {
-    width: 260,
-
     [theme.fn.smallerThan("sm")]: {
       width: "auto",
       marginLeft: "auto",
+    },
+  },
+
+  icon: {
+    "&:hover": {
+      backgroundColor:
+        theme.colorScheme === "dark"
+          ? theme.colors.dark[6]
+          : theme.colors.gray[0],
+      boxShadow: `${theme.shadows.md} !important`,
+      transform: "scale(1.10)",
+      borderRadius: theme.radius.sm,
     },
   },
 
@@ -124,6 +134,24 @@ interface PortfolioHeaderProps {
   links: { link: string; label: string }[];
 }
 
+const socialLinks = [
+  {
+    label: "Twitter",
+    href: "https://twitter.com/na0495",
+    icon: <BrandTwitter size={28} />,
+  },
+  {
+    label: "Github",
+    href: "https://github.com/na0495",
+    icon: <BrandGithub size={28} />,
+  },
+  {
+    label: "Linkedin",
+    href: "https://www.linkedin.com/in/saad-mrabet-978a01188/",
+    icon: <BrandLinkedin size={28} />,
+  },
+];
+
 export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
   const [opened, toggleOpened] = useBooleanToggle(false);
   const [active, setActive] = useState(links[0].link);
@@ -157,28 +185,26 @@ export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
         <Group className={classes.links} spacing={5}>
           {items}
         </Group>
-
-        {/* <Group className={classes.logo}>
-          <DeviceLaptop size={24} />
-          <Text weight={900}>Na0495 Portfolio</Text>
-        </Group> */}
-
         <Group spacing={0} className={classes.social} position="right" noWrap>
-          <ActionIcon size="lg" ml={20}>
-            <BrandTwitter size={24} />
-          </ActionIcon>
-          <ActionIcon size="lg" ml={20}>
-            <BrandGithub size={24} />
-          </ActionIcon>
-          <ActionIcon size="lg" ml={20}>
-            <BrandLinkedin size={24} />
-          </ActionIcon>
+          {socialLinks.map((link) => (
+            <ActionIcon
+              key={link.label}
+              size="xl"
+              ml={20}
+              radius="md"
+              className={classes.icon}
+              component="a"
+              href={link.href}
+              target="_blank"
+            >
+              {link.icon}
+            </ActionIcon>
+          ))}
         </Group>
         <Group>
           <SwitchMode />
           <MusicMode />
         </Group>
-        {/* <LanguagePopover /> */}
       </Container>
     </Header>
   );

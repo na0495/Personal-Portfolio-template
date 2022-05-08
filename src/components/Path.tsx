@@ -183,7 +183,7 @@ export default function Path() {
                               ? theme.colors.dark[4]
                               : theme.colors.gray[3]
                           }`,
-                          backgroundColor: "gray"
+                          backgroundColor: "gray",
                         }}
                         whileHover={{ scale: 1.3 }}
                         whileTap={{ scale: 0.8 }}
