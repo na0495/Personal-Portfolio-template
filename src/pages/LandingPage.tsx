@@ -80,7 +80,7 @@ export default function LandingPage() {
       </Page>
       <Page withBackground={true}>
         <Path />
-      </Page>
+      </Page>      
       <Page withBackground={false}>
         <Github />
       </Page>
