@@ -25,7 +25,9 @@ import CountUp from "react-countup";
 const useStyles = createStyles((theme) => ({
   card: {
     backgroundColor:
-      theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[6]
+        : theme.colors.gray[0],
     border: `1px solid ${
       theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]
     }`,
@@ -83,8 +85,6 @@ export default function Path() {
     const start = new Date(path.current.start);
     setTotalMonth(monthDiff(start, today));
   }, [path.current.start]);
-
-  console.log(totalMonth);
 
   const features = path.current.badges.map((badge) => (
     <Badge

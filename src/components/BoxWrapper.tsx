@@ -21,8 +21,8 @@ const BoxWrapper = forwardRef<HTMLDivElement, any>(
           boxShadow: `${theme.shadows.md} !important`,
           backgroundColor: withBackground
             ? theme.colorScheme === "dark"
-              ? theme.colors.dark[8]
-              : theme.colors.gray[1]
+              ? theme.colors.dark[6]
+              : theme.colors.gray[0]
             : theme.colorScheme === "dark"
             ? theme.colors.dark[7]
             : theme.colors.white[0],

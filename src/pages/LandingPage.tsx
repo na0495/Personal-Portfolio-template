@@ -12,6 +12,7 @@ import Footer from "../components/Footer";
 import Page from "../components/Page";
 import Skills from "../components/Skills";
 import Path from "../components/Path";
+import Github from "../components/Github";
 
 // -------------------------------------------------
 
@@ -79,6 +80,9 @@ export default function LandingPage() {
       </Page>
       <Page withBackground={true}>
         <Path />
+      </Page>
+      <Page withBackground={false}>
+        <Github />
       </Page>
     </>
   );

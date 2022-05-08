@@ -1,13 +1,10 @@
 // mantine
 import {
   createStyles,
-  Image,
-  Container,
   Title,
   Button,
   Group,
   Grid,
-  Box,
   Center,
 } from "@mantine/core";
 // icons

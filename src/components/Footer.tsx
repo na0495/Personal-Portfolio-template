@@ -89,7 +89,7 @@ export default function Footer() {
         </Text>
 
         <Group spacing={0} className={classes.social} position="right" noWrap>
-        {socialLinks.map((link) => (
+          {socialLinks.map((link) => (
             <ActionIcon
               key={link.label}
               size="xl"
