@@ -9,10 +9,10 @@ import BoxWrapper from "../components/BoxWrapper";
 // components
 import { Hero } from "../components/Hero";
 import Footer from "../components/Footer";
-// mock
-import footer from "../_mock/footer.json";
 import Page from "../components/Page";
 import Skills from "../components/Skills";
+import Path from "../components/Path";
+import Github from "../components/Github";
 
 // -------------------------------------------------
 
@@ -75,30 +75,14 @@ export default function LandingPage() {
       <Page withBackground={true}>
         <About />
       </Page>
-      {/* <ActionIcon
-        variant="filled"
-        color="gray"
-        radius={50}
-        onClick={handleParallaxNavigationDown}
-        disabled={currentOffset >= 2}
-        size={45}
-        mr={25}
-      >
-        <ArrowDown />
-      </ActionIcon>
-      <ActionIcon
-        variant="filled"
-        color="gray"
-        radius={50}
-        onClick={handleParallaxNavigationUp}
-        disabled={currentOffset <= 0}
-        size={45}
-      >
-        <ArrowUp />
-      </ActionIcon> */}
-
       <Page withBackground={false}>
-          <Skills />
+        <Skills />
+      </Page>
+      <Page withBackground={true}>
+        <Path />
+      </Page>      
+      <Page withBackground={false}>
+        <Github />
       </Page>
     </>
   );

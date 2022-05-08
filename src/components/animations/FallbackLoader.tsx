@@ -11,10 +11,13 @@ const FallbackLoader = forwardRef<HTMLDivElement, any>(
       <Center>
         <Box ref={ref} sx={sx} {...others}>
           <Loader
-            color={colorScheme === "dark" ? "orange" : "lime"}
+            color={colorScheme === "dark" ? "yellow" : "orange"}
             size={75}
-            style={{ marginTop: window.innerHeight / 2 - 50 }}
-            variant="dots"
+            style={{
+              marginTop: window.innerHeight / 2 - 150,
+              marginBottom: window.innerHeight / 2 - 50,
+              marginLeft: -100,
+            }}
           />
         </Box>
       </Center>

@@ -10,7 +10,7 @@ import aboutme from "../_mock/aboutme.json";
 export default function About() {
   return (
     <Container px="xl" size="lg">
-      <BoxWrapper>
+      <BoxWrapper withBackground={false}>
         <Title
           order={3}
           sx={(theme) => ({
