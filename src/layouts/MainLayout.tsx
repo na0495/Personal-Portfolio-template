@@ -1,12 +1,9 @@
 // React
 import { Outlet } from "react-router-dom";
 // Manatine UI
-import { AppShell, Header, Text, useMantineTheme } from "@mantine/core";
+import { AppShell, useMantineTheme } from "@mantine/core";
 // header
-import SwitchMode from "./header/SwitchMode";
-import LanguagePopover from "./header/LanguagePopover";
 import PotfolioHeader from "./header/PotfolioHeader";
-import ParticlesWrapper from "../components/animations/ParticlesWrapper";
 import Footer from "../components/Footer";
 
 //-----------------------------------------------------------------------------

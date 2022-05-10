@@ -1,6 +1,6 @@
 import { useState } from "react";
 // Mantine
-import { ActionIcon, createStyles, Text } from "@mantine/core";
+import { ActionIcon, createStyles } from "@mantine/core";
 import { useScrollIntoView } from "@mantine/hooks";
 // components
 import { Hero } from "../components/Hero";
