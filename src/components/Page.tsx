@@ -6,19 +6,21 @@ type PageProps = {
   children: React.ReactNode;
   withBackground?: boolean;
   isFirst?: boolean;
+  height?: string;
 };
 
 export default function Page({
   children,
   withBackground,
   isFirst,
+  height,
   ...props
 }: PageProps) {
   return (
     <Box
       sx={(theme) => ({
         // set the box size of the higet of size of the window
-        height: "100vh",
+        height: height || "100vh",
         marginTop: isFirst ? -100 : 100,
         marginRight: -16,
         marginLeft: -16,
