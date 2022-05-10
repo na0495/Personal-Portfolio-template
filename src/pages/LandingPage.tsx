@@ -11,6 +11,7 @@ import Path from "../components/Path";
 import Github from "../components/Github";
 // icons
 import { ArrowDown, ArrowUp } from "tabler-icons-react";
+import Project from "../components/Project";
 
 // -------------------------------------------------
 
@@ -43,7 +44,8 @@ export default function LandingPage() {
 
   return (
     <>
-      <Page ref={targetRef} withBackground={false} isFirst={true}>
+      <div ref={targetRef} />
+      <Page withBackground={false} isFirst={true}>
         <Hero />
       </Page>
       <Page withBackground={true}>
@@ -54,6 +56,9 @@ export default function LandingPage() {
       </Page> */}
       <Page withBackground={true} height={"200hv"}>
         <Github />
+      </Page>
+      <Page withBackground={true} height={"200hv"}>
+        <Project />
       </Page>
       <Page withBackground={true}>
         <Path />

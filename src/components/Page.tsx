@@ -7,7 +7,6 @@ type PageProps = {
   withBackground?: boolean;
   isFirst?: boolean;
   height?: string;
-  ref?: React.Ref<HTMLDivElement>;
 };
 
 export default function Page({
@@ -15,7 +14,6 @@ export default function Page({
   withBackground,
   isFirst,
   height,
-  ref,
   ...props
 }: PageProps) {
   return (
@@ -38,7 +36,6 @@ export default function Page({
             : theme.colors.orange[3]
           : "transparent",
       })}
-      ref={ref}
     >
       {children}
     </Box>
