@@ -6,12 +6,11 @@ import { useScrollIntoView } from "@mantine/hooks";
 import { Hero } from "../components/Hero";
 import About from "../components/About";
 import Page from "../components/Page";
-// import Skills from "../components/Skills";
+import Skills from "../components/Skills";
 import Path from "../components/Path";
 import Github from "../components/Github";
 // icons
-import { ArrowDown, ArrowUp } from "tabler-icons-react";
-import Project from "../components/Project";
+import { ArrowUp } from "tabler-icons-react";
 
 // -------------------------------------------------
 
@@ -51,15 +50,15 @@ export default function LandingPage() {
       <Page withBackground={true}>
         <About />
       </Page>
-      {/* <Page withBackground={false}>
+      <Page withBackground={false}>
         <Skills />
-      </Page> */}
+      </Page>
       <Page withBackground={true} height={"200hv"}>
         <Github />
       </Page>
-      <Page withBackground={true} height={"200hv"}>
+      {/* <Page withBackground={true} height={"200hv"}>
         <Project />
-      </Page>
+      </Page> */}
       <Page withBackground={true}>
         <Path />
       </Page>

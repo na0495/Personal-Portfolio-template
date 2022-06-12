@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 // Mantine
 import {
@@ -154,6 +155,7 @@ const socialLinks = [
 
 export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
   const [opened, toggleOpened] = useBooleanToggle(false);
+  const navigate = useNavigate();
   const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
 
@@ -167,6 +169,7 @@ export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
       onClick={(event) => {
         event.preventDefault();
         setActive(link.link);
+        navigate(link.link);
       }}
     >
       {link.label}
@@ -182,7 +185,7 @@ export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
           size="sm"
           className={classes.burger}
         />
-        <Group spacing={0} className={classes.social} position="right" noWrap>
+        {/* <Group spacing={0} className={classes.social} position="right" noWrap>
           {socialLinks.map((link) => (
             <ActionIcon
               key={link.label}
@@ -197,10 +200,8 @@ export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
               {link.icon}
             </ActionIcon>
           ))}
-        </Group>
-        <Group className={classes.links} spacing={5}>
-          {items}
-        </Group>
+        </Group> */}
+        <Group spacing={5}>{items}</Group>
         <Group>
           <SwitchMode />
           <MusicMode />
