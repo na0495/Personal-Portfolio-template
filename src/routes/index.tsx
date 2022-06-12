@@ -70,4 +70,3 @@ const AboutPage = Loadable(lazy(() => import("../pages/AboutPage")));
 const SkillsPage = Loadable(lazy(() => import("../pages/SkillsPage")));
 const ProjectsPage = Loadable(lazy(() => import("../pages/ProjectsPage")));
 const ContactPage = Loadable(lazy(() => import("../pages/ContactPage")));
-
