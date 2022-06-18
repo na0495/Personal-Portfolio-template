@@ -20,7 +20,7 @@ export default function Page({
     <Box
       sx={(theme) => ({
         // set the box size of the higet of size of the window
-        height: height || "100vh",
+        height: height || "99vh",
         marginTop: isFirst ? -100 : 100,
         marginRight: -16,
         marginLeft: -16,

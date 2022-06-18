@@ -5,31 +5,24 @@ import { Container } from "tsparticles-engine";
 // make reusable component for particles
 
 type ParticlesWrapperProps = {
-  children: any;
+  // children: any;
   sx?: React.CSSProperties;
 };
 
-const ParticlesWrapper = ({
-  children,
-  sx,
-  ...others
-}: ParticlesWrapperProps) => {
+const ParticlesWrapper = ({ sx, ...others }: ParticlesWrapperProps) => {
   const particlesInit = async (main: any) => {
-    console.log(main);
-
-    // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    // starting from v2 you can add only the features you need reducing the bundle size
     await loadFull(main);
   };
 
-  const particlesLoaded = (container: Container) => {};
+  // const particlesLoaded = (container: any) => {
+
+  // };
 
   return (
     <Particles
       id="tsparticles"
       init={particlesInit}
-      loaded={children}
+      // loaded={children}
       options={{
         particles: {
           number: {
