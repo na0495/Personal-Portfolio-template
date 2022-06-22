@@ -4,7 +4,6 @@ import { Outlet } from "react-router-dom";
 import { AppShell, useMantineTheme } from "@mantine/core";
 // header
 import PotfolioHeader from "./header/PotfolioHeader";
-import Footer from "../components/Footer";
 
 //-----------------------------------------------------------------------------
 
@@ -40,7 +39,6 @@ export default function MainLayout(): JSX.Element {
       header={<PotfolioHeader links={links} />}
     >
       <Outlet />
-      <Footer />
     </AppShell>
   );
 }
