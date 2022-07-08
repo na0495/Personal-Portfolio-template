@@ -7,7 +7,7 @@ import {
   SimpleGrid,
   Box,
 } from "@mantine/core";
-import { Sun, Phone, MapPin, At } from "tabler-icons-react";
+import { Sun, Phone, MapPin, At, BrandGithub } from "tabler-icons-react";
 
 type ContactIconVariant = "white" | "gradient";
 
@@ -26,9 +26,7 @@ const useStyles = createStyles((theme, { variant }: ContactIconStyles) => ({
     marginRight: theme.spacing.md,
     backgroundImage:
       variant === "gradient"
-        ? `linear-gradient(135deg, ${theme.colors[theme.primaryColor][4]} 0%, ${
-            theme.colors[theme.primaryColor][6]
-          } 100%)`
+        ? `linear-gradient(135deg, ${theme.colors.yellow[4]} 0%, ${theme.colors.yellow[6]} 100%)`
         : "none",
     backgroundColor: "transparent",
   },
@@ -90,9 +88,9 @@ interface ContactIconsListProps {
 }
 
 const MOCKDATA = [
-  { title: "Email", description: "hello@mantine.dev", icon: At },
-  { title: "Phone", description: "+49 (800) 335 35 35", icon: Phone },
-  { title: "Address", description: "844 Morris Park avenue", icon: MapPin },
+  { title: "Email", description: "saadmrabet007@gmail.com", icon: At },
+  { title: "Github", description: "na0495", icon: BrandGithub },
+  { title: "Address", description: "Casablanca, Morocco", icon: MapPin },
   { title: "Working hours", description: "8 a.m. – 11 p.m.", icon: Sun },
 ];
 

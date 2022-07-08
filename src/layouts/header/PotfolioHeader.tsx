@@ -185,13 +185,18 @@ export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
           size="sm"
           className={classes.burger}
         />
-        {/* <Group spacing={0} className={classes.social} position="right" noWrap>
+        <Group spacing={4}>{items}</Group>
+        <Group>
+          <SwitchMode />
+          <MusicMode />
+        </Group>
+        <Group spacing={0} className={classes.social} position="right" noWrap>
           {socialLinks.map((link) => (
             <ActionIcon
               key={link.label}
-              size="xl"
-              ml={20}
-              radius="md"
+              size="lg"
+              ml={15}
+              radius="lg"
               className={classes.icon}
               component="a"
               href={link.href}
@@ -200,11 +205,6 @@ export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
               {link.icon}
             </ActionIcon>
           ))}
-        </Group> */}
-        <Group spacing={5}>{items}</Group>
-        <Group>
-          <SwitchMode />
-          <MusicMode />
         </Group>
       </Container>
     </Header>

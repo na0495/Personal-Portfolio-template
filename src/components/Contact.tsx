@@ -70,7 +70,17 @@ const useStyles = createStyles((theme) => ({
   },
 
   control: {
-    backgroundColor: theme.colors[theme.primaryColor][6],
+    backgroundColor:
+      theme.colorScheme === "dark"
+        ? theme.colors.yellow[5]
+        : theme.colors.orange[3],
+
+    "&:hover": {
+      backgroundColor:
+        theme.colorScheme === "dark"
+          ? theme.colors.yellow[6]
+          : theme.colors.orange[4],
+    },
   },
 }));
 
@@ -79,16 +89,16 @@ const social = [BrandTwitter, BrandYoutube, BrandInstagram];
 export function Contact() {
   const { classes } = useStyles();
 
-  const icons = social.map((Icon, index) => (
-    <ActionIcon
-      key={index}
-      size={28}
-      className={classes.social}
-      variant="transparent"
-    >
-      <Icon size={22} />
-    </ActionIcon>
-  ));
+  // const icons = social.map((Icon, index) => (
+  //   <ActionIcon
+  //     key={index}
+  //     size={28}
+  //     className={classes.social}
+  //     variant="transparent"
+  //   >
+  //     <Icon size={22} />
+  //   </ActionIcon>
+  // ));
 
   return (
     <BoxWrapper>
@@ -105,7 +115,7 @@ export function Contact() {
 
           <ContactIconsList />
 
-          <Group mt="xl">{icons}</Group>
+          {/* <Group mt="xl">{icons}</Group> */}
         </div>
         <div className={classes.form}>
           <TextInput

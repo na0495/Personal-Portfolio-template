@@ -26,6 +26,7 @@ const BoxWrapper = forwardRef<HTMLDivElement, any>(
             : theme.colorScheme === "dark"
             ? theme.colors.dark[7]
             : theme.colors.white[0],
+          zIndex: 9999,
         })}
         ref={ref}
         {...props}

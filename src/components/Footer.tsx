@@ -31,17 +31,12 @@ const socialLinks = [
 
 const useStyles = createStyles((theme) => ({
   footer: {
-    marginTop: 120,
-    paddingTop: theme.spacing.xl * 2,
-    paddingBottom: theme.spacing.xl * 2,
     backgroundColor:
       theme.colorScheme === "dark"
         ? theme.colors.dark[6]
-        : theme.colors.gray[0],
-    borderTop: `1px solid ${
-      theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[2]
-    }`,
-    margin: -15,
+        : theme.colors.gray[3],
+    width: "100%",
+    zIndex: 9998,
   },
 
   icon: {
