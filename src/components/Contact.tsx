@@ -117,7 +117,7 @@ export function Contact() {
 
           {/* <Group mt="xl">{icons}</Group> */}
         </div>
-        <div className={classes.form}>
+        <form className={classes.form} name="contact" method="post">
           <TextInput
             label="Email"
             placeholder="your@email.com"
@@ -142,7 +142,7 @@ export function Contact() {
           <Group position="right" mt="md">
             <Button className={classes.control}>Send message</Button>
           </Group>
-        </div>
+        </form>
       </SimpleGrid>
     </BoxWrapper>
   );
