@@ -4,9 +4,11 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
+    "vite": "vite",
+    "dev": "vite --host",
+    "build:dev": "vite build -m dev",
+    "preview": "yarn tsc & yarn build:dev && vite preview --host --port=4000",
     "format": "prettier --write ."
   },
   "dependencies": {

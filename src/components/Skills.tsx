@@ -11,7 +11,7 @@ import BoxWrapper from "./BoxWrapper";
 // motion
 import { motion } from "framer-motion";
 // mock
-import tech from "../_mock/tech.json";
+import { tech } from "../_mock/tech";
 
 // ----------------------------------------------------------------------------
 
@@ -69,8 +69,8 @@ export default function Skills() {
                       }}
                       whileHover={{ scale: 1.3 }}
                       whileTap={{ scale: 0.8 }}
-                      src={"/src/assets/language/" + subDataitem + ".png"}
-                      alt={subDataitem}
+                      src={subDataitem}
+                      // alt={subDataitem}
                     />
                   ))}
                 </SimpleGrid>
