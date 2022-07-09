@@ -17,6 +17,10 @@ const links = [
     link: "/about",
   },
   {
+    label: "Path",
+    link: "/path",
+  },
+  {
     label: "Skills",
     link: "/skills",
   },

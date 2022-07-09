@@ -36,7 +36,7 @@ const useStyles = createStyles((theme) => ({
         ? theme.colors.dark[6]
         : theme.colors.gray[3],
     width: "100%",
-    zIndex: 9998,
+    zIndex: 5,
   },
 
   icon: {

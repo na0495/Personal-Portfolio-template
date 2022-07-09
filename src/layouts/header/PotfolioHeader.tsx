@@ -29,7 +29,7 @@ const useStyles = createStyles((theme) => ({
     backdropFilter: "blur(50px)",
     position: "-webkit-sticky",
     top: "0",
-    zIndex: 3,
+    zIndex: 6,
     boxShadow: `${theme.shadows.md} !important`,
   },
 

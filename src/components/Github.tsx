@@ -109,39 +109,39 @@ export default function Github() {
             },
           })}
         >
-            {loading ? (
-              <>
+          {loading ? (
+            <>
               <Grid>
                 <Grid.Col span={2}>
                   <Skeleton height={100} circle mb="xl" />
                 </Grid.Col>
                 <Grid.Col span={10}>
-                  <Skeleton height={20} mt={15} radius="xl"  />
-                  <Skeleton height={20} mt={10} radius="xl"  />
+                  <Skeleton height={20} mt={15} radius="xl" />
+                  <Skeleton height={20} mt={10} radius="xl" />
                   <Skeleton height={20} mt={10} radius="xl" width="70%" />
                 </Grid.Col>
               </Grid>
-              </>
-            ) : (
-              <Group noWrap>
-                <div>
-                  <Avatar src={user?.avatar_url} size={94} radius="md" />
-                  <Text mt={10} mb={-10}>
-                    {user?.followers} followers
+            </>
+          ) : (
+            <Group noWrap>
+              <div>
+                <Avatar src={user?.avatar_url} size={94} radius="md" />
+                <Text mt={10} mb={-10}>
+                  {user?.followers} followers
+                </Text>
+              </div>
+              <div>
+                <Text size="lg" weight={700} className={classes.name}>
+                  {user?.login}
+                </Text>
+                <Group noWrap spacing={10} mt={3}>
+                  <Text size="md" className="text">
+                    {user?.bio}
                   </Text>
-                </div>
-                <div>
-                  <Text size="lg" weight={700} className={classes.name}>
-                    {user?.login}
-                  </Text>
-                  <Group noWrap spacing={10} mt={3}>
-                    <Text size="md" className="text">
-                      {user?.bio}
-                    </Text>
-                  </Group>
-                </div>
-          </Group>
-            )}
+                </Group>
+              </div>
+            </Group>
+          )}
         </Box>
         <Title
           order={3}

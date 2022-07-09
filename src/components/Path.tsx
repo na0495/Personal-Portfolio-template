@@ -10,6 +10,9 @@ import {
   Badge,
   createStyles,
   useMantineTheme,
+  Timeline,
+  Tabs,
+  ScrollArea,
 } from "@mantine/core";
 // motion
 import { motion } from "framer-motion";
@@ -19,6 +22,14 @@ import BoxWrapper from "./BoxWrapper";
 import path from "../_mock/path.json";
 // lib
 import CountUp from "react-countup";
+import {
+  Book,
+  DeviceLaptop,
+  GitBranch,
+  GitCommit,
+  GitPullRequest,
+  MessageDots,
+} from "tabler-icons-react";
 
 // ----------------------------------------------------------------------------
 
@@ -96,11 +107,145 @@ export default function Path() {
     </Badge>
   ));
   return (
-    <Container px="xl" size="lg">
+    <Container px="xl" size="lg" sx={{ zIndex: 5 }}>
       <BoxWrapper withBackground={false}>
         <Grid grow>
           <Grid.Col xs={12} sm={8} md={5}>
-            <Card withBorder radius="lg" p="md" className={classes.card}>
+            <Tabs color="orange" tabPadding="xl" orientation="vertical">
+              <Tabs.Tab label="Studies" icon={<Book size={14} />}>
+              <ScrollArea style={{ height: 300, width: 350 }} type="scroll" offsetScrollbars scrollbarSize={14}>
+      {/* ... content */}
+                <Timeline
+                  color="orange"
+                  active={2}
+                  reverseActive
+                  lineWidth={8}
+                  bulletSize={30}
+                >
+                  <Timeline.Item
+                    bullet={<GitBranch size={12} />}
+                    title="New branch"
+                  >
+                    <Text color="dimmed" size="sm">
+                      You&apos;ve created new branch{" "}
+                      <Text variant="link" component="span" inherit>
+                        fix-notifications
+                      </Text>{" "}
+                      from master
+                    </Text>
+                    <Text size="xs" mt={4}>
+                      2 hours ago
+                    </Text>
+                  </Timeline.Item>
+
+                  <Timeline.Item
+                    bullet={<GitCommit size={12} />}
+                    title="Commits"
+                  >
+                    <Text color="dimmed" size="sm">
+                      You&apos;ve pushed 23 commits to
+                      <Text variant="link" component="span" inherit>
+                        fix-notifications branch
+                      </Text>
+                    </Text>
+                    <Text size="xs" mt={4}>
+                      52 minutes ago
+                    </Text>
+                  </Timeline.Item>
+
+                  <Timeline.Item
+                    title="Pull request"
+                    bullet={<GitPullRequest size={12} />}
+                    lineVariant="dashed"
+                  >
+                    <Text color="dimmed" size="sm">
+                      You&apos;ve submitted a pull request
+                      <Text variant="link" component="span" inherit>
+                        Fix incorrect notification message (#187)
+                      </Text>
+                    </Text>
+                    <Text size="xs" mt={4}>
+                      34 minutes ago
+                    </Text>
+                  </Timeline.Item>
+
+                  <Timeline.Item
+                    title="Code review"
+                    bullet={<MessageDots size={12} />}
+                  >
+                    <Text color="dimmed" size="sm">
+                      <Text variant="link" component="span" inherit>
+                        Robert Gluesticker
+                      </Text>{" "}
+                      left a code review on your pull request
+                    </Text>
+                    <Text size="xs" mt={4}>
+                      12 minutes ago
+                    </Text>
+                  </Timeline.Item>
+                </Timeline>
+    </ScrollArea>
+              </Tabs.Tab>
+              <Tabs.Tab label="Experience" icon={<DeviceLaptop size={14} />}>
+              <ScrollArea style={{ height: 300, width: 350 }} type="scroll" offsetScrollbars scrollbarSize={14}>
+      {/* ... content */}
+                <Timeline
+                  color="orange"
+                  active={2}
+                  reverseActive
+                  lineWidth={8}
+                  bulletSize={30}
+                >
+                  <Timeline.Item
+                    bullet={<GitCommit size={12} />}
+                    title="Commits"
+                  >
+                    <Text color="dimmed" size="sm">
+                      You&apos;ve pushed 23 commits to
+                      <Text variant="link" component="span" inherit>
+                        fix-notifications branch
+                      </Text>
+                    </Text>
+                    <Text size="xs" mt={4}>
+                      52 minutes ago
+                    </Text>
+                  </Timeline.Item>
+
+                  <Timeline.Item
+                    title="Pull request"
+                    bullet={<GitPullRequest size={12} />}
+                    lineVariant="dashed"
+                  >
+                    <Text color="dimmed" size="sm">
+                      You&apos;ve submitted a pull request
+                      <Text variant="link" component="span" inherit>
+                        Fix incorrect notification message (#187)
+                      </Text>
+                    </Text>
+                    <Text size="xs" mt={4}>
+                      34 minutes ago
+                    </Text>
+                  </Timeline.Item>
+
+                  <Timeline.Item
+                    title="Code review"
+                    bullet={<MessageDots size={12} />}
+                  >
+                    <Text color="dimmed" size="sm">
+                      <Text variant="link" component="span" inherit>
+                        Robert Gluesticker
+                      </Text>{" "}
+                      left a code review on your pull request
+                    </Text>
+                    <Text size="xs" mt={4}>
+                      12 minutes ago
+                    </Text>
+                  </Timeline.Item>
+                </Timeline>
+    </ScrollArea>
+              </Tabs.Tab>
+            </Tabs>
+            {/* <Card withBorder radius="lg" p="md" className={classes.card}>
               <Card.Section>
                 <Image
                   src={path.current.image}
@@ -157,10 +302,10 @@ export default function Path() {
                   {features}
                 </Group>
               </Card.Section>
-            </Card>
+            </Card> */}
           </Grid.Col>
           <Grid.Col xs={12} sm={8} md={5}>
-            {path.past.map((past) => (
+            {/* {path.past.map((past) => (
               <Card
                 key={past.title}
                 withBorder
@@ -220,7 +365,7 @@ export default function Path() {
                   </Group>
                 </Card.Section>
               </Card>
-            ))}
+            ))} */}
           </Grid.Col>
         </Grid>
       </BoxWrapper>
