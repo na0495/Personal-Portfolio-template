@@ -17,6 +17,10 @@ const links = [
     link: "/about",
   },
   {
+    label: "Path",
+    link: "/path",
+  },
+  {
     label: "Skills",
     link: "/skills",
   },
@@ -34,7 +38,7 @@ export default function MainLayout(): JSX.Element {
   const theme = useMantineTheme();
   return (
     <AppShell
-      navbarOffsetBreakpoint={theme.breakpoints.sm}
+      navbarOffsetBreakpoint={theme.breakpoints.md}
       fixed
       header={<PotfolioHeader links={links} />}
     >
