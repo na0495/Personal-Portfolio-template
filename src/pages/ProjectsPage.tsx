@@ -6,7 +6,7 @@ import Page from "../components/Page";
 
 export default function ProjectsPage() {
   return (
-    <Page isFirst={true} withBackground={true}>
+    <Page title="Project" isFirst={true} withBackground={true}>
       <Github />
     </Page>
   );

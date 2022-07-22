@@ -7,7 +7,7 @@ import ParticlesWrapper from "../components/animations/ParticlesWrapper";
 
 export default function PathPage() {
   return (
-    <Page isFirst={true} withBackground={false}>
+    <Page title="Path" isFirst={true} withBackground={false}>
       <ParticlesWrapper />
       <Path />
     </Page>

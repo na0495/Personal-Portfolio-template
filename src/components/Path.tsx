@@ -113,136 +113,146 @@ export default function Path() {
           <Grid.Col xs={12} sm={8} md={5}>
             <Tabs color="orange" tabPadding="xl" orientation="vertical">
               <Tabs.Tab label="Studies" icon={<Book size={14} />}>
-              <ScrollArea style={{ height: 300, width: 350 }} type="scroll" offsetScrollbars scrollbarSize={14}>
-      {/* ... content */}
-                <Timeline
-                  color="orange"
-                  active={2}
-                  reverseActive
-                  lineWidth={8}
-                  bulletSize={30}
+                <ScrollArea
+                  style={{ height: 300, width: 350 }}
+                  type="scroll"
+                  offsetScrollbars
+                  scrollbarSize={14}
                 >
-                  <Timeline.Item
-                    bullet={<GitBranch size={12} />}
-                    title="New branch"
+                  {/* ... content */}
+                  <Timeline
+                    color="orange"
+                    active={2}
+                    reverseActive
+                    lineWidth={8}
+                    bulletSize={30}
                   >
-                    <Text color="dimmed" size="sm">
-                      You&apos;ve created new branch{" "}
-                      <Text variant="link" component="span" inherit>
-                        fix-notifications
-                      </Text>{" "}
-                      from master
-                    </Text>
-                    <Text size="xs" mt={4}>
-                      2 hours ago
-                    </Text>
-                  </Timeline.Item>
-
-                  <Timeline.Item
-                    bullet={<GitCommit size={12} />}
-                    title="Commits"
-                  >
-                    <Text color="dimmed" size="sm">
-                      You&apos;ve pushed 23 commits to
-                      <Text variant="link" component="span" inherit>
-                        fix-notifications branch
+                    <Timeline.Item
+                      bullet={<GitBranch size={12} />}
+                      title="New branch"
+                    >
+                      <Text color="dimmed" size="sm">
+                        You&apos;ve created new branch{" "}
+                        <Text variant="link" component="span" inherit>
+                          fix-notifications
+                        </Text>{" "}
+                        from master
                       </Text>
-                    </Text>
-                    <Text size="xs" mt={4}>
-                      52 minutes ago
-                    </Text>
-                  </Timeline.Item>
-
-                  <Timeline.Item
-                    title="Pull request"
-                    bullet={<GitPullRequest size={12} />}
-                    lineVariant="dashed"
-                  >
-                    <Text color="dimmed" size="sm">
-                      You&apos;ve submitted a pull request
-                      <Text variant="link" component="span" inherit>
-                        Fix incorrect notification message (#187)
+                      <Text size="xs" mt={4}>
+                        2 hours ago
                       </Text>
-                    </Text>
-                    <Text size="xs" mt={4}>
-                      34 minutes ago
-                    </Text>
-                  </Timeline.Item>
+                    </Timeline.Item>
 
-                  <Timeline.Item
-                    title="Code review"
-                    bullet={<MessageDots size={12} />}
-                  >
-                    <Text color="dimmed" size="sm">
-                      <Text variant="link" component="span" inherit>
-                        Robert Gluesticker
-                      </Text>{" "}
-                      left a code review on your pull request
-                    </Text>
-                    <Text size="xs" mt={4}>
-                      12 minutes ago
-                    </Text>
-                  </Timeline.Item>
-                </Timeline>
-    </ScrollArea>
+                    <Timeline.Item
+                      bullet={<GitCommit size={12} />}
+                      title="Commits"
+                    >
+                      <Text color="dimmed" size="sm">
+                        You&apos;ve pushed 23 commits to
+                        <Text variant="link" component="span" inherit>
+                          fix-notifications branch
+                        </Text>
+                      </Text>
+                      <Text size="xs" mt={4}>
+                        52 minutes ago
+                      </Text>
+                    </Timeline.Item>
+
+                    <Timeline.Item
+                      title="Pull request"
+                      bullet={<GitPullRequest size={12} />}
+                      lineVariant="dashed"
+                    >
+                      <Text color="dimmed" size="sm">
+                        You&apos;ve submitted a pull request
+                        <Text variant="link" component="span" inherit>
+                          Fix incorrect notification message (#187)
+                        </Text>
+                      </Text>
+                      <Text size="xs" mt={4}>
+                        34 minutes ago
+                      </Text>
+                    </Timeline.Item>
+
+                    <Timeline.Item
+                      title="Code review"
+                      bullet={<MessageDots size={12} />}
+                    >
+                      <Text color="dimmed" size="sm">
+                        <Text variant="link" component="span" inherit>
+                          Robert Gluesticker
+                        </Text>{" "}
+                        left a code review on your pull request
+                      </Text>
+                      <Text size="xs" mt={4}>
+                        12 minutes ago
+                      </Text>
+                    </Timeline.Item>
+                  </Timeline>
+                </ScrollArea>
               </Tabs.Tab>
               <Tabs.Tab label="Experience" icon={<DeviceLaptop size={14} />}>
-              <ScrollArea style={{ height: 300, width: 350 }} type="scroll" offsetScrollbars scrollbarSize={14}>
-      {/* ... content */}
-                <Timeline
-                  color="orange"
-                  active={2}
-                  reverseActive
-                  lineWidth={8}
-                  bulletSize={30}
+                <ScrollArea
+                  style={{ height: 300, width: 350 }}
+                  type="scroll"
+                  offsetScrollbars
+                  scrollbarSize={14}
                 >
-                  <Timeline.Item
-                    bullet={<GitCommit size={12} />}
-                    title="Commits"
+                  {/* ... content */}
+                  <Timeline
+                    color="orange"
+                    active={2}
+                    reverseActive
+                    lineWidth={8}
+                    bulletSize={30}
                   >
-                    <Text color="dimmed" size="sm">
-                      You&apos;ve pushed 23 commits to
-                      <Text variant="link" component="span" inherit>
-                        fix-notifications branch
+                    <Timeline.Item
+                      bullet={<GitCommit size={12} />}
+                      title="Commits"
+                    >
+                      <Text color="dimmed" size="sm">
+                        You&apos;ve pushed 23 commits to
+                        <Text variant="link" component="span" inherit>
+                          fix-notifications branch
+                        </Text>
                       </Text>
-                    </Text>
-                    <Text size="xs" mt={4}>
-                      52 minutes ago
-                    </Text>
-                  </Timeline.Item>
-
-                  <Timeline.Item
-                    title="Pull request"
-                    bullet={<GitPullRequest size={12} />}
-                    lineVariant="dashed"
-                  >
-                    <Text color="dimmed" size="sm">
-                      You&apos;ve submitted a pull request
-                      <Text variant="link" component="span" inherit>
-                        Fix incorrect notification message (#187)
+                      <Text size="xs" mt={4}>
+                        52 minutes ago
                       </Text>
-                    </Text>
-                    <Text size="xs" mt={4}>
-                      34 minutes ago
-                    </Text>
-                  </Timeline.Item>
+                    </Timeline.Item>
 
-                  <Timeline.Item
-                    title="Code review"
-                    bullet={<MessageDots size={12} />}
-                  >
-                    <Text color="dimmed" size="sm">
-                      <Text variant="link" component="span" inherit>
-                        Robert Gluesticker
-                      </Text>{" "}
-                      left a code review on your pull request
-                    </Text>
-                    <Text size="xs" mt={4}>
-                      12 minutes ago
-                    </Text>
-                  </Timeline.Item>
-                </Timeline>
-    </ScrollArea>
+                    <Timeline.Item
+                      title="Pull request"
+                      bullet={<GitPullRequest size={12} />}
+                      lineVariant="dashed"
+                    >
+                      <Text color="dimmed" size="sm">
+                        You&apos;ve submitted a pull request
+                        <Text variant="link" component="span" inherit>
+                          Fix incorrect notification message (#187)
+                        </Text>
+                      </Text>
+                      <Text size="xs" mt={4}>
+                        34 minutes ago
+                      </Text>
+                    </Timeline.Item>
+
+                    <Timeline.Item
+                      title="Code review"
+                      bullet={<MessageDots size={12} />}
+                    >
+                      <Text color="dimmed" size="sm">
+                        <Text variant="link" component="span" inherit>
+                          Robert Gluesticker
+                        </Text>{" "}
+                        left a code review on your pull request
+                      </Text>
+                      <Text size="xs" mt={4}>
+                        12 minutes ago
+                      </Text>
+                    </Timeline.Item>
+                  </Timeline>
+                </ScrollArea>
               </Tabs.Tab>
             </Tabs>
             {/* <Card withBorder radius="lg" p="md" className={classes.card}>

@@ -6,7 +6,7 @@ import Page from "../components/Page";
 
 export default function AboutPage() {
   return (
-    <Page isFirst={true} withBackground={true}>
+    <Page title="About me" isFirst={true} withBackground={true}>
       <About />
     </Page>
   );

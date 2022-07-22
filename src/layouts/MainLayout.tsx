@@ -16,10 +16,10 @@ const links = [
     label: "About",
     link: "/about",
   },
-  {
-    label: "Path",
-    link: "/path",
-  },
+  // {
+  //   label: "Path",
+  //   link: "/path",
+  // },
   {
     label: "Skills",
     link: "/skills",

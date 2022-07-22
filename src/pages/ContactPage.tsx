@@ -7,7 +7,7 @@ import Page from "../components/Page";
 
 export default function LandingPage() {
   return (
-    <Page isFirst={true} withBackground={true}>
+    <Page title="Contact me" isFirst={true} withBackground={true}>
       <ParticlesWrapper />
       <Contact />
     </Page>

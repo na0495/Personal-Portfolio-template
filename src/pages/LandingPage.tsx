@@ -3,13 +3,13 @@ import { useState } from "react";
 import { ActionIcon, createStyles } from "@mantine/core";
 import { useScrollIntoView } from "@mantine/hooks";
 // components
-import { Hero } from "../components/Hero";
-import About from "../components/About";
-import Page from "../components/Page";
-import Skills from "../components/Skills";
-import Path from "../components/Path";
-import Github from "../components/Github";
-// icons
+// import { Hero } from "../components/Hero";
+// import About from "../components/About";
+// import Page from "../components/Page";
+// import Skills from "../components/Skills";
+// import Path from "../components/Path";
+// import Github from "../components/Github";
+// // icons
 import { ArrowUp } from "tabler-icons-react";
 
 // -------------------------------------------------
@@ -43,7 +43,7 @@ export default function LandingPage() {
 
   return (
     <>
-      <div ref={targetRef} />
+      {/* <div ref={targetRef} />
       <Page withBackground={false} isFirst={true}>
         <Hero />
       </Page>
@@ -59,9 +59,9 @@ export default function LandingPage() {
       {/* <Page withBackground={true} height={"200hv"}>
         <Project />
       </Page> */}
-      <Page withBackground={true}>
+      {/* <Page withBackground={true}>
         <Path />
-      </Page>
+      </Page> */}
       <div className={classes.sticky}>
         <ActionIcon
           variant="filled"

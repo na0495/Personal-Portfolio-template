@@ -6,7 +6,7 @@ import Skills from "../components/Skills";
 
 export default function SkillsPage() {
   return (
-    <Page isFirst={true} withBackground={true}>
+    <Page title="Skills" isFirst={true} withBackground={true}>
       <Skills />
     </Page>
   );
