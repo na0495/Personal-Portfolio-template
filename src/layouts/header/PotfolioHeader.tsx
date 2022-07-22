@@ -8,7 +8,6 @@ import {
   ActionIcon,
   Container,
   Burger,
-  Text,
 } from "@mantine/core";
 import { useBooleanToggle } from "@mantine/hooks";
 // Icons
@@ -16,11 +15,10 @@ import {
   BrandTwitter,
   BrandGithub,
   BrandLinkedin,
-  DeviceLaptop,
 } from "tabler-icons-react";
 import SwitchMode from "./SwitchMode";
-import LanguagePopover from "./LanguagePopover";
-import MusicMode from "./MusicMode";
+// import LanguagePopover from "./LanguagePopover";
+// import MusicMode from "./MusicMode";
 
 // -------------------------------------------------
 
@@ -188,7 +186,7 @@ export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
         <Group spacing={4}>{items}</Group>
         <Group>
           <SwitchMode />
-          <MusicMode />
+          {/* <MusicMode /> */}
         </Group>
         <Group spacing={0} className={classes.social} position="right" noWrap>
           {socialLinks.map((link) => (

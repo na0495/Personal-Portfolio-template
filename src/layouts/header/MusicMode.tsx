@@ -8,7 +8,7 @@ import { PlayerPlay, PlayerPause } from "tabler-icons-react";
 // sounds
 import useSound from "use-sound";
 // mp3
-import Chill from "/src/assets/sounds/chill.mp3?url";
+import Chill from "/src/assets/sounds/chill.mp3";
 
 // ------------------------------------------------------------
 
