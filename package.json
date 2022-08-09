@@ -12,12 +12,14 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@emotion/react": "^11.10.0",
+    "@emotion/server": "^11.10.0",
     "@honkhonk/vite-plugin-svgr": "^1.1.0",
     "@lottiefiles/react-lottie-player": "^3.4.4",
-    "@mantine/core": "^4.2.12",
-    "@mantine/hooks": "^4.2.12",
-    "@mantine/prism": "^4.2.12",
-    "@mantine/spotlight": "^4.2.12",
+    "@mantine/core": "^5.1.1",
+    "@mantine/hooks": "^5.1.1",
+    "@mantine/prism": "^5.1.1",
+    "@mantine/spotlight": "^5.1.1",
     "@react-spring/parallax": "^9.4.4",
     "@types/node": "^17.0.25",
     "framer-motion": "^6.3.0",
