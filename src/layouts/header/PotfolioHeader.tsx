@@ -9,13 +9,9 @@ import {
   Container,
   Burger,
 } from "@mantine/core";
-import { useBooleanToggle } from "@mantine/hooks";
+import { useDisclosure } from "@mantine/hooks";
 // Icons
-import {
-  BrandTwitter,
-  BrandGithub,
-  BrandLinkedin,
-} from "tabler-icons-react";
+import { BrandTwitter, BrandGithub, BrandLinkedin } from "tabler-icons-react";
 import SwitchMode from "./SwitchMode";
 // import LanguagePopover from "./LanguagePopover";
 // import MusicMode from "./MusicMode";
@@ -152,7 +148,7 @@ const socialLinks = [
 ];
 
 export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
-  const [opened, toggleOpened] = useBooleanToggle(false);
+  const [opened, handlers] = useDisclosure(false);
   const navigate = useNavigate();
   const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
@@ -179,7 +175,7 @@ export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
       <Container className={classes.inner}>
         <Burger
           opened={opened}
-          onClick={() => toggleOpened()}
+          onClick={() => handlers.open()}
           size="sm"
           className={classes.burger}
         />

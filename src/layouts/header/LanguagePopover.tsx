@@ -27,7 +27,7 @@ export default function LanguagePopover() {
 
   return (
     <>
-      <Menu
+      {/* <Menu
         sx={{ marginLeft: 10, marginRight: 15 }}
         control={<Image src={currentLang.icon} alt={currentLang.label} />}
       >
@@ -40,7 +40,7 @@ export default function LanguagePopover() {
             {lang.label}
           </Menu.Item>
         ))}
-      </Menu>
+      </Menu> */}
     </>
   );
 }

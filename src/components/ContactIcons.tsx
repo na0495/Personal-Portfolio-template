@@ -6,6 +6,7 @@ import {
   Group,
   SimpleGrid,
   Box,
+  Stack,
 } from "@mantine/core";
 import { Sun, Phone, MapPin, At, BrandGithub } from "tabler-icons-react";
 
@@ -101,7 +102,7 @@ export function ContactIconsList({
   const items = data.map((item, index) => (
     <ContactIcon key={index} variant={variant} {...item} />
   ));
-  return <Group direction="column">{items}</Group>;
+  return <Stack>{items}</Stack>;
 }
 
 // export function ContactIcons() {
