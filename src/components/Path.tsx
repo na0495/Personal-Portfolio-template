@@ -111,8 +111,8 @@ export default function Path() {
       <BoxWrapper withBackground={false}>
         <Grid grow>
           <Grid.Col xs={12} sm={8} md={5}>
-            <Tabs color="orange" tabPadding="xl" orientation="vertical">
-              <Tabs.Tab label="Studies" icon={<Book size={14} />}>
+            <Tabs color="orange" orientation="vertical">
+              <Tabs.Tab value="Studies" icon={<Book size={14} />}>
                 <ScrollArea
                   style={{ height: 300, width: 350 }}
                   type="scroll"
@@ -191,7 +191,7 @@ export default function Path() {
                   </Timeline>
                 </ScrollArea>
               </Tabs.Tab>
-              <Tabs.Tab label="Experience" icon={<DeviceLaptop size={14} />}>
+              <Tabs.Tab value="Experience" icon={<DeviceLaptop size={14} />}>
                 <ScrollArea
                   style={{ height: 300, width: 350 }}
                   type="scroll"

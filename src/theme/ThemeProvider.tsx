@@ -7,7 +7,7 @@ import {
   ButtonStylesParams,
   ActionIconStylesParams,
 } from "@mantine/core";
-import { useHotkeys, useLocalStorageValue } from "@mantine/hooks";
+import { useHotkeys, useLocalStorage } from "@mantine/hooks";
 // theme
 import { themeColors, themeBreakpoints } from "./theme";
 
@@ -18,7 +18,7 @@ type Props = {
 };
 
 export default function ThemeProvider(props: Props) {
-  const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
+  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: "mantine-color-scheme",
     defaultValue: "light",
   });
@@ -37,24 +37,30 @@ export default function ThemeProvider(props: Props) {
           colorScheme,
           colors: { ...themeColors },
           breakpoints: { ...themeBreakpoints },
-        }}
-        styles={{
-          Button: (theme, params: ButtonStylesParams) => ({
-            root: {
-              "&:hover": {
-                boxShadow: `${theme.shadows.md} !important`,
-                transform: "scale(1.05)",
-              },
+
+          components: {
+            Button: {
+              // Subscribe to theme and component params
+              styles: (theme, params: ButtonStylesParams) => ({
+                root: {
+                  "&:hover": {
+                    boxShadow: `${theme.shadows.md} !important`,
+                    transform: "scale(1.05)",
+                  },
+                },
+              }),
             },
-          }),
-          ActionIcon: (theme, params: ActionIconStylesParams) => ({
-            root: {
-              "&:hover": {
-                boxShadow: `${theme.shadows.lg} !important`,
-                transform: "scale(1.05)",
-              },
+            ActionIcon: {
+              styles: (theme, params: ActionIconStylesParams) => ({
+                root: {
+                  "&:hover": {
+                    boxShadow: `${theme.shadows.md} !important`,
+                    transform: "scale(1.05)",
+                  },
+                },
+              }),
             },
-          }),
+          },
         }}
         withNormalizeCSS
         withGlobalStyles
