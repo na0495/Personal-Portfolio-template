@@ -6,6 +6,7 @@ import {
   Group,
   Grid,
   Center,
+  Box,
 } from "@mantine/core";
 // icons
 import Type from "./animations/Type";
@@ -72,7 +73,7 @@ export function Hero() {
       <Grid grow justify="center">
         <Grid.Col md={4} mt={150} sm={10}>
           <Center>
-            <div>
+            <Box>
               <Title className={classes.title}>
                 I'm <span className={classes.highlight}>Mrabet saâd</span> a{" "}
                 <br />{" "}
@@ -96,7 +97,7 @@ export function Hero() {
                   Download cv
                 </Button>
               </Group>
-            </div>
+            </Box>
           </Center>
         </Grid.Col>
         <Grid.Col md={7} sm={10} xs={8}>
