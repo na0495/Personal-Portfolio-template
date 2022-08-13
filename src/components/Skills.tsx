@@ -58,7 +58,16 @@ export default function Skills() {
             {item.data.map((dataItem: any, index: number) => (
               <div key={index}>
                 <Text className={classes.title}>{dataItem.type}</Text>
-                <SimpleGrid cols={12}>
+                <SimpleGrid
+                  cols={12}
+                  spacing="lg"
+                  breakpoints={[
+                    { maxWidth: 980, cols: 7, spacing: "md" },
+                    { maxWidth: 755, cols: 5, spacing: "sm" },
+                    { maxWidth: 600, cols: 4, spacing: "sm" },
+                    { maxWidth: 450, cols: 3, spacing: "sm" },
+                  ]}
+                >
                   {dataItem.png.map((subDataitem: any) => (
                     <motion.img
                       key={subDataitem}
