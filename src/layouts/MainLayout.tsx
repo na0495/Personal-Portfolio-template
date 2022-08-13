@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 // Manatine UI
 import { AppShell, useMantineTheme } from "@mantine/core";
 // header
-import PotfolioHeader from "./header/PotfolioHeader";
+import HeaderResponsive from "./header/HeaderResponsive";
 
 //-----------------------------------------------------------------------------
 
@@ -40,7 +40,7 @@ export default function MainLayout(): JSX.Element {
     <AppShell
       navbarOffsetBreakpoint={theme.breakpoints.md}
       fixed
-      header={<PotfolioHeader links={links} />}
+      header={<HeaderResponsive links={links} />}
     >
       <Outlet />
     </AppShell>

@@ -1,53 +1,66 @@
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-// Mantine
 import {
   createStyles,
   Header,
-  Group,
-  ActionIcon,
   Container,
+  Group,
   Burger,
+  Paper,
+  Transition,
+  ActionIcon,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-// Icons
-import { BrandTwitter, BrandGithub, BrandLinkedin } from "tabler-icons-react";
 import SwitchMode from "./SwitchMode";
-// import LanguagePopover from "./LanguagePopover";
-// import MusicMode from "./MusicMode";
+import MusicMode from "./MusicMode";
+import { BrandTwitter, BrandGithub, BrandLinkedin } from "tabler-icons-react";
 
 // -------------------------------------------------
 
+const HEADER_HEIGHT = 60;
+
 const useStyles = createStyles((theme) => ({
-  header: {
-    backdropFilter: "blur(50px)",
-    position: "-webkit-sticky",
-    top: "0",
-    zIndex: 6,
-    boxShadow: `${theme.shadows.md} !important`,
+  root: {
+    position: "relative",
+    zIndex: 1,
   },
 
-  inner: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    height: 70,
+  dropdown: {
+    position: "absolute",
+    top: HEADER_HEIGHT,
+    left: 0,
+    right: 0,
+    zIndex: 0,
+    borderTopRightRadius: 0,
+    borderTopLeftRadius: 0,
+    borderTopWidth: 0,
+    overflow: "hidden",
 
-    [theme.fn.smallerThan("sm")]: {
-      justifyContent: "flex-start",
+    [theme.fn.largerThan("md")]: {
+      display: "none",
     },
   },
 
-  links: {
-    width: 260,
+  header: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    height: "100%",
+  },
 
-    [theme.fn.smallerThan("sm")]: {
+  links: {
+    [theme.fn.smallerThan("md")]: {
+      display: "none",
+    },
+  },
+
+  burger: {
+    [theme.fn.largerThan("md")]: {
       display: "none",
     },
   },
 
   social: {
-    [theme.fn.smallerThan("sm")]: {
+    [theme.fn.smallerThan("md")]: {
       width: "auto",
       marginLeft: "auto",
     },
@@ -65,13 +78,6 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
-  burger: {
-    marginRight: theme.spacing.md,
-
-    [theme.fn.largerThan("sm")]: {
-      display: "none",
-    },
-  },
 
   link: {
     display: "block",
@@ -83,10 +89,26 @@ const useStyles = createStyles((theme) => ({
     color:
       theme.colorScheme === "dark"
         ? theme.colors.dark[0]
-        : theme.colors.white[7],
+        : theme.colors.gray[7],
     fontSize: theme.fontSizes.sm,
     fontWeight: 600,
 
+    "&:hover": {
+      backgroundColor:
+        theme.colorScheme === "dark"
+          ? theme.colors.dark[6]
+          : theme.colors.gray[0],
+    },
+
+    [theme.fn.smallerThan("sm")]: {
+      borderRadius: 0,
+      padding: theme.spacing.md,
+    },
+  },
+
+  //
+
+  additonalLinks: {
     "&:hover": {
       backgroundColor:
         theme.colorScheme === "dark"
@@ -106,28 +128,9 @@ const useStyles = createStyles((theme) => ({
           : theme.colors.orange[1],
       borderRadius: theme.radius.sm,
       color: theme.colors.white[9],
-      fontWeight: 600,
-      transform: "scale(1.10)",
     },
   },
-  logo: {
-    border: `2px solid`,
-    borderColor:
-      theme.colorScheme === "dark"
-        ? theme.colors.gray[2]
-        : theme.colors.gray[0],
-    padding: theme.spacing.xs,
-    borderRadius: theme.radius.md,
-    backgroundColor:
-      theme.colorScheme === "dark" ? theme.white : theme.colors.gray[7],
-    color: theme.colorScheme === "dark" ? theme.black : theme.white,
-    boxShadow: `${theme.shadows.md} !important`,
-  },
 }));
-
-interface PortfolioHeaderProps {
-  links: { link: string; label: string }[];
-}
 
 const socialLinks = [
   {
@@ -147,9 +150,12 @@ const socialLinks = [
   },
 ];
 
-export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
-  const [opened, handlers] = useDisclosure(false);
-  const navigate = useNavigate();
+interface HeaderResponsiveProps {
+  links: { link: string; label: string }[];
+}
+
+export default function HeaderResponsive({ links }: HeaderResponsiveProps) {
+  const [opened, { toggle, close }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
 
@@ -157,40 +163,39 @@ export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
     <a
       key={link.label}
       href={link.link}
-      className={cx(classes.link, {
-        [classes.linkActive]: active === link.link,
-      })}
+      className={cx(
+        classes.link,
+        {
+          [classes.linkActive]: active === link.link,
+        },
+        { [classes.additonalLinks]: opened === false }
+      )}
       onClick={(event) => {
         event.preventDefault();
         setActive(link.link);
-        navigate(link.link);
+        close();
       }}
     >
       {link.label}
     </a>
   ));
-
+  
   return (
-    <Header height={70} mb={120} className={classes.header}>
-      <Container className={classes.inner}>
-        <Burger
-          opened={opened}
-          onClick={() => handlers.open()}
-          size="sm"
-          className={classes.burger}
-        />
-        <Group spacing={4}>{items}</Group>
-        <Group>
-          <SwitchMode />
-          {/* <MusicMode /> */}
-        </Group>
-        <Group spacing={0} className={classes.social} position="right" noWrap>
+    <Header height={HEADER_HEIGHT} mb={50} className={classes.root}>
+      <Container className={classes.header}>
+      <Burger
+        opened={opened}
+        onClick={toggle}
+        className={classes.burger}
+        size="sm"
+      />
+        <Group spacing={0} className={classes.social} position="right" noWrap mr={25}>
           {socialLinks.map((link) => (
             <ActionIcon
               key={link.label}
               size="lg"
               ml={15}
-              radius="lg"
+              radius="xl"
               className={classes.icon}
               component="a"
               href={link.href}
@@ -200,6 +205,22 @@ export default function PortfolioHeader({ links }: PortfolioHeaderProps) {
             </ActionIcon>
           ))}
         </Group>
+        <Group spacing={5} className={classes.links}>
+          {items}
+        </Group>
+        <Group>
+          <SwitchMode />
+          <MusicMode />
+        </Group>
+
+
+        <Transition transition="pop-top-right" duration={200} mounted={opened}>
+          {(styles) => (
+            <Paper className={classes.dropdown} withBorder style={styles}>
+              {items}
+            </Paper>
+          )}
+        </Transition>
       </Container>
     </Header>
   );
