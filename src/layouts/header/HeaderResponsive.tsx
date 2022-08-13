@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   createStyles,
   Header,
@@ -155,6 +156,7 @@ interface HeaderResponsiveProps {
 }
 
 export default function HeaderResponsive({ links }: HeaderResponsiveProps) {
+  const navigate = useNavigate();
   const [opened, { toggle, close }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
@@ -173,11 +175,13 @@ export default function HeaderResponsive({ links }: HeaderResponsiveProps) {
       onClick={(event) => {
         event.preventDefault();
         setActive(link.link);
+        navigate(link.link);
         close();
       }}
     >
       {link.label}
     </a>
+    
   ));
   
   return (
