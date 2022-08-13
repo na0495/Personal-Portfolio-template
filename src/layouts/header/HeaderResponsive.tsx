@@ -79,7 +79,6 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
-
   link: {
     display: "block",
     lineHeight: 1,
@@ -181,19 +180,24 @@ export default function HeaderResponsive({ links }: HeaderResponsiveProps) {
     >
       {link.label}
     </a>
-    
   ));
-  
+
   return (
     <Header height={HEADER_HEIGHT} mb={50} className={classes.root}>
       <Container className={classes.header}>
-      <Burger
-        opened={opened}
-        onClick={toggle}
-        className={classes.burger}
-        size="sm"
-      />
-        <Group spacing={0} className={classes.social} position="right" noWrap mr={25}>
+        <Burger
+          opened={opened}
+          onClick={toggle}
+          className={classes.burger}
+          size="sm"
+        />
+        <Group
+          spacing={0}
+          className={classes.social}
+          position="right"
+          noWrap
+          mr={25}
+        >
           {socialLinks.map((link) => (
             <ActionIcon
               key={link.label}
@@ -216,7 +220,6 @@ export default function HeaderResponsive({ links }: HeaderResponsiveProps) {
           <SwitchMode />
           <MusicMode />
         </Group>
-
 
         <Transition transition="pop-top-right" duration={200} mounted={opened}>
           {(styles) => (

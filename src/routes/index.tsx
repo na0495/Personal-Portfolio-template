@@ -22,7 +22,7 @@ export default function Routes() {
     {
       path: "/",
       element: <MainLayout />,
-      children: [{ path: "", element: <HomePage /> }],
+      children: [{ path: "", element: <LandingPage /> }],
     },
     {
       path: "/about",

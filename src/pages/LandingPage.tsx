@@ -3,12 +3,11 @@ import { useState } from "react";
 import { ActionIcon, createStyles } from "@mantine/core";
 import { useScrollIntoView } from "@mantine/hooks";
 // components
-// import { Hero } from "../components/Hero";
-// import About from "../components/About";
-// import Page from "../components/Page";
-// import Skills from "../components/Skills";
-// import Path from "../components/Path";
-// import Github from "../components/Github";
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Section from "../components/Section";
+import Skills from "../components/Skills";
+import Github from "../components/Github";
 // // icons
 import { ArrowUp } from "tabler-icons-react";
 
@@ -18,10 +17,8 @@ const useStyles = createStyles((theme) => ({
   sticky: {
     position: "sticky",
     zIndex: 9999,
-    // // fix the content on the bottom right corner of the page when the page is scrolled
     bottom: "0",
     right: "0",
-    // make the content visible when the page is scrolled
     display: "flex",
     alignItems: "center",
     justifyContent: "flex-end",
@@ -43,25 +40,19 @@ export default function LandingPage() {
 
   return (
     <>
-      {/* <div ref={targetRef} />
-      <Page withBackground={false} isFirst={true}>
+      <div ref={targetRef} />
+      <Section withBackground={false} isFirst={true}>
         <Hero />
-      </Page>
-      <Page withBackground={true}>
+      </Section>
+      <Section withBackground={true}>
         <About />
-      </Page>
-      <Page withBackground={false}>
+      </Section>
+      <Section withBackground={false}>
         <Skills />
-      </Page>
-      <Page withBackground={true} height={"200hv"}>
+      </Section>
+      <Section withBackground={true} height={"200hv"}>
         <Github />
-      </Page>
-      {/* <Page withBackground={true} height={"200hv"}>
-        <Project />
-      </Page> */}
-      {/* <Page withBackground={true}>
-        <Path />
-      </Page> */}
+      </Section>
       <div className={classes.sticky}>
         <ActionIcon
           variant="filled"
