@@ -66,7 +66,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export function Hero() {
+export default function Hero() {
   const { classes } = useStyles();
   return (
     <Group>
@@ -90,10 +90,10 @@ export function Hero() {
                 <Type />
               </Title>
               <Group mt={30}>
-                <Button radius="xl" size="md" className={classes.control}>
+                <Button radius="lg" size="md" className={classes.control}>
                   Find out
                 </Button>
-                <Button variant="default" radius="xl" size="md">
+                <Button variant="default" radius="lg" size="md">
                   Download cv
                 </Button>
               </Group>

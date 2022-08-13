@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   createStyles,
   Header,
@@ -78,7 +79,6 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
-
   link: {
     display: "block",
     lineHeight: 1,
@@ -155,6 +155,7 @@ interface HeaderResponsiveProps {
 }
 
 export default function HeaderResponsive({ links }: HeaderResponsiveProps) {
+  const navigate = useNavigate();
   const [opened, { toggle, close }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
@@ -173,23 +174,30 @@ export default function HeaderResponsive({ links }: HeaderResponsiveProps) {
       onClick={(event) => {
         event.preventDefault();
         setActive(link.link);
+        navigate(link.link);
         close();
       }}
     >
       {link.label}
     </a>
   ));
-  
+
   return (
     <Header height={HEADER_HEIGHT} mb={50} className={classes.root}>
       <Container className={classes.header}>
-      <Burger
-        opened={opened}
-        onClick={toggle}
-        className={classes.burger}
-        size="sm"
-      />
-        <Group spacing={0} className={classes.social} position="right" noWrap mr={25}>
+        <Burger
+          opened={opened}
+          onClick={toggle}
+          className={classes.burger}
+          size="sm"
+        />
+        <Group
+          spacing={0}
+          className={classes.social}
+          position="right"
+          noWrap
+          mr={25}
+        >
           {socialLinks.map((link) => (
             <ActionIcon
               key={link.label}
@@ -212,7 +220,6 @@ export default function HeaderResponsive({ links }: HeaderResponsiveProps) {
           <SwitchMode />
           <MusicMode />
         </Group>
-
 
         <Transition transition="pop-top-right" duration={200} mounted={opened}>
           {(styles) => (
