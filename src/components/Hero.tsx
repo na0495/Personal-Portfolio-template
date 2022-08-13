@@ -14,6 +14,7 @@ import Type from "./animations/Type";
 import { Player } from "@lottiefiles/react-lottie-player";
 //
 import CodingJson from "/src/assets/animations/coding.json?url";
+import { useMediaQuery } from "@mantine/hooks";
 
 // --------------------------------------------------
 
@@ -27,6 +28,12 @@ const useStyles = createStyles((theme) => ({
 
     [theme.fn.smallerThan("xs")]: {
       fontSize: 28,
+    },
+  },
+
+  box: {
+    [theme.fn.smallerThan("md")]: {
+      marginTop: 250,
     },
   },
 
@@ -69,11 +76,11 @@ const useStyles = createStyles((theme) => ({
 export default function Hero() {
   const { classes } = useStyles();
   return (
-    <Group>
-      <Grid grow justify="center">
-        <Grid.Col md={4} mt={150} sm={10}>
+    <Group pr={10}>
+      <Grid grow justify="center" align="center">
+        <Grid.Col md={6} sm={10} mt={75}>
           <Center>
-            <Box>
+            <Box className={classes.box}>
               <Title className={classes.title}>
                 I'm <span className={classes.highlight}>Mrabet saâd</span> a{" "}
                 <br />{" "}
@@ -100,16 +107,16 @@ export default function Hero() {
             </Box>
           </Center>
         </Grid.Col>
-        <Grid.Col md={7} sm={10} xs={8}>
+        <Grid.Col md={6} sm={10}>
           <Player
             autoplay
             loop
             src={CodingJson}
             style={{
               height: "650px",
-              width: "650px",
-              marginTop: -100,
-              backgroundColor: "transparent",
+              // width: "650px",
+              // marginTop: -50,
+              // backgroundColor: "transparent",
             }}
           />
         </Grid.Col>

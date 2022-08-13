@@ -21,8 +21,9 @@ const HEADER_HEIGHT = 60;
 
 const useStyles = createStyles((theme) => ({
   root: {
-    position: "relative",
+    // position: "relative",
     zIndex: 1,
+    boxShadow: theme.shadows.sm,
   },
 
   dropdown: {
