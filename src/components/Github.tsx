@@ -13,9 +13,10 @@ import {
 } from "@mantine/core";
 // Components
 import BoxWrapper from "./BoxWrapper";
+import GitHubCalendar from "react-github-calendar";
 // d_mock
 import github from "../_mock/github.json";
-import GitHubCalendar from "react-github-calendar";
+import { GITHUB_USERNAME } from "../config";
 
 // ----------------------------------------------------------------------------
 
@@ -50,16 +51,27 @@ export default function Github() {
   const [user, setUser] = useState<GithubUser>();
   const { classes } = useStyles();
   const [loading, setLoading] = useState(true);
+  const [totalCommits, setTotalCommits] = useState(0);
 
   const fetchData = async () => {
-    const res = await fetch("https://api.github.com/users/na0495");
+    const res = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
     const data = await res.json();
     setUser(data);
     setLoading(false);
   };
 
+  const fetchTotalCommits = async () => {
+    const res = await fetch(
+      `https://github-contributions-api.jogruber.de/v4/${GITHUB_USERNAME}?y=all`
+    );
+    const data: { total: Object } = await res.json();
+    let total = Object.values(data.total).reduce((a: any, b: any) => a + b, 0);
+    setTotalCommits(total);
+  };
+
   useEffect(() => {
     setLoading(true);
+    fetchTotalCommits();
     fetchData();
   }, []);
 
@@ -125,8 +137,8 @@ export default function Github() {
           ) : (
             <Group noWrap>
               <div>
-                <Avatar src={user?.avatar_url} size={94} radius="md" />
-                <Text mt={10} mb={-10}>
+                <Avatar src={user?.avatar_url} size={125} radius="md" />
+                <Text mt={10} mb={-10} ml={15}>
                   {user?.followers} followers
                 </Text>
               </div>
@@ -136,7 +148,8 @@ export default function Github() {
                 </Text>
                 <Group noWrap spacing={10} mt={3}>
                   <Text size="md" className="text">
-                    {user?.bio}
+                    {user?.bio} <br /> My account curentlyy has {totalCommits}{" "}
+                    commits.
                   </Text>
                 </Group>
               </div>
