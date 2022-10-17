@@ -1,18 +1,20 @@
 // mantine
 import {
-  Box,
-  Button,
-  Center,
   createStyles,
-  Grid,
-  Group,
   Title,
+  Button,
+  Group,
+  Grid,
+  Center,
+  Box,
 } from "@mantine/core";
 // icons
 import Type from "./animations/Type";
 // svg
+import { Player } from "@lottiefiles/react-lottie-player";
 //
-import HeroCanvas from "./HeroCanvas";
+import CodingJson from "/src/assets/animations/coding.json?url";
+import { useMediaQuery } from "@mantine/hooks";
 
 // --------------------------------------------------
 
@@ -30,9 +32,6 @@ const useStyles = createStyles((theme) => ({
   },
 
   box: {
-    zIndex: 9,
-    maxWidth: 600,
-    minWidth: 450,
     [theme.fn.smallerThan("md")]: {
       marginTop: 250,
     },
@@ -78,7 +77,7 @@ export default function Hero() {
   const { classes } = useStyles();
   return (
     <Group pr={10}>
-      <Grid justify="center" align="center">
+      <Grid grow justify="center" align="center">
         <Grid.Col md={6} sm={10} mt={75}>
           <Center>
             <Box className={classes.box}>
@@ -109,7 +108,17 @@ export default function Hero() {
           </Center>
         </Grid.Col>
         <Grid.Col md={6} sm={10}>
-          <HeroCanvas />
+          <Player
+            autoplay
+            loop
+            src={CodingJson}
+            style={{
+              height: "650px",
+              // width: "650px",
+              // marginTop: -50,
+              // backgroundColor: "transparent",
+            }}
+          />
         </Grid.Col>
       </Grid>
     </Group>
