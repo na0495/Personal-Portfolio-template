@@ -9,7 +9,7 @@
     "dev": "vite --host --port 3000",
     "build:dev": "vite build -m dev",
     "preview": "yarn tsc & yarn build:dev && vite preview --host --port=4000",
-    "format": "prettier --write ."
+    "format": "prettier --write --ignore-path .gitignore \"src/**/*.{js,jsx,ts,tsx,css,scss,md}\""
   },
   "dependencies": {
     "@emotion/react": "^11.10.0",

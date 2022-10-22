@@ -1,15 +1,13 @@
 import { useRef, useState } from "react";
 // Mantine
 import { ActionIcon, createStyles } from "@mantine/core";
-import { useWindowScroll } from "@mantine/hooks";
 // parallex
 import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { ArrowDown, ArrowUp } from "tabler-icons-react";
 import About from "../components/About";
-import BoxWrapper from "../components/BoxWrapper";
 // components
-import { Hero } from "../components/Hero";
 import Footer from "../components/Footer";
+import Hero from "../components/Hero";
 
 // -------------------------------------------------
 
