@@ -1,6 +1,7 @@
+import React from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { ThreedAvatar } from "../assets/ThreedAvatar";
+import { Avatar } from "../assets/3DAvatar";
 import { Suspense } from "react";
 
 export default function HeroCanvas() {
@@ -16,7 +17,7 @@ export default function HeroCanvas() {
       <ambientLight intensity={0.1} />
       <directionalLight intensity={0.4} />
       <Suspense fallback={null}>
-        <ThreedAvatar position={[0.025, -0.9, 0]} />
+        <Avatar position={[0.025, -0.9, 0]} />
       </Suspense>
       <OrbitControls />
     </Canvas>
