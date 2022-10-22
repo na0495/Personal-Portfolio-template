@@ -17,7 +17,7 @@ import HeroCanvas from "./HeroCanvas";
 
 // --------------------------------------------------
 
-const useStyles = createStyles((theme) => ({
+const useStyles: any = createStyles((theme) => ({
   title: {
     color: theme.colorScheme === "dark" ? theme.white : theme.black,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
@@ -31,7 +31,6 @@ const useStyles = createStyles((theme) => ({
   },
 
   box: {
-    zIndex: 9,
     maxWidth: 600,
     minWidth: 450,
     [theme.fn.smallerThan("md")]: {
@@ -79,8 +78,8 @@ export default function Hero() {
   const { classes } = useStyles();
   return (
     <Group pr={10}>
-      <Grid justify="center" align="center">
-        <Grid.Col md={6} sm={10} mt={75}>
+      <Grid justify="space-between" align="center">
+        <Grid.Col lg={6} md={7} sm={12} mt={75}>
           <Center>
             <Box className={classes.box}>
               <Title className={classes.title}>
@@ -109,23 +108,31 @@ export default function Hero() {
             </Box>
           </Center>
         </Grid.Col>
-        <Grid.Col md={6} sm={8}>
-          <Paper
-            shadow="lg"
-            p="md"
-            sx={(theme) => ({
-              backgroundColor:
-                theme.colorScheme === "dark"
-                  ? theme.colors.yellow[3]
-                  : theme.colors.orange[3],
+        <Grid.Col lg={6} md={5} sm={12}>
+          <Center>
+            <Paper
+              shadow="lg"
+              p="md"
+              sx={(theme) => ({
+                backgroundColor:
+                  theme.colorScheme === "dark"
+                    ? theme.colors.yellow[3]
+                    : theme.colors.orange[3],
+                alignItems: "center",
+                justifyContent: "center",
+                display: "flex",
+                width: "80%",
+                [theme.fn.smallerThan("md")]: {
+                  marginTop: 125,
+                  marginBottom: 125,
+                },
+              })}
 
-              //disable scroll
-              overflow: "hidden",
-              touchAction: "none",
-            })}
-          >
-            <HeroCanvas />
-          </Paper>
+            >
+              <HeroCanvas />
+            </Paper>
+
+          </Center>
         </Grid.Col>
       </Grid>
     </Group>

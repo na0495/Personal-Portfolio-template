@@ -29,6 +29,16 @@ const Page = forwardRef<HTMLDivElement, PageProps>(
           // set the box size of the higet of size of the window
           height: height || "99vh",
           marginTop: isFirst ? -100 : 100,
+          
+          [theme.fn.smallerThan("md") as any]: {
+            marginTop: isFirst ? -50 : 50,
+          },
+
+          [theme.fn.smallerThan("xs") as any]: {
+            marginTop: isFirst ? -25 : 25,
+          },
+
+
           marginRight: -16,
           marginLeft: -16,
           // senter the children in the box

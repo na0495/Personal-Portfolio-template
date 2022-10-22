@@ -9,7 +9,7 @@ export default function HeroCanvas() {
     <Canvas
       camera={{ position: [2, 0, 12.25], fov: 15 }}
       style={{
-        height: "80vh",
+        height: "50vh",
       }}
     >
       <ambientLight intensity={1.25} />
