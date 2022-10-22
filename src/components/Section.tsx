@@ -18,7 +18,9 @@ const Section = forwardRef<HTMLDivElement, SectionProps>(
       sx={(theme) => ({
         // set the box size of the higet of size of the window
         height: height || "99vh",
-        marginTop: isFirst ? -100 : 100,
+        marginTop: isFirst ? 100 - (theme.breakpoints.sm ? 100 : 0) : 100,
+        // if it small screen, sm set margin bottom to 150
+        marginBottom: theme.breakpoints.sm ? 200 : 0,
         marginRight: -16,
         marginLeft: -16,
         // senter the children in the box

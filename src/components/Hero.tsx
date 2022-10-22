@@ -6,6 +6,7 @@ import {
   createStyles,
   Grid,
   Group,
+  Paper,
   Title,
 } from "@mantine/core";
 // icons
@@ -108,8 +109,23 @@ export default function Hero() {
             </Box>
           </Center>
         </Grid.Col>
-        <Grid.Col md={6} sm={10}>
-          <HeroCanvas />
+        <Grid.Col md={6} sm={8}>
+          <Paper
+            shadow="lg"
+            p="md"
+            sx={(theme) => ({
+              backgroundColor:
+                theme.colorScheme === "dark"
+                  ? theme.colors.yellow[3]
+                  : theme.colors.orange[3],
+
+              //disable scroll
+              overflow: "hidden",
+              touchAction: "none",
+            })}
+          >
+            <HeroCanvas />
+          </Paper>
         </Grid.Col>
       </Grid>
     </Group>
