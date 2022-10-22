@@ -121,17 +121,15 @@ export default function Hero() {
                 alignItems: "center",
                 justifyContent: "center",
                 display: "flex",
-                width: "80%",
                 [theme.fn.smallerThan("md")]: {
                   marginTop: 125,
                   marginBottom: 125,
                 },
+                minWidth: 400,
               })}
-
             >
               <HeroCanvas />
             </Paper>
-
           </Center>
         </Grid.Col>
       </Grid>
