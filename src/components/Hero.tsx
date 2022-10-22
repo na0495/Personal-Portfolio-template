@@ -6,8 +6,6 @@ import {
   Paper,
   Title,
   Button,
-  Group,
-  Grid,
   Center,
   Box,
 } from "@mantine/core";
