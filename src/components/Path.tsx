@@ -1,27 +1,22 @@
 import { useEffect, useState } from "react";
 // Mantine
 import {
-  Container,
-  Card,
-  Image,
-  Text,
-  Grid,
-  Group,
   Badge,
+  Container,
   createStyles,
-  useMantineTheme,
-  Timeline,
-  Tabs,
+  Grid,
   ScrollArea,
+  Tabs,
+  Text,
+  Timeline,
+  useMantineTheme,
 } from "@mantine/core";
 // motion
-import { motion } from "framer-motion";
 // Components
 import BoxWrapper from "./BoxWrapper";
 // _mock
 import path from "../_mock/path.json";
 // lib
-import CountUp from "react-countup";
 import {
   Book,
   DeviceLaptop,
