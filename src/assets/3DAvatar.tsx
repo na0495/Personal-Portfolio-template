@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import modelSrc from "../assets/model.glb?url";
 
-export function ThreedAvatar(props) {
+export function Avatar(props: any) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(modelSrc);
   const { actions } = useAnimations(animations, group);
