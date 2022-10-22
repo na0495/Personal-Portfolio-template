@@ -38,7 +38,23 @@ export default function MusicMode() {
           size="xl"
           onClick={handleClick}
           variant="filled"
-          radius="xl"
+          radius="lg"
+          sx={(theme) => ({
+            backgroundColor:
+              theme.colorScheme === "dark"
+                ? theme.colors.gray[8]
+                : theme.colors.gray[0],
+            color:
+              theme.colorScheme === "dark"
+                ? theme.colors.gray[0]
+                : theme.colors.gray[8],
+            "&:hover": {
+              backgroundColor:
+                theme.colorScheme === "dark"
+                  ? theme.colors.gray[9]
+                  : theme.colors.gray[1],
+            },
+          })}
         >
           {playMode === true ? <PlayerPlay size={24} /> : <PlayerPause />}
         </ActionIcon>

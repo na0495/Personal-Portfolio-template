@@ -32,8 +32,8 @@ const Section = forwardRef<HTMLDivElement, SectionProps>(
         justifyContent: "center",
         backgroundColor: withBackground
           ? theme.colorScheme === "dark"
-            ? theme.colors.yellow[3]
-            : theme.colors.orange[3]
+            ? theme.colors.yellow[2]
+            : theme.colors.orange[1]
           : "transparent",
       })}
     >

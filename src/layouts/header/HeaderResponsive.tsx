@@ -1,29 +1,33 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import {
-  createStyles,
-  Header,
-  Container,
-  Group,
+  ActionIcon,
   Burger,
+  Container,
+  createStyles,
+  Group,
+  Header,
   Paper,
   Transition,
-  ActionIcon,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import SwitchMode from "./SwitchMode";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { BrandGithub, BrandLinkedin, BrandTwitter } from "tabler-icons-react";
 import MusicMode from "./MusicMode";
-import { BrandTwitter, BrandGithub, BrandLinkedin } from "tabler-icons-react";
+import SwitchMode from "./SwitchMode";
 
 // -------------------------------------------------
 
-const HEADER_HEIGHT = 60;
+const HEADER_HEIGHT = 70;
 
 const useStyles = createStyles((theme) => ({
   root: {
     // position: "relative",
     zIndex: 1,
     boxShadow: theme.shadows.sm,
+    backgroundColor:
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[5]
+        : theme.colors.gray[1],
   },
 
   dropdown: {
@@ -68,18 +72,6 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
-  icon: {
-    "&:hover": {
-      backgroundColor:
-        theme.colorScheme === "dark"
-          ? theme.colors.dark[6]
-          : theme.colors.gray[2],
-      boxShadow: `${theme.shadows.md} !important`,
-      transform: "scale(1.10)",
-      borderRadius: theme.radius.sm,
-    },
-  },
-
   link: {
     display: "block",
     lineHeight: 1,
@@ -88,9 +80,9 @@ const useStyles = createStyles((theme) => ({
     marginRight: theme.spacing.md,
     textDecoration: "none",
     color:
-      theme.colorScheme === "dark"
-        ? theme.colors.dark[0]
-        : theme.colors.gray[7],
+      theme.colorScheme === "light"
+        ? theme.colors.dark[9]
+        : theme.colors.white[0],
     fontSize: theme.fontSizes.sm,
     fontWeight: 600,
 
@@ -113,8 +105,8 @@ const useStyles = createStyles((theme) => ({
     "&:hover": {
       backgroundColor:
         theme.colorScheme === "dark"
-          ? theme.colors.dark[6]
-          : theme.colors.gray[0],
+          ? theme.colors.yellow[7]
+          : theme.colors.orange[0],
       boxShadow: `${theme.shadows.md} !important`,
       transform: "scale(1.10)",
       borderRadius: theme.radius.sm,
@@ -126,9 +118,10 @@ const useStyles = createStyles((theme) => ({
       backgroundColor:
         theme.colorScheme === "dark"
           ? theme.colors.yellow[6]
-          : theme.colors.orange[1],
+          : theme.colors.orange[2],
       borderRadius: theme.radius.sm,
       color: theme.colors.white[9],
+      borderShadow: `${theme.shadows.md} !important`,
     },
   },
 }));
@@ -138,16 +131,19 @@ const socialLinks = [
     label: "Twitter",
     href: "https://twitter.com/na0495",
     icon: <BrandTwitter size={28} />,
+    color: "#1DA1F2",
   },
   {
     label: "Github",
     href: "https://github.com/na0495",
     icon: <BrandGithub size={28} />,
+    color: "#24292e",
   },
   {
     label: "Linkedin",
     href: "https://www.linkedin.com/in/saad-mrabet-978a01188/",
     icon: <BrandLinkedin size={28} />,
+    color: "#0077B5",
   },
 ];
 
@@ -204,11 +200,20 @@ export default function HeaderResponsive({ links }: HeaderResponsiveProps) {
               key={link.label}
               size="lg"
               ml={15}
-              radius="xl"
-              className={classes.icon}
+              radius="md"
               component="a"
               href={link.href}
               target="_blank"
+              sx={{
+                backgroundColor: link.color,
+                color: "white",
+                "&:hover": {
+                  backgroundColor: link.color,
+                  boxShadow: "none",
+                  transform: "scale(1.10)",
+                  borderRadius: "md",
+                },
+              }}
             >
               {link.icon}
             </ActionIcon>

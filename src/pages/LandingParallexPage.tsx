@@ -21,8 +21,8 @@ const useStyles = createStyles((theme) => ({
   about: {
     backgroundColor:
       theme.colorScheme === "dark"
-        ? theme.colors.yellow[3]
-        : theme.colors.orange[3],
+        ? theme.colors.yellow[2]
+        : theme.colors.orange[1],
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -35,8 +35,8 @@ const useStyles = createStyles((theme) => ({
   footer: {
     backgroundColor:
       theme.colorScheme === "dark"
-        ? theme.colors.yellow[3]
-        : theme.colors.orange[3],
+        ? theme.colors.yellow[2]
+        : theme.colors.orange[1],
     bottom: "0",
   },
 }));

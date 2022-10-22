@@ -45,13 +45,13 @@ const useStyles: any = createStyles((theme) => ({
     background:
       theme.colorScheme === "dark"
         ? theme.colors.yellow[4]
-        : theme.colors.orange[2],
+        : theme.colors.orange[1],
     color: theme.colorScheme === "dark" ? theme.colors.gray[9] : theme.white,
     "&:hover": {
       background:
         theme.colorScheme === "dark"
           ? theme.colors.yellow[5]
-          : theme.colors.orange[3],
+          : theme.colors.orange[1],
     },
   },
 
@@ -68,7 +68,7 @@ const useStyles: any = createStyles((theme) => ({
     backgroundColor:
       theme.colorScheme === "dark"
         ? theme.fn.rgba(theme.colors.yellow[6], 0.55)
-        : theme.colors.orange[2],
+        : theme.colors.orange[1],
     borderRadius: theme.radius.lg,
     padding: "4px 12px",
   },
@@ -92,7 +92,7 @@ export default function Hero() {
                   color:
                     theme.colorScheme === "dark"
                       ? theme.colors.yellow[2]
-                      : theme.colors.orange[3],
+                      : theme.colors.orange[1],
                 })}
               >
                 <Type />
@@ -113,11 +113,12 @@ export default function Hero() {
             <Paper
               shadow="lg"
               p="md"
+              radius="lg"
               sx={(theme) => ({
                 backgroundColor:
                   theme.colorScheme === "dark"
-                    ? theme.colors.yellow[3]
-                    : theme.colors.orange[3],
+                    ? theme.colors.yellow[2]
+                    : theme.colors.orange[1],
                 alignItems: "center",
                 justifyContent: "center",
                 display: "flex",

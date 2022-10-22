@@ -1,14 +1,9 @@
 // Mantine
-import {
-  ActionIcon,
-  createStyles,
-  Switch,
-  useMantineColorScheme,
-} from "@mantine/core";
+import { ActionIcon, useMantineColorScheme } from "@mantine/core";
 // Motion
 import { AnimatePresence, motion } from "framer-motion";
 // Icons
-import { Sun, MoonStars } from "tabler-icons-react";
+import { MoonStars, Sun } from "tabler-icons-react";
 // sounds
 import useSound from "use-sound";
 // mp3
@@ -18,9 +13,7 @@ import LightSwitch from "/src/assets/sounds/lightswitch.mp3?url";
 
 export default function SwitchMode() {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-  const dark = colorScheme === "dark";
 
-  // sound effects on click
   const [play] = useSound(LightSwitch, {
     volume: 0.25,
     sprite: {
@@ -46,10 +39,25 @@ export default function SwitchMode() {
       >
         <ActionIcon
           size="xl"
-          color={dark ? "grape" : "yellow"}
           onClick={handleClick}
           variant="filled"
-          radius="xl"
+          radius="lg"
+          sx={(theme) => ({
+            backgroundColor:
+              theme.colorScheme === "dark"
+                ? theme.colors.gray[8]
+                : theme.colors.gray[0],
+            color:
+              theme.colorScheme === "dark"
+                ? theme.colors.gray[0]
+                : theme.colors.gray[8],
+            "&:hover": {
+              backgroundColor:
+                theme.colorScheme === "dark"
+                  ? theme.colors.gray[9]
+                  : theme.colors.gray[1],
+            },
+          })}
         >
           {colorScheme !== "dark" ? <Sun size={24} /> : <MoonStars />}
         </ActionIcon>
