@@ -13,7 +13,6 @@ const FallbackLoader = forwardRef<HTMLDivElement, any>(
         <Box ref={ref} sx={sx} {...others}>
           <Player
             autoplay
-            loop
             src={loading}
             style={{
               height: "250px",

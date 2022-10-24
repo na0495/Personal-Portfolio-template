@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import { useGLTF, useAnimations } from "@react-three/drei";
+import { useAnimations, useGLTF } from "@react-three/drei";
+import { useEffect, useRef } from "react";
 import modelSrc from "../assets/model.glb?url";
 
 export function Avatar(props: any) {
