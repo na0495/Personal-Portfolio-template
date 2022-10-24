@@ -1,6 +1,5 @@
-import { Suspense, lazy, ElementType } from "react";
+import { ElementType, lazy, Suspense } from "react";
 import { Navigate, useRoutes } from "react-router-dom";
-// hooks
 // layouts
 import MainLayout from "../layouts/MainLayout";
 // components

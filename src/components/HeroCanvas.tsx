@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { CameraShake, OrbitControls } from "@react-three/drei";
 import { Avatar } from "../assets/3DAvatar";
 import { Suspense } from "react";
+import WaitLoader from "./animations/WaitLoader";
 
 export default function HeroCanvas() {
   return (

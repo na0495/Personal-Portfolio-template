@@ -2,11 +2,11 @@
 import { Player } from "@lottiefiles/react-lottie-player";
 import { Box, Center } from "@mantine/core";
 import { forwardRef } from "react";
-import loading from "../../assets/animations/loading.json";
+import wait from "../../assets/animations/wait.json";
 
 // ----------------------------------------------------------------------
 
-const FallbackLoader = forwardRef<HTMLDivElement, any>(
+const WaitLoader = forwardRef<HTMLDivElement, any>(
   ({ children, sx, ...others }, ref) => {
     return (
       <Center>
@@ -14,11 +14,13 @@ const FallbackLoader = forwardRef<HTMLDivElement, any>(
           <Player
             autoplay
             loop
-            src={loading}
-            style={{
-              height: "250px",
-              marginTop: window.innerHeight / 2 - 200,
-            }}
+            src={wait}
+            style={
+              {
+                //   height: "250px",
+                //   marginTop: window.innerHeight / 2 - 200,
+              }
+            }
           />
         </Box>
       </Center>
@@ -26,4 +28,4 @@ const FallbackLoader = forwardRef<HTMLDivElement, any>(
   }
 );
 
-export default FallbackLoader;
+export default WaitLoader;
