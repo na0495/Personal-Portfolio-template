@@ -25,16 +25,19 @@ const useStyles: any = createStyles((theme) => ({
     lineHeight: 1.2,
     fontWeight: 800,
 
-    [theme.fn.smallerThan("xs")]: {
-      fontSize: 28,
+    [theme.fn.smallerThan("md")]: {
+      fontSize: 34,
     },
   },
 
   box: {
-    maxWidth: 600,
-    minWidth: 450,
     [theme.fn.smallerThan("md")]: {
-      marginTop: 250,
+      marginTop: 100,
+      marginRight: 0,
+    },
+    [theme.fn.largerThan("md")]: {
+      maxWidth: 600,
+      minWidth: 450,
     },
   },
 
@@ -91,8 +94,11 @@ export default function Hero() {
                   marginTop: 25,
                   color:
                     theme.colorScheme === "dark"
-                      ? theme.colors.yellow[2]
-                      : theme.colors.orange[1],
+                      ? theme.colors.yellow[4]
+                      : theme.colors.orange[3],
+                  [theme.fn.smallerThan("md")]: {
+                    fontSize: 28,
+                  },
                 })}
               >
                 <Type />
@@ -119,14 +125,16 @@ export default function Hero() {
                   theme.colorScheme === "dark"
                     ? theme.colors.yellow[2]
                     : theme.colors.orange[1],
-                alignItems: "center",
-                justifyContent: "center",
-                display: "flex",
-                [theme.fn.smallerThan("md")]: {
+                [theme.fn.smallerThan("sm")]: {
                   marginTop: 125,
-                  marginBottom: 125,
+                  width: 225,
+                  height: 225,
                 },
-                minWidth: 400,
+                [theme.fn.largerThan("sm")]: {
+                  marginTop: 125,
+                  minWidth: 400,
+                  minHeight: 400,
+                },
               })}
             >
               <HeroCanvas />

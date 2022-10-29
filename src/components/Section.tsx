@@ -16,9 +16,11 @@ const Section = forwardRef<HTMLDivElement, SectionProps>(
   ({ children, meta, height, isFirst, withBackground, ...other }, ref) => (
     <Box
       sx={(theme) => ({
-        height: height || "99vh",
+        // height: height || "120vh",
+        minHeight: "100vh",
+
         [theme.fn.smallerThan("md")]: {
-          marginTop: isFirst ? -20 : 0,
+          marginTop: isFirst ? -20 : 150,
           marginBottom: 150,
         },
         [theme.fn.largerThan("md")]: {

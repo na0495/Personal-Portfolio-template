@@ -2,8 +2,10 @@ import { Suspense } from "react";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Avatar } from "../assets/3DAvatar";
+import { useMantineTheme } from "@mantine/core";
 
 export default function HeroCanvas() {
+  const theme = useMantineTheme();
   return (
     <Canvas
       camera={{ position: [2, 0, 12.25], fov: 15 }}
@@ -13,9 +15,7 @@ export default function HeroCanvas() {
     >
       <ambientLight intensity={1.25} />
       <directionalLight intensity={0.4} />
-      <Suspense 
-        fallback={null}
-      >
+      <Suspense fallback={null}>
         <Avatar position={[0.025, -0.9, 0]} />
       </Suspense>
       <OrbitControls makeDefault />

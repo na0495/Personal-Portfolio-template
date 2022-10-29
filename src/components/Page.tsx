@@ -27,16 +27,19 @@ const Page = forwardRef<HTMLDivElement, PageProps>(
       <Box
         sx={(theme) => ({
           // set the box size of the higet of size of the window
-          height: height || "99vh",
-          marginTop: isFirst ? -100 : 100,
+          // height: height || "150vh",
 
-          [theme.fn.smallerThan("md") as any]: {
-            marginTop: isFirst ? -50 : 50,
-          },
+          // [theme.fn.smallerThan("md") as any]: {
+          //   marginTop: isFirst ? -50 : 50,
+          // },
 
-          [theme.fn.smallerThan("xs") as any]: {
-            marginTop: isFirst ? -25 : 25,
-          },
+          // [theme.fn.smallerThan("xs") as any]: {
+          //   marginTop: isFirst ?  -25 : 25,
+          // },
+
+          // [theme.fn.largerThan("md") as any]: {
+          //   marginTop: isFirst ? -100 : 100,
+          // },
 
           marginRight: -16,
           marginLeft: -16,
