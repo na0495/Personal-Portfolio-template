@@ -2,15 +2,17 @@ import { Suspense } from "react";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Avatar } from "../assets/3DAvatar";
-import { useMantineTheme } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
+
+// ----------------------------------------------------------
 
 export default function HeroCanvas() {
-  const theme = useMantineTheme();
+  const matches = useMediaQuery("(min-width: 650px)");
   return (
     <Canvas
       camera={{ position: [2, 0, 12.25], fov: 15 }}
       style={{
-        height: "50vh",
+        height: matches ? "50vh" : 225,
       }}
     >
       <ambientLight intensity={1.25} />

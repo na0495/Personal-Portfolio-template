@@ -4,9 +4,7 @@ import {
   Badge,
   Container,
   createStyles,
-  Grid,
   ScrollArea,
-  Tabs,
   Text,
   Timeline,
   useMantineTheme,
@@ -15,11 +13,9 @@ import {
 // Components
 import BoxWrapper from "./BoxWrapper";
 // _mock
-import path from "../_mock/path.json";
+import { path } from "../_mock/path";
 // lib
 import {
-  Book,
-  DeviceLaptop,
   GitBranch,
   GitCommit,
   GitPullRequest,
@@ -38,12 +34,6 @@ const useStyles = createStyles((theme) => ({
       theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]
     }`,
     boxShadow: `${theme.shadows.md} !important`,
-    // on hover scale up and make the animation smoother
-
-    // "&:hover": {
-    //   boxShadow: `${theme.shadows.lg} !important`,
-    //   transform: "scale(1.02)",
-    // },
   },
 
   section: {
@@ -85,294 +75,58 @@ export default function Path() {
     );
   }
 
-  useEffect(() => {
-    // calculate the total working month based on path.start and today date
-    const today = new Date();
-    const start = new Date(path.current.start);
-    setTotalMonth(monthDiff(start, today));
-  }, [path.current.start]);
+  // useEffect(() => {
+  //   // calculate the total working month based on path.start and today date
+  //   const today = new Date();
+  //   const start = new Date(path.current.start);
+  //   setTotalMonth(monthDiff(start, today));
+  // }, [path.current.start]);
 
-  const features = path.current.badges.map((badge) => (
-    <Badge
-      className={classes.badge}
-      color={theme.colorScheme === "dark" ? "dark" : "gray"}
-      key={badge.label}
-    >
-      {badge.label}
-    </Badge>
-  ));
+  // const features = path.current.badges.map((badge) => (
+  //   <Badge
+  //     className={classes.badge}
+  //     color={theme.colorScheme === "dark" ? "dark" : "gray"}
+  //     key={badge.label}
+  //   >
+  //     {badge.label}
+  //   </Badge>
+  // ));
+
+  const items = path.map((item, index) => {
+    return (
+      <Timeline.Item bullet={<GitBranch size={12} />} title="New branch">
+        <Text color="dimmed" size="sm">
+          You&apos;ve pushed 23 commits to
+          <Text variant="link" component="span" inherit>
+            fix-notifications branch
+          </Text>
+        </Text>
+        <Text size="xs" mt={4}>
+          52 minutes ago
+        </Text>
+      </Timeline.Item>
+    );
+  });
+
   return (
     <Container px="xl" size="lg" sx={{ zIndex: 5 }}>
       <BoxWrapper withBackground={false}>
-        <Grid grow>
-          <Grid.Col xs={12} sm={8} md={5}>
-            <Tabs color="orange" orientation="vertical">
-              <Tabs.Tab value="Studies" icon={<Book size={14} />}>
-                <ScrollArea
-                  style={{ height: 300, width: 350 }}
-                  type="scroll"
-                  offsetScrollbars
-                  scrollbarSize={14}
-                >
-                  {/* ... content */}
-                  <Timeline
-                    color="orange"
-                    active={2}
-                    reverseActive
-                    lineWidth={8}
-                    bulletSize={30}
-                  >
-                    <Timeline.Item
-                      bullet={<GitBranch size={12} />}
-                      title="New branch"
-                    >
-                      <Text color="dimmed" size="sm">
-                        You&apos;ve created new branch{" "}
-                        <Text variant="link" component="span" inherit>
-                          fix-notifications
-                        </Text>{" "}
-                        from master
-                      </Text>
-                      <Text size="xs" mt={4}>
-                        2 hours ago
-                      </Text>
-                    </Timeline.Item>
-
-                    <Timeline.Item
-                      bullet={<GitCommit size={12} />}
-                      title="Commits"
-                    >
-                      <Text color="dimmed" size="sm">
-                        You&apos;ve pushed 23 commits to
-                        <Text variant="link" component="span" inherit>
-                          fix-notifications branch
-                        </Text>
-                      </Text>
-                      <Text size="xs" mt={4}>
-                        52 minutes ago
-                      </Text>
-                    </Timeline.Item>
-
-                    <Timeline.Item
-                      title="Pull request"
-                      bullet={<GitPullRequest size={12} />}
-                      lineVariant="dashed"
-                    >
-                      <Text color="dimmed" size="sm">
-                        You&apos;ve submitted a pull request
-                        <Text variant="link" component="span" inherit>
-                          Fix incorrect notification message (#187)
-                        </Text>
-                      </Text>
-                      <Text size="xs" mt={4}>
-                        34 minutes ago
-                      </Text>
-                    </Timeline.Item>
-
-                    <Timeline.Item
-                      title="Code review"
-                      bullet={<MessageDots size={12} />}
-                    >
-                      <Text color="dimmed" size="sm">
-                        <Text variant="link" component="span" inherit>
-                          Robert Gluesticker
-                        </Text>{" "}
-                        left a code review on your pull request
-                      </Text>
-                      <Text size="xs" mt={4}>
-                        12 minutes ago
-                      </Text>
-                    </Timeline.Item>
-                  </Timeline>
-                </ScrollArea>
-              </Tabs.Tab>
-              <Tabs.Tab value="Experience" icon={<DeviceLaptop size={14} />}>
-                <ScrollArea
-                  style={{ height: 300, width: 350 }}
-                  type="scroll"
-                  offsetScrollbars
-                  scrollbarSize={14}
-                >
-                  {/* ... content */}
-                  <Timeline
-                    color="orange"
-                    active={2}
-                    reverseActive
-                    lineWidth={8}
-                    bulletSize={30}
-                  >
-                    <Timeline.Item
-                      bullet={<GitCommit size={12} />}
-                      title="Commits"
-                    >
-                      <Text color="dimmed" size="sm">
-                        You&apos;ve pushed 23 commits to
-                        <Text variant="link" component="span" inherit>
-                          fix-notifications branch
-                        </Text>
-                      </Text>
-                      <Text size="xs" mt={4}>
-                        52 minutes ago
-                      </Text>
-                    </Timeline.Item>
-
-                    <Timeline.Item
-                      title="Pull request"
-                      bullet={<GitPullRequest size={12} />}
-                      lineVariant="dashed"
-                    >
-                      <Text color="dimmed" size="sm">
-                        You&apos;ve submitted a pull request
-                        <Text variant="link" component="span" inherit>
-                          Fix incorrect notification message (#187)
-                        </Text>
-                      </Text>
-                      <Text size="xs" mt={4}>
-                        34 minutes ago
-                      </Text>
-                    </Timeline.Item>
-
-                    <Timeline.Item
-                      title="Code review"
-                      bullet={<MessageDots size={12} />}
-                    >
-                      <Text color="dimmed" size="sm">
-                        <Text variant="link" component="span" inherit>
-                          Robert Gluesticker
-                        </Text>{" "}
-                        left a code review on your pull request
-                      </Text>
-                      <Text size="xs" mt={4}>
-                        12 minutes ago
-                      </Text>
-                    </Timeline.Item>
-                  </Timeline>
-                </ScrollArea>
-              </Tabs.Tab>
-            </Tabs>
-            {/* <Card withBorder radius="lg" p="md" className={classes.card}>
-              <Card.Section>
-                <Image
-                  src={path.current.image}
-                  alt={path.current.title}
-                  height={200}
-                />
-              </Card.Section>
-
-              <Card.Section className={classes.section} mt="md">
-                <Group mb={10} position="apart">
-                  <Group>
-                    <motion.img
-                      style={{
-                        width: 65,
-                        height: 65,
-                        borderRadius: 15,
-                        margin: 2,
-                        border: `1px solid ${
-                          theme.colorScheme === "dark"
-                            ? theme.colors.dark[4]
-                            : theme.colors.gray[3]
-                        }`,
-                      }}
-                      whileHover={{ scale: 1.3 }}
-                      whileTap={{ scale: 0.8 }}
-                      src={"/src/assets/sowit.png"}
-                      alt={"sowit"}
-                    />
-                    <Group direction="column">
-                      <Text size="lg" weight={500} mb={-10}>
-                        {path.current.title}
-                      </Text>
-                      <Text size="md">{path.current.company}</Text>
-                    </Group>
-                  </Group>
-                  <Group position="right">
-                    <Text size="md" weight={500}>
-                      {path.current.start} to <br /> today (
-                      <CountUp start={0} end={totalMonth} duration={2} />{" "}
-                      months)
-                    </Text>
-                  </Group>
-                </Group>
-                <Text size="sm" mt="xs">
-                  {path.current.description}
-                </Text>
-              </Card.Section>
-
-              <Card.Section className={classes.section}>
-                <Text mt="md" className={classes.label} color="dimmed">
-                  Technologies
-                </Text>
-                <Group spacing={7} mt={5}>
-                  {features}
-                </Group>
-              </Card.Section>
-            </Card> */}
-          </Grid.Col>
-          <Grid.Col xs={12} sm={8} md={5}>
-            {/* {path.past.map((past) => (
-              <Card
-                key={past.title}
-                withBorder
-                radius="lg"
-                p="md"
-                className={classes.card}
-                mb={15}
-              >
-                <Card.Section className={classes.section} mt="md">
-                  <Group mb={10} position="apart">
-                    <Group>
-                      <motion.div
-                        style={{
-                          width: 65,
-                          height: 65,
-                          borderRadius: 15,
-                          margin: 2,
-                          border: `1px solid ${
-                            theme.colorScheme === "dark"
-                              ? theme.colors.dark[4]
-                              : theme.colors.gray[3]
-                          }`,
-                          backgroundColor: "gray",
-                        }}
-                        whileHover={{ scale: 1.3 }}
-                        whileTap={{ scale: 0.8 }}
-                      />
-                      <Group direction="column">
-                        <Text size="lg" weight={500} mb={-10}>
-                          {past.title}
-                        </Text>
-                        <Text size="md">{past.company}</Text>
-                      </Group>
-                    </Group>
-                    <Group position="right">
-                      <Text size="md" weight={500}>
-                        {past.start} to <br /> {past.end}
-                      </Text>
-                    </Group>
-                  </Group>
-                </Card.Section>
-
-                <Card.Section className={classes.section}>
-                  <Text mt="md" className={classes.label} color="dimmed">
-                    Technologies
-                  </Text>
-                  <Group spacing={7} mt={5}>
-                    {past.badges.map((badge) => (
-                      <Badge
-                        className={classes.badge}
-                        color={theme.colorScheme === "dark" ? "dark" : "gray"}
-                        key={badge.label}
-                      >
-                        {badge.label}
-                      </Badge>
-                    ))}
-                  </Group>
-                </Card.Section>
-              </Card>
-            ))} */}
-          </Grid.Col>
-        </Grid>
+        <ScrollArea
+          style={{ height: 300, width: 350 }}
+          type="scroll"
+          offsetScrollbars
+          scrollbarSize={14}
+        >
+          <Timeline
+            color="orange"
+            active={2}
+            reverseActive
+            lineWidth={8}
+            bulletSize={30}
+          >
+            {items}
+          </Timeline>
+        </ScrollArea>
       </BoxWrapper>
     </Container>
   );

@@ -1,10 +1,10 @@
 // Mantine
 import {
   Container,
-  Title,
-  Text,
-  SimpleGrid,
   createStyles,
+  SimpleGrid,
+  Text,
+  Title,
 } from "@mantine/core";
 // Components
 import BoxWrapper from "./BoxWrapper";
@@ -72,9 +72,11 @@ export default function Skills() {
                     <motion.img
                       key={subDataitem}
                       style={{
-                        width: 65,
-                        height: 65,
+                        width: 70,
+                        height: 70,
                         borderRadius: 15,
+                        padding: 5,
+                        boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
                       }}
                       whileHover={{ scale: 1.3 }}
                       whileTap={{ scale: 0.8 }}

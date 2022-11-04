@@ -3,13 +3,14 @@ import { useState } from "react";
 import { ActionIcon, createStyles } from "@mantine/core";
 import { useScrollIntoView } from "@mantine/hooks";
 // components
-import Hero from "../components/Hero";
 import About from "../components/About";
+import Github from "../components/Github";
+import Hero from "../components/Hero";
 import Section from "../components/Section";
 import Skills from "../components/Skills";
-import Github from "../components/Github";
 // // icons
 import { ArrowUp } from "tabler-icons-react";
+import ParticlesWrapper from "../components/animations/ParticlesWrapper";
 
 // -------------------------------------------------
 
@@ -22,8 +23,14 @@ const useStyles = createStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "flex-end",
-    paddingBottom: 75,
-    marginRight: 75,
+    [theme.fn.largerThan("md")]: {
+      paddingBottom: 75,
+      marginRight: 75,
+    },
+    [theme.fn.smallerThan("md")]: {
+      paddingBottom: 25,
+      marginRight: 25,
+    },
   },
 }));
 
@@ -41,6 +48,7 @@ export default function LandingPage() {
   return (
     <>
       <div ref={targetRef} />
+      <ParticlesWrapper />
       <Section withBackground={false} isFirst={true}>
         <Hero />
       </Section>

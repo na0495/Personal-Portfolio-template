@@ -26,29 +26,12 @@ const Page = forwardRef<HTMLDivElement, PageProps>(
       </Helmet>
       <Box
         sx={(theme) => ({
-          // set the box size of the higet of size of the window
-          // height: height || "150vh",
-
-          // [theme.fn.smallerThan("md") as any]: {
-          //   marginTop: isFirst ? -50 : 50,
-          // },
-
-          // [theme.fn.smallerThan("xs") as any]: {
-          //   marginTop: isFirst ?  -25 : 25,
-          // },
-
-          // [theme.fn.largerThan("md") as any]: {
-          //   marginTop: isFirst ? -100 : 100,
-          // },
-
           marginRight: -16,
           marginLeft: -16,
-          // senter the children in the box
+          height: "100%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          // if withBackground is true, set the background  to
-          // else set the background to transparent
           backgroundColor: withBackground
             ? theme.colorScheme === "dark"
               ? theme.colors.yellow[2]

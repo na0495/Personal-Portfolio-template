@@ -1,129 +1,102 @@
+import { useMantineTheme } from "@mantine/core";
+import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
-import { Container } from "tsparticles-engine";
+import type { Container, Engine } from "tsparticles-engine";
 
-// make reusable component for particles
+// ----------------------------------------------------------
 
 type ParticlesWrapperProps = {
-  // children: any;
   sx?: React.CSSProperties;
 };
 
 const ParticlesWrapper = ({ sx, ...others }: ParticlesWrapperProps) => {
-  const particlesInit = async (main: any) => {
-    await loadFull(main);
+  const theme = useMantineTheme();
+  const particlesInit = useCallback(async (engine: Engine) => {
+    await loadFull(engine);
+  }, []);
+
+  const particlesLoaded = useCallback(
+    async (container: Container | undefined) => {
+      // await console.log(container);
+    },
+    []
+  );
+
+  const opt: any = {
+    smooth: true,
+    interactivity: {
+      events: {
+        onHover: {
+          enable: true,
+          mode: "bubble",
+          parallax: {
+            enable: false,
+            force: 2,
+            smooth: 10,
+          },
+        },
+      },
+      modes: {
+        bubble: {
+          distance: 40,
+          duration: 2,
+          opacity: 8,
+          size: 15,
+        },
+      },
+    },
+    particles: {
+      move: {
+        direction: "none",
+        distance: 5,
+        enable: true,
+        outModes: "none",
+        speed: 1,
+      },
+      number: {
+        value: 300,
+      },
+      shape: {
+        type: ["circle", "square", "triangle", "polygon"],
+      },
+      size: {
+        value: {
+          min: 3,
+          max: 6,
+        },
+      },
+      color: {
+        value:
+          theme.colorScheme === "dark"
+            ? [
+                theme.colors.gray[1],
+                theme.colors.gray[2],
+                theme.colors.gray[3],
+                theme.colors.gray[4],
+                theme.colors.gray[5],
+              ]
+            : [
+                theme.colors.white[1],
+                theme.colors.white[2],
+                theme.colors.white[3],
+                theme.colors.white[4],
+                theme.colors.white[5],
+              ],
+      },
+    },
+    backgroundMode: {
+      enable: true,
+      zIndex: -1,
+    },
   };
-
-  // const particlesLoaded = (container: any) => {
-
-  // };
 
   return (
     <Particles
       id="tsparticles"
       init={particlesInit}
-      // loaded={children}
-      options={{
-        particles: {
-          number: {
-            value: 100,
-            density: {
-              enable: true,
-              value_area: 600,
-            },
-          },
-          color: {
-            value: "#9e9e9e",
-          },
-          shape: {
-            type: "circle",
-            stroke: {
-              width: 0,
-              color: "#bdbdbd",
-            },
-          },
-          opacity: {
-            value: 0.45,
-            random: false,
-            anim: {
-              enable: false,
-              speed: 1,
-              opacity_min: 0.1,
-              sync: false,
-            },
-          },
-          size: {
-            value: 3,
-            random: true,
-            anim: {
-              enable: false,
-              speed: 50,
-              size_min: 0.1,
-              sync: false,
-            },
-          },
-          line_linked: {
-            enable: false,
-            distance: 150,
-            color: "#ffffff",
-            opacity: 0.4,
-            width: 1,
-          },
-          move: {
-            enable: true,
-            speed: 3,
-            direction: "left",
-            random: true,
-            straight: true,
-            out_mode: "out",
-            bounce: false,
-            attract: {
-              enable: false,
-              rotateX: 600,
-              rotateY: 1200,
-            },
-          },
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: {
-              enable: false,
-              mode: "grab",
-            },
-            onclick: {
-              enable: false,
-              mode: "repulse",
-            },
-            resize: true,
-          },
-          modes: {
-            grab: {
-              distance: 200,
-              line_linked: {
-                opacity: 1,
-              },
-            },
-            bubble: {
-              distance: 400,
-              size: 40,
-              duration: 2,
-              opacity: 8,
-            },
-            repulse: {
-              distance: 200,
-              duration: 0.4,
-            },
-            push: {
-              particles_nb: 4,
-            },
-            remove: {
-              particles_nb: 2,
-            },
-          },
-        },
-        retina_detect: true,
-      }}
+      loaded={particlesLoaded}
+      options={opt}
     />
   );
 };
