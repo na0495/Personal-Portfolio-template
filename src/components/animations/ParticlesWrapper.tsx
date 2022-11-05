@@ -70,11 +70,11 @@ const ParticlesWrapper = ({ sx, ...others }: ParticlesWrapperProps) => {
         value:
           theme.colorScheme === "dark"
             ? [
-                theme.colors.gray[1],
-                theme.colors.gray[2],
-                theme.colors.gray[3],
-                theme.colors.gray[4],
                 theme.colors.gray[5],
+                theme.colors.gray[6],
+                theme.colors.gray[7],
+                theme.colors.gray[8],
+                theme.colors.gray[9],
               ]
             : [
                 theme.colors.white[1],

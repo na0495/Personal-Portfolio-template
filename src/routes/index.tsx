@@ -1,4 +1,5 @@
-import { ElementType, lazy, Suspense } from "react";
+import { ElementType, lazy, Suspense, useEffect } from "react";
+import ReactGA from "react-ga";
 import { Navigate, useRoutes } from "react-router-dom";
 // layouts
 import MainLayout from "../layouts/MainLayout";
@@ -16,8 +17,11 @@ const Loadable = (Component: ElementType) => (props: any) => {
 };
 
 export default function Routes() {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, [window.location.pathname, window.location.search]);
+
   return useRoutes([
-    // Auth Routes
     {
       path: "/",
       element: <MainLayout />,
