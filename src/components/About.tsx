@@ -1,6 +1,8 @@
 // Mantine
 import { Container, Text, Title } from "@mantine/core";
 import { Prism } from "@mantine/prism";
+import github from "prism-react-renderer/themes/github";
+import vsDark from "prism-react-renderer/themes/vsDark";
 // Components
 import BoxWrapper from "./BoxWrapper";
 // d_mock
@@ -9,11 +11,18 @@ import { aboutMe } from "../_mock/aboutme";
 
 // ----------------------------------------------------------------------------
 
-const aboutMeCode = `import Saad from "saad/core/"
+const aboutMeCode = `import Saad from "@saad/core"
 
 // -----------------------------------------------------------------------------
 
-export default function AboutMe() {
+type Props = {
+  name: string;
+  age: number;
+  location: string;
+  email: string;
+}
+
+export default function AboutMe(props: Props) {
   return (
     <Saad ${aboutMe.details.map(
       (item: any) =>
@@ -30,7 +39,15 @@ export default function About() {
     <Container px="xl" size="lg">
       <BoxWrapper withBackground={false}>
         {!match ? (
-          <Prism language="tsx">{aboutMeCode}</Prism>
+          <Prism
+            noCopy
+            language="tsx"
+            getPrismTheme={(_theme, colorScheme) =>
+              colorScheme === "dark" ? vsDark : github
+            }
+          >
+            {aboutMeCode}
+          </Prism>
         ) : (
           <>
             <Title

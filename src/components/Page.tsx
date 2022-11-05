@@ -34,7 +34,7 @@ const Page = forwardRef<HTMLDivElement, PageProps>(
           justifyContent: "center",
           backgroundColor: withBackground
             ? theme.colorScheme === "dark"
-              ? theme.colors.yellow[2]
+              ? theme.colors.yellow[4]
               : theme.colors.orange[1]
             : "transparent",
         })}

@@ -18,15 +18,19 @@ const BoxWrapper = forwardRef<HTMLDivElement, any>(
               ? theme.colors.dark[4]
               : theme.colors.gray[3]
           }`,
-          boxShadow: `${theme.shadows.md} !important`,
           backgroundColor: withBackground
             ? theme.colorScheme === "dark"
               ? theme.colors.dark[6]
               : theme.colors.gray[0]
             : theme.colorScheme === "dark"
-            ? theme.colors.dark[7]
+            ? theme.colors.dark[5]
             : theme.colors.white[0],
           zIndex: 5,
+          boxShadow: `0 0 10px ${
+            theme.colorScheme === "dark"
+              ? theme.colors.white[3]
+              : theme.colors.white[6]
+          } !important`,
         })}
         ref={ref}
         {...props}

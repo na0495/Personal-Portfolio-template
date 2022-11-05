@@ -125,6 +125,7 @@ export default function Hero() {
                   theme.colorScheme === "dark"
                     ? theme.colors.yellow[2]
                     : theme.colors.orange[1],
+
                 [theme.fn.smallerThan("sm")]: {
                   marginTop: 125,
                   width: 225,
@@ -135,6 +136,11 @@ export default function Hero() {
                   minWidth: 400,
                   minHeight: 400,
                 },
+                boxShadow: `0 0 10px ${
+                  theme.colorScheme === "dark"
+                    ? theme.colors.white[3]
+                    : theme.colors.white[4]
+                } !important`,
               })}
             >
               <HeroCanvas />

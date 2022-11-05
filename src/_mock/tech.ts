@@ -24,9 +24,9 @@ import vitePng from "../assets/languages/vite.png";
 
 export const tech = [
   {
-    title: "Techenology & Tools",
+    title: "Technologies & Tools",
     description:
-      "Those are some of the tools I use in my daily work, and I really enjoy using them on the different project that i'm working on.",
+      "For me, those are some of the tech & tools that i like to use on my daily work, and which I really enjoy using them on the different projects.",
     data: [
       {
         type: "Programming languages",

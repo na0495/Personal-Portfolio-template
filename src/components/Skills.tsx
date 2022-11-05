@@ -32,6 +32,19 @@ const useStyles = createStyles((theme) => ({
       fontSize: 28,
     },
   },
+  img: {
+    width: 70,
+    height: 70,
+    borderRadius: 15,
+    padding: 5,
+    // boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
+    // shadow color based on theme
+    boxShadow: `0 0 10px ${
+      theme.colorScheme === "dark"
+        ? theme.colors.white[3]
+        : theme.colors.gray[7]
+    }`,
+  },
 }));
 
 export default function Skills() {
@@ -71,13 +84,7 @@ export default function Skills() {
                   {dataItem.png.map((subDataitem: any) => (
                     <motion.img
                       key={subDataitem}
-                      style={{
-                        width: 70,
-                        height: 70,
-                        borderRadius: 15,
-                        padding: 5,
-                        boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
-                      }}
+                      className={classes.img}
                       whileHover={{ scale: 1.3 }}
                       whileTap={{ scale: 0.8 }}
                       src={subDataitem}
