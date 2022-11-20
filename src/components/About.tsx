@@ -1,13 +1,23 @@
+import { useState } from "react";
 // Mantine
-import { Container, Text, Title } from "@mantine/core";
 import { Prism } from "@mantine/prism";
+import { useMediaQuery } from "@mantine/hooks";
+import {
+  Container,
+  Group,
+  Switch,
+  Text,
+  Title,
+  useMantineTheme,
+} from "@mantine/core";
+//
 import github from "prism-react-renderer/themes/github";
 import vsDark from "prism-react-renderer/themes/vsDark";
 // Components
 import BoxWrapper from "./BoxWrapper";
 // d_mock
-import { useMediaQuery } from "@mantine/hooks";
 import { aboutMe } from "../_mock/aboutme";
+import { Code, CodeOff } from "tabler-icons-react";
 
 // ----------------------------------------------------------------------------
 
@@ -34,44 +44,71 @@ export default function AboutMe(props: Props) {
 }`;
 
 export default function About() {
+  const theme = useMantineTheme();
   const match = useMediaQuery("(max-width: 1000px)");
+  const [isTechPersonal, setIsTechPersonal] = useState(true);
+  const NonTechContent = () => (
+    <>
+      {aboutMe.details.map((item: any, index: number) => (
+        <div key={index}>
+          <Text size="lg" key={item.id} className="text" mt={5}>
+            <span style={{ marginRight: 5 }}>{item.icon}</span>
+            {item.text}
+          </Text>
+        </div>
+      ))}
+    </>
+  );
+
   return (
     <Container px="xl" size="lg">
       <BoxWrapper withBackground={false}>
-        {!match ? (
-          <Prism
-            noCopy
-            language="tsx"
-            getPrismTheme={(_theme, colorScheme) =>
-              colorScheme === "dark" ? vsDark : github
-            }
+        <Group position="apart" mb={25}>
+          <Title
+            order={3}
+            sx={(theme) => ({
+              color:
+                theme.colorScheme === "dark"
+                  ? theme.colors.yellow[5]
+                  : theme.colors.orange[5],
+            })}
           >
-            {aboutMeCode}
-          </Prism>
-        ) : (
-          <>
-            <Title
-              order={3}
-              sx={(theme) => ({
-                marginBottom: 25,
-                color:
-                  theme.colorScheme === "dark"
-                    ? theme.colors.yellow[5]
-                    : theme.colors.orange[5],
-              })}
+            {aboutMe.title}
+          </Title>
+          <Switch
+            label={isTechPersonal ? "Dev view" : "No tech view"}
+            checked={isTechPersonal}
+            onChange={() => setIsTechPersonal(!isTechPersonal)}
+            onLabel={
+              <Code size={16} strokeWidth={2.5} color={theme.colors.gray[4]} />
+            }
+            offLabel={
+              <CodeOff
+                size={16}
+                strokeWidth={2.5}
+                color={theme.colors.yellow[4]}
+              />
+            }
+            color="orange"
+            size="lg"
+          />
+        </Group>
+        {!match ? (
+          isTechPersonal ? (
+            <Prism
+              noCopy
+              language="tsx"
+              getPrismTheme={(_theme, colorScheme) =>
+                colorScheme === "dark" ? vsDark : github
+              }
             >
-              {aboutMe.title}
-            </Title>
-
-            {aboutMe.details.map((item: any, index: number) => (
-              <div key={index}>
-                <Text size="lg" key={item.id} className="text" mt={5}>
-                  <span style={{ marginRight: 5 }}>{item.icon}</span>
-                  {item.text}
-                </Text>
-              </div>
-            ))}
-          </>
+              {aboutMeCode}
+            </Prism>
+          ) : (
+            <NonTechContent />
+          )
+        ) : (
+          <NonTechContent />
         )}
       </BoxWrapper>
     </Container>
