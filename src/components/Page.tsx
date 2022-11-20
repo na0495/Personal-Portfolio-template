@@ -2,6 +2,7 @@ import { forwardRef, ReactNode } from "react";
 import { Helmet } from "react-helmet-async";
 // mantine
 import { Box } from "@mantine/core";
+import CustomHelmet from "./CustomHelmet";
 
 // ----------------------------------------------------------
 
@@ -20,10 +21,8 @@ const Page = forwardRef<HTMLDivElement, PageProps>(
     ref
   ) => (
     <>
-      <Helmet>
-        <title>{`${title} | Saad Portfolio`}</title>
-        {meta}
-      </Helmet>
+      <CustomHelmet title={title} />
+
       <Box
         sx={(theme) => ({
           marginRight: -16,

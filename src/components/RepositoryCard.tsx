@@ -1,23 +1,35 @@
 import {
+  Badge,
   Box,
   Group,
   Text,
-  Badge,
-  Stack,
-  Spoiler,
   TypographyStylesProvider,
 } from "@mantine/core";
 import { motion } from "framer-motion";
 import { BrandGithub, GitFork, Star } from "tabler-icons-react";
 import { getTagColor } from "../utils/getTagColor";
-import BoxWrapper from "./BoxWrapper";
 
 // ------------------------------------------------------
 
-const RepositoryCard = (props: any) => {
-  const { title, description, language, url, stargazers_count, forks_count } =
-    props;
+type RepositoryCardProps = {
+  title: string;
+  description: string;
+  url: string;
+  stargazers_count: number;
+  forks_count: number;
+  language: string;
+  created_at: string;
+};
 
+export default function RepositoryCard({
+  title,
+  description,
+  url,
+  stargazers_count,
+  forks_count,
+  language,
+  created_at,
+}: RepositoryCardProps) {
   const handleLinkClick = (e: any, link: any) => {
     window.open(link);
     e.stopPropagation();
@@ -28,7 +40,8 @@ const RepositoryCard = (props: any) => {
       <Box
         sx={(theme) => ({
           padding: theme.spacing.md,
-          height: 175,
+          maxHeight: 175,
+          minHeight: 150,
           borderRadius: 20,
           marginTop: theme.spacing.md,
           border: `1px solid ${
@@ -42,10 +55,10 @@ const RepositoryCard = (props: any) => {
               ? theme.colors.dark[7]
               : theme.colors.white[0],
         })}
+        onClick={(e: any) => handleLinkClick(e, url)}
       >
         <Group>
           <Group>
-            {/* <Tooltip> */}
             <Group>
               <BrandGithub />
               <Text size="md">{title}</Text>
@@ -72,7 +85,6 @@ const RepositoryCard = (props: any) => {
           </Group>
           <Text lineClamp={2}>
             <TypographyStylesProvider>
-              {/* <h3>Line clamp with TypographyStylesProvider</h3> */}
               <Text size="xs">{description}</Text>
             </TypographyStylesProvider>
           </Text>
@@ -80,6 +92,4 @@ const RepositoryCard = (props: any) => {
       </Box>
     </motion.div>
   );
-};
-
-export default RepositoryCard;
+}

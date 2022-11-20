@@ -7,6 +7,7 @@ import ReactGA from "react-ga";
 import ThemeProvider from "./theme/ThemeProvider";
 // config
 import { googleAnlyticId } from "./config";
+import { Seo } from "tabler-icons-react";
 
 // -----------------------------------------------------------------------------
 
@@ -17,6 +18,7 @@ ReactGA.initialize(googleAnlyticId);
 function App() {
   return (
     <ThemeProvider>
+      <Seo />
       <ScrollToTop />
       <Router />
     </ThemeProvider>

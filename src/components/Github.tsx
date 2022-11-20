@@ -148,7 +148,7 @@ export default function Github() {
                 </Text>
                 <Group noWrap spacing={10} mt={3}>
                   <Text size="md" className="text">
-                    {user?.bio} <br /> My account curentlyy has {totalCommits}{" "}
+                    {user?.bio} <br /> My account curently has {totalCommits}{" "}
                     commits.
                   </Text>
                 </Group>

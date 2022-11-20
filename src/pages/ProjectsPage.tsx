@@ -1,15 +1,23 @@
 // components
 import ParticlesWrapper from "../components/animations/ParticlesWrapper";
 import Github from "../components/Github";
-import Page from "../components/Page";
+import CustomHelmet from "../components/CustomHelmet";
+import Project from "../components/Project";
+import Section from "../components/Section";
 
 // -------------------------------------------------
 
 export default function ProjectsPage() {
   return (
-    <Page title="Project" isFirst={true} withBackground={false}>
+    <>
+      <CustomHelmet title="Projects" />
       <ParticlesWrapper />
-      <Github />
-    </Page>
+      <Section>
+        <Github />
+      </Section>
+      <Section>
+        <Project />
+      </Section>
+    </>
   );
 }
