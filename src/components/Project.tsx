@@ -78,7 +78,7 @@ export default function Github() {
         <BoxWrapper withBackground={true}>
           <Grid>
             {repos.slice(0, 6).map((repo: any, index: number) => (
-              <Grid.Col span={4} key={index}>
+              <Grid.Col sm={12} md={6} lg={4} key={index}>
                 <RepositoryCard
                   title={repo.name}
                   description={repo.description}
