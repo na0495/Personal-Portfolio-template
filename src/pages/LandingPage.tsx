@@ -8,6 +8,7 @@ import Github from "../components/Github";
 import Hero from "../components/Hero";
 import Section from "../components/Section";
 import Skills from "../components/Skills";
+import Project from "../components/Project";
 // // icons
 import { ArrowUp } from "tabler-icons-react";
 import ParticlesWrapper from "../components/animations/ParticlesWrapper";
@@ -60,6 +61,9 @@ export default function LandingPage() {
       </Section>
       <Section withBackground={true} height={"200hv"}>
         <Github />
+      </Section>
+      <Section withBackground={false} height={"200hv"}>
+        <Project />
       </Section>
       <div className={classes.sticky}>
         <ActionIcon
