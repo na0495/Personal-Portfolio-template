@@ -12,6 +12,7 @@ import { Seo } from "tabler-icons-react";
 // -----------------------------------------------------------------------------
 
 ReactGA.initialize(googleAnlyticId);
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 // -----------------------------------------------------------------------------
 
