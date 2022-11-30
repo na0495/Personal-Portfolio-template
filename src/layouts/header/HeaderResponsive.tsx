@@ -1,3 +1,8 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+// motion
+import { motion } from "framer-motion";
+// Manatine UI
 import {
   ActionIcon,
   Burger,
@@ -9,11 +14,17 @@ import {
   Transition,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// icons
 import { BrandGithub, BrandLinkedin, BrandTwitter } from "tabler-icons-react";
+// hooks
+import useAnalyticsEventTracker from "../../hooks/useAnalyticsEventTracker";
+// buttons
 import MusicMode from "./MusicMode";
 import SwitchMode from "./SwitchMode";
+// sounds
+import useSound from "use-sound";
+// assets
+import soundUrl from "/src/assets/sounds/rising-pops.mp3";
 
 // -------------------------------------------------
 
@@ -153,12 +164,20 @@ interface HeaderResponsiveProps {
 
 export default function HeaderResponsive({ links }: HeaderResponsiveProps) {
   const navigate = useNavigate();
+  const gaEventTracker = useAnalyticsEventTracker({
+    category: "Header",
+    action: "Click",
+    label: "Header link",
+  });
   const [opened, { toggle, close }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
+  const [play] = useSound(soundUrl, { volume: 0.2 });
 
   const items = links.map((link) => (
-    <a
+    <motion.a
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.8 }}
       key={link.label}
       href={link.link}
       className={cx(
@@ -172,11 +191,13 @@ export default function HeaderResponsive({ links }: HeaderResponsiveProps) {
         event.preventDefault();
         setActive(link.link);
         navigate(link.link);
+        gaEventTracker({ label: link.label });
+        play();
         close();
       }}
     >
       {link.label}
-    </a>
+    </motion.a>
   ));
 
   return (
@@ -204,6 +225,11 @@ export default function HeaderResponsive({ links }: HeaderResponsiveProps) {
               component="a"
               href={link.href}
               target="_blank"
+              onClick={() => {
+                gaEventTracker({
+                  label: link.label,
+                });
+              }}
               sx={{
                 backgroundColor: link.color,
                 color: "white",

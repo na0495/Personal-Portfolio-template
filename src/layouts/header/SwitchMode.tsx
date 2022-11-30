@@ -6,12 +6,19 @@ import { AnimatePresence, motion } from "framer-motion";
 import { MoonStars, Sun } from "tabler-icons-react";
 // sounds
 import useSound from "use-sound";
+// hooks
+import useAnalyticsEventTracker from "../../hooks/useAnalyticsEventTracker";
 // mp3
 import LightSwitch from "/src/assets/sounds/lightswitch.mp3?url";
 
 // ------------------------------------------------------------
 
 export default function SwitchMode() {
+  const gaEventTracker = useAnalyticsEventTracker({
+    category: "Theme",
+    action: "Switch",
+    label: "Switch Theme",
+  });
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
 
   const [play] = useSound(LightSwitch, {
@@ -25,6 +32,11 @@ export default function SwitchMode() {
   const handleClick = () => {
     colorScheme === "dark" ? play({ id: "on" }) : play({ id: "off" });
     toggleColorScheme();
+    gaEventTracker(
+      colorScheme === "dark"
+        ? { label: "Switch to Light Mode" }
+        : { label: "Switch to Dark Mode" }
+    );
   };
 
   return (

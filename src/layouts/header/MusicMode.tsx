@@ -7,12 +7,20 @@ import { AnimatePresence, motion } from "framer-motion";
 import { PlayerPlay, PlayerPause } from "tabler-icons-react";
 // sounds
 import useSound from "use-sound";
+// hooks
+import useAnalyticsEventTracker from "../../hooks/useAnalyticsEventTracker";
 // mp3
 import Chill from "/src/assets/sounds/chill.mp3";
 
 // ------------------------------------------------------------
 
 export default function MusicMode() {
+  const gaEventTracker = useAnalyticsEventTracker({
+    category: "Music",
+    action: "Switch",
+    label: "Switch Music",
+  });
+
   const [playMode, setPlayMode] = useState(true);
 
   // sound effects on click
@@ -22,6 +30,7 @@ export default function MusicMode() {
     // check the playMode value to play to stop the music
     playMode ? play() : stop();
     setPlayMode(!playMode);
+    gaEventTracker(playMode ? { label: "Music Off" } : { label: "Music On" });
   };
 
   return (

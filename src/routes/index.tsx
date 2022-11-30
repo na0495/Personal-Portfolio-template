@@ -5,6 +5,8 @@ import { Navigate, useRoutes } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 // components
 import FallbackLoader from "../components/animations/FallbackLoader";
+// config
+import { googleAnlyticId } from "../config";
 
 // ----------------------------------------------------------------------
 
@@ -15,6 +17,8 @@ const Loadable = (Component: ElementType) => (props: any) => {
     </Suspense>
   );
 };
+
+ReactGA.initialize(googleAnlyticId);
 
 export default function Routes() {
   useEffect(() => {
