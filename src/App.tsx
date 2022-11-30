@@ -1,3 +1,5 @@
+// mantine
+import { NotificationsProvider } from "@mantine/notifications";
 // routes
 import Router from "./routes";
 // components
@@ -12,9 +14,11 @@ import { Seo } from "tabler-icons-react";
 function App() {
   return (
     <ThemeProvider>
-      <Seo />
-      <ScrollToTop />
-      <Router />
+      <NotificationsProvider>
+        <Seo />
+        <ScrollToTop />
+        <Router />
+      </NotificationsProvider>
     </ThemeProvider>
   );
 }

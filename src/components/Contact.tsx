@@ -1,17 +1,26 @@
+// Mantine
 import {
-  createStyles,
-  Text,
-  Title,
-  SimpleGrid,
-  TextInput,
-  Textarea,
   Button,
+  createStyles,
   Group,
-  ActionIcon,
+  SimpleGrid,
+  Text,
+  Textarea,
+  TextInput,
+  Title,
 } from "@mantine/core";
-import { BrandTwitter, BrandYoutube, BrandInstagram } from "tabler-icons-react";
+import { useForm } from "@mantine/form";
+import { showNotification } from "@mantine/notifications";
+// components
 import BoxWrapper from "./BoxWrapper";
 import { ContactIconsList } from "./ContactIcons";
+// utils
+import emailjs from "emailjs-com";
+import { Check } from "tabler-icons-react";
+// config
+import { serviceId, templateId, userId } from "../config";
+
+// -----------------------------------------------------------
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -41,7 +50,10 @@ const useStyles = createStyles((theme) => ({
   },
 
   form: {
-    backgroundColor: theme.white,
+    backgroundColor:
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[7]
+        : theme.colors.gray[0],
     padding: theme.spacing.xl,
     borderRadius: theme.radius.md,
     boxShadow: theme.shadows.lg,
@@ -55,50 +67,57 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
-  input: {
-    backgroundColor: theme.white,
-    borderColor: theme.colors.gray[4],
-    color: theme.black,
-
-    "&::placeholder": {
-      color: theme.colors.gray[5],
-    },
-  },
-
-  inputLabel: {
-    color: theme.black,
-  },
-
   control: {
     backgroundColor:
       theme.colorScheme === "dark"
         ? theme.colors.yellow[5]
-        : theme.colors.orange[1],
+        : theme.colors.orange[4],
 
     "&:hover": {
       backgroundColor:
         theme.colorScheme === "dark"
           ? theme.colors.yellow[6]
-          : theme.colors.orange[4],
+          : theme.colors.green[4],
     },
   },
 }));
 
-const social = [BrandTwitter, BrandYoutube, BrandInstagram];
-
 export function Contact() {
   const { classes } = useStyles();
 
-  // const icons = social.map((Icon, index) => (
-  //   <ActionIcon
-  //     key={index}
-  //     size={28}
-  //     className={classes.social}
-  //     variant="transparent"
-  //   >
-  //     <Icon size={22} />
-  //   </ActionIcon>
-  // ));
+  const form = useForm({
+    initialValues: {
+      email: "",
+      name: "",
+      message: "",
+    },
+
+    validate: {
+      email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
+      name: (value) => (value.length > 0 ? null : "Name is required"),
+      message: (value) => (value.length > 0 ? null : "Message is required"),
+    },
+  });
+
+  const onSubmit = (values: any) => {
+    try {
+      emailjs.send(serviceId, templateId, values, userId).then((result) => {
+        showNotification({
+          title: "Success",
+          message: "Your message has been sent, ! ! 🤩",
+          color: "green",
+          icon: <Check />,
+        });
+        form.reset();
+      });
+    } catch (error) {
+      showNotification({
+        title: "Error",
+        message: "An error occurred while sending your message",
+        color: "red",
+      });
+    }
+  };
 
   return (
     <BoxWrapper>
@@ -114,33 +133,31 @@ export function Contact() {
           </Text>
 
           <ContactIconsList />
-
-          {/* <Group mt="xl">{icons}</Group> */}
         </div>
-        <form className={classes.form} name="contact" method="post">
+        <form onSubmit={form.onSubmit(onSubmit)} className={classes.form}>
           <TextInput
             label="Email"
             placeholder="your@email.com"
-            required
-            classNames={{ input: classes.input, label: classes.inputLabel }}
+            {...form.getInputProps("email")}
           />
           <TextInput
             label="Name"
             placeholder="John Doe"
             mt="md"
-            classNames={{ input: classes.input, label: classes.inputLabel }}
+            {...form.getInputProps("name")}
           />
           <Textarea
-            required
             label="Your message"
             placeholder="I want to order your goods"
             minRows={4}
             mt="md"
-            classNames={{ input: classes.input, label: classes.inputLabel }}
+            {...form.getInputProps("message")}
           />
 
           <Group position="right" mt="md">
-            <Button className={classes.control}>Send message</Button>
+            <Button type="submit" className={classes.control}>
+              Send message
+            </Button>
           </Group>
         </form>
       </SimpleGrid>
