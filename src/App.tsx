@@ -16,6 +16,8 @@ ReactGA.initialize(googleAnlyticId);
 // -----------------------------------------------------------------------------
 
 function App() {
+
+  console.log(googleAnlyticId)
   return (
     <ThemeProvider>
       <Seo />
