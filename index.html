@@ -4,10 +4,16 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/src/assets/programmer.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <meta
       name="google-site-verification"
       content="i3dH6sjHguAYPRedkSQDaeilKMbSksslSQY-Dw0DsH8"
     />
+    <meta
+      name="description"
+      content="I'm Mrabet saad a Full-stack developer, and this is my portofilo, check it out :D !."
+    />
+    <meta property="og:image" content="/src/assets/landing.png" />
     <title>Saad Mrabet Portfolio</title>
   </head>
   <body>
@@ -19,5 +25,13 @@
     </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<{ VITE_REACT_APP_GA_ID }>"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', '<{ VITE_REACT_APP_GA_ID }>');
+    </script>
   </body>
 </html>
