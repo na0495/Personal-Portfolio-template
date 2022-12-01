@@ -75,6 +75,7 @@ export default function About() {
           >
             {aboutMe.title}
           </Title>
+          {!match && (
           <Switch
             label={isTechPersonal ? "Dev view" : "No tech view"}
             checked={isTechPersonal}
@@ -92,6 +93,7 @@ export default function About() {
             color="orange"
             size="lg"
           />
+          )}
         </Group>
         {!match ? (
           isTechPersonal ? (

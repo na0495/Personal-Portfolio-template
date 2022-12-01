@@ -8,8 +8,8 @@ import ParticlesWrapper from "../components/animations/ParticlesWrapper";
 export default function PathPage() {
   return (
     <Page title="Path" isFirst={true} withBackground={false}>
-      <ParticlesWrapper />
       <Path />
+      <ParticlesWrapper />
     </Page>
   );
 }

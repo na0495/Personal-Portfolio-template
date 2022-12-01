@@ -8,8 +8,8 @@ import Skills from "../components/Skills";
 export default function SkillsPage() {
   return (
     <Page title="Skills" isFirst={true} withBackground={false}>
-      <ParticlesWrapper />
       <Skills />
+      <ParticlesWrapper />
     </Page>
   );
 }

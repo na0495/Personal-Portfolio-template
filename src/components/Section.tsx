@@ -24,8 +24,8 @@ const Section = forwardRef<HTMLDivElement, SectionProps>(
           marginBottom: 150,
         },
         [theme.fn.largerThan("md")]: {
-          marginTop: isFirst ? -60 : 0,
-          marginBottom: 0,
+          marginTop: isFirst ? -125 : 0,
+          marginBottom: 10,
         },
         marginRight: -16,
         marginLeft: -16,

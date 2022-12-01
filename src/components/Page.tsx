@@ -1,7 +1,6 @@
 import { forwardRef, ReactNode } from "react";
-import { Helmet } from "react-helmet-async";
 // mantine
-import { Box } from "@mantine/core";
+import { Box, Center } from "@mantine/core";
 import CustomHelmet from "./CustomHelmet";
 
 // ----------------------------------------------------------
@@ -20,17 +19,12 @@ const Page = forwardRef<HTMLDivElement, PageProps>(
     { children, title = "", meta, height, isFirst, withBackground, ...other },
     ref
   ) => (
-    <>
+    <Center ref={ref} mt={100}>
       <CustomHelmet title={title} />
-
       <Box
         sx={(theme) => ({
           marginRight: -16,
           marginLeft: -16,
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
           backgroundColor: withBackground
             ? theme.colorScheme === "dark"
               ? theme.colors.yellow[4]
@@ -40,7 +34,7 @@ const Page = forwardRef<HTMLDivElement, PageProps>(
       >
         {children}
       </Box>
-    </>
+    </Center>
   )
 );
 

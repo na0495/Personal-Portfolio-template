@@ -11,13 +11,13 @@ export default function ProjectsPage() {
   return (
     <>
       <CustomHelmet title="Projects" />
-      <ParticlesWrapper />
       <Section>
         <Github />
       </Section>
       <Section>
         <Project />
       </Section>
+      <ParticlesWrapper />
     </>
   );
 }

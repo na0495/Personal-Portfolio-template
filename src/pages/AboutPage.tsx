@@ -8,8 +8,8 @@ import Page from "../components/Page";
 export default function AboutPage() {
   return (
     <Page title="About me" isFirst={true} withBackground={false}>
-      <ParticlesWrapper />
       <About />
+      <ParticlesWrapper />
     </Page>
   );
 }

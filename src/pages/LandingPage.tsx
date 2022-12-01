@@ -49,7 +49,6 @@ export default function LandingPage() {
   return (
     <>
       <div ref={targetRef} />
-      <ParticlesWrapper />
       <Section withBackground={false} isFirst={true}>
         <Hero />
       </Section>
@@ -78,6 +77,7 @@ export default function LandingPage() {
           <ArrowUp />
         </ActionIcon>
       </div>
+      <ParticlesWrapper />
     </>
   );
 }

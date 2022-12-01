@@ -8,8 +8,8 @@ import Page from "../components/Page";
 export default function LandingPage() {
   return (
     <Page title="Contact me" isFirst={true} withBackground={false}>
-      <ParticlesWrapper />
       <Contact />
+      <ParticlesWrapper />
     </Page>
   );
 }
