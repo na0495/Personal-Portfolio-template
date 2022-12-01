@@ -76,23 +76,27 @@ export default function About() {
             {aboutMe.title}
           </Title>
           {!match && (
-          <Switch
-            label={isTechPersonal ? "Dev view" : "No tech view"}
-            checked={isTechPersonal}
-            onChange={() => setIsTechPersonal(!isTechPersonal)}
-            onLabel={
-              <Code size={16} strokeWidth={2.5} color={theme.colors.gray[4]} />
-            }
-            offLabel={
-              <CodeOff
-                size={16}
-                strokeWidth={2.5}
-                color={theme.colors.yellow[4]}
-              />
-            }
-            color="orange"
-            size="lg"
-          />
+            <Switch
+              label={isTechPersonal ? "Dev view" : "No tech view"}
+              checked={isTechPersonal}
+              onChange={() => setIsTechPersonal(!isTechPersonal)}
+              onLabel={
+                <Code
+                  size={16}
+                  strokeWidth={2.5}
+                  color={theme.colors.gray[4]}
+                />
+              }
+              offLabel={
+                <CodeOff
+                  size={16}
+                  strokeWidth={2.5}
+                  color={theme.colors.yellow[4]}
+                />
+              }
+              color="orange"
+              size="lg"
+            />
           )}
         </Group>
         {!match ? (
