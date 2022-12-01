@@ -19,8 +19,6 @@ const Loadable = (Component: ElementType) => (props: any) => {
 export default function Routes() {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
-    // check if react ga is working
-    console.log("ReactGA", ReactGA);
   }, [window.location.pathname, window.location.search]);
 
   return useRoutes([
