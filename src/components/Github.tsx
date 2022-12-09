@@ -169,7 +169,7 @@ export default function Github() {
           {github.contribution}
         </Title>
         <BoxWrapper withBackground={true}>
-          <GitHubCalendar username="na0495" />
+          <GitHubCalendar username="Egon001" />
         </BoxWrapper>
       </BoxWrapper>
     </Container>

@@ -14,12 +14,12 @@ import { BrandTwitter, BrandGithub, BrandLinkedin } from "tabler-icons-react";
 const socialLinks = [
   {
     label: "Twitter",
-    href: "https://twitter.com/na0495",
+    href: "https://twitter.com/Egon001",
     icon: <BrandTwitter size={28} />,
   },
   {
     label: "Github",
-    href: "https://github.com/na0495",
+    href: "https://github.com/Egon001",
     icon: <BrandGithub size={28} />,
   },
   {
@@ -80,7 +80,7 @@ export default function Footer() {
     <footer className={classes.footer}>
       <Container className={classes.afterFooter}>
         <Text color="dimmed" size="sm">
-          Copyright © 2022 na0495 All rights reserved.
+          Copyright © 2022 Egon001 All rights reserved.
         </Text>
 
         <Group spacing={0} className={classes.social} position="right" noWrap>

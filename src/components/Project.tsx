@@ -38,7 +38,7 @@ export default function Github() {
   const [repos, setRepos] = useState<any>([]);
 
   //   useEffect(() => {
-  //     get("/users/na0495/repos").then(res => {
+  //     get("/users/Egon001/repos").then(res => {
   //       setRepos(
   //         res?.sort((a, b) => b.stargazers_count - a.stargazers_count).slice(0, 16)
   //       );
@@ -47,7 +47,7 @@ export default function Github() {
   //   }, []);
 
   const fetchData = async () => {
-    const res = await fetch("https://api.github.com/users/na0495/repos");
+    const res = await fetch("https://api.github.com/users/Egon001/repos");
     const data = await res.json();
     setRepos(
       data

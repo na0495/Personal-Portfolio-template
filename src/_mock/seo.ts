@@ -9,6 +9,6 @@ export const metaData = {
   siteUrl: "https://saad-mrabet.netlify.app/",
   siteLanguage: "en",
   siteLocale: "en_US",
-  twitterUsername: "@na0495",
-  githubUsername: "na0495",
+  twitterUsername: "@Egon001",
+  githubUsername: "Egon001",
 };

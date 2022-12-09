@@ -1,4 +1,5 @@
 import ReactGA from "react-ga";
+import { Seo } from "tabler-icons-react";
 // mantine
 import { NotificationsProvider } from "@mantine/notifications";
 // routes
@@ -8,7 +9,6 @@ import ScrollToTop from "./components/ScrollToTop";
 // providers
 import ThemeProvider from "./theme/ThemeProvider";
 // config
-import { Seo } from "tabler-icons-react";
 import { googleAnlyticId } from "./config";
 
 // -----------------------------------------------------------------------------

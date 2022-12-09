@@ -4,8 +4,8 @@
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
-  <a href="https://twitter.com/na0495" target="_blank">
-    <img alt="Twitter: na0495" src="https://img.shields.io/twitter/follow/na0495.svg?style=social" />
+  <a href="https://twitter.com/Egon001" target="_blank">
+    <img alt="Twitter: Egon001" src="https://img.shields.io/twitter/follow/Egon001.svg?style=social" />
   </a>
 </p>
 
@@ -53,16 +53,16 @@ Start the server
 ## Author
 
 <a href = "https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=na0495/mario-with-js"/>
+  <img src = "https://contrib.rocks/image?repo=Egon001/mario-with-js"/>
 </a>
 
 <br>
 
-👤 **na0495**
+👤 **Egon001**
 
 - Website: https://saad-mrabet.netlify.app/
-- Twitter: [@na0495](https://twitter.com/na0495)
-- Github: [@na0495](https://github.com/na0495)
+- Twitter: [@Egon001](https://twitter.com/Egon001)
+- Github: [@Egon001](https://github.com/Egon001)
 - LinkedIn: [@https:\/\/www.linkedin.com\/in\/saad-mrabet-978a01188\/](https://linkedin.com/in/https://www.linkedin.com/in/saad-mrabet-978a01188/)
 
 ## Show your support
