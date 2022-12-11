@@ -1,5 +1,5 @@
 import { ElementType, lazy, Suspense, useEffect } from "react";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 import { Navigate, useRoutes } from "react-router-dom";
 // layouts
 import MainLayout from "../layouts/MainLayout";

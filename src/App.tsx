@@ -1,4 +1,4 @@
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 import { Seo } from "tabler-icons-react";
 // mantine
 import { NotificationsProvider } from "@mantine/notifications";

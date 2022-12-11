@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 // ----------------------------------------------------------------------
 
