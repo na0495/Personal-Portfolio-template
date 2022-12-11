@@ -9,11 +9,14 @@ import {
   Paper,
   Title,
 } from "@mantine/core";
+import { m } from "framer-motion";
 // icons
 import Type from "./animations/Type";
 // svg
 //
 import HeroCanvas from "./HeroCanvas";
+import { varFade } from "./animations/variants";
+import { textGradient } from "../utils/cssStyles";
 
 // --------------------------------------------------
 
@@ -75,6 +78,45 @@ const useStyles: any = createStyles((theme) => ({
     borderRadius: theme.radius.lg,
     padding: "4px 12px",
   },
+
+  gradientText: {
+    ...textGradient(
+      `300deg, 
+      ${
+        theme.colorScheme === "dark"
+          ? theme.colors.yellow[4]
+          : theme.colors.orange[3]
+      } 0%,
+      ${
+        theme.colorScheme === "dark"
+          ? theme.colors.lime[5]
+          : theme.colors.lime[3]
+      } 50%,
+      ${
+        theme.colorScheme === "dark"
+        ? theme.colors.yellow[4]
+        : theme.colors.orange[3]
+      } 50%,
+      ${
+        theme.colorScheme === "dark"
+        ? theme.colors.lime[5]
+        : theme.colors.lime[3]
+      } 75%,
+      ${
+        theme.colorScheme === "dark"
+        ? theme.colors.yellow[4]
+        : theme.colors.orange[3]
+      } 100%`
+    ),
+    backgroundSize: "400%",
+    fontSize: 64 / 14 + "rem",
+    textAlign: 'center',
+    lineHeight: 1,
+    padding: 0,
+    marginTop: 24,
+    marginLeft: -30,
+    marginBottom: 24,
+  },
 }));
 
 export default function Hero() {
@@ -85,24 +127,42 @@ export default function Hero() {
         <Grid.Col lg={6} md={7} sm={12} mt={95}>
           <Center>
             <Box className={classes.box}>
-              <Title className={classes.title}>
-                I'm <span className={classes.highlight}>Mrabet saâd</span> a{" "}
-                <br />{" "}
-              </Title>
-              <Title
-                sx={(theme) => ({
-                  marginTop: 25,
-                  color:
-                    theme.colorScheme === "dark"
-                      ? theme.colors.yellow[4]
-                      : theme.colors.orange[3],
-                  [theme.fn.smallerThan("md")]: {
-                    fontSize: 28,
-                  },
-                })}
-              >
-                <Type />
-              </Title>
+              <m.div variants={varFade().in}>
+                <Title className={classes.title}>
+                  Hello, I'm <br />
+                </Title>
+              </m.div>
+              <m.div variants={varFade().in}>
+                <m.h1
+                  animate={{
+                    backgroundPosition: "200%",
+                  }}
+                  transition={{
+                    repeatType: "reverse",
+                    ease: "linear",
+                    duration: 1,
+                    repeat: Infinity,
+                  }}
+                  className={classes.gradientText}
+                >
+                  Mrabet saâd
+                </m.h1>
+              </m.div>
+              <m.div variants={varFade().in}>
+                <Title
+                  sx={(theme) => ({
+                    color:
+                      theme.colorScheme === "dark"
+                        ? theme.colors.yellow[4]
+                        : theme.colors.orange[3],
+                    [theme.fn.smallerThan("md")]: {
+                      fontSize: 34,
+                    },
+                  })}
+                >
+                  <Type />
+                </Title>
+              </m.div>
               <Group mt={30}>
                 <Button radius="lg" size="md" className={classes.control}>
                   Find out
