@@ -1,9 +1,9 @@
-import { Suspense } from "react";
-import { ThemeIcon, RingProgress, Text, Center } from "@mantine/core";
+import { RingProgress, Text } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { Html, OrbitControls, useProgress } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import { Suspense } from "react";
 import { Avatar } from "../assets/3DAvatar";
-import { useMediaQuery } from "@mantine/hooks";
 
 // ----------------------------------------------------------
 

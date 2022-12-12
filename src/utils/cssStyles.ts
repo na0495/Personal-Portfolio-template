@@ -7,3 +7,9 @@ export function textGradient(value: string) {
     WebkitTextFillColor: "transparent",
   };
 }
+
+export function backgroundGradient(value: string) {
+  return {
+    background: `-webkit-linear-gradient(${value})`,
+  };
+}

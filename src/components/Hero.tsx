@@ -8,6 +8,7 @@ import {
   Group,
   Paper,
   Title,
+  useMantineTheme,
 } from "@mantine/core";
 import { m } from "framer-motion";
 // icons
@@ -16,7 +17,7 @@ import Type from "./animations/Type";
 //
 import HeroCanvas from "./HeroCanvas";
 import { varFade } from "./animations/variants";
-import { textGradient } from "../utils/cssStyles";
+import { textGradient, backgroundGradient } from "../utils/cssStyles";
 import MotionContainer from "./animations/MotionContainer";
 import getVariant from "./animations/variants/getVariant";
 
@@ -85,7 +86,7 @@ const useStyles: any = createStyles((theme) => ({
 
   gradientText: {
     ...textGradient(
-      `300deg, 
+      `100deg, 
       ${
         theme.colorScheme === "dark"
           ? theme.colors.yellow[4]
@@ -121,10 +122,59 @@ const useStyles: any = createStyles((theme) => ({
     marginLeft: -30,
     marginBottom: 24,
   },
+
+  gradientBg: {
+    ...backgroundGradient(
+      `0deg,
+      ${
+        theme.colorScheme === "dark"
+          ? theme.colors.yellow[4]
+          : theme.colors.orange[4]
+      } 0%,
+      ${
+        theme.colorScheme === "dark"
+          ? theme.colors.yellow[2]
+          : theme.colors.orange[2]
+      } 25%,
+      ${
+        theme.colorScheme === "dark"
+          ? theme.colors.yellow[4]
+          : theme.colors.red[4]
+      } 50%,
+      ${
+        theme.colorScheme === "dark"
+          ? theme.colors.yellow[2]
+          : theme.colors.orange[2]
+      } 75%,
+      ${
+        theme.colorScheme === "dark"
+          ? theme.colors.yellow[4]
+          : theme.colors.orange[4]
+      } 100%`
+    ),
+    backgroundSize: "400%",
+    [theme.fn.smallerThan("sm")]: {
+      marginTop: 125,
+      width: 225,
+      height: 225,
+    },
+    [theme.fn.largerThan("sm")]: {
+      marginTop: 125,
+      minWidth: 400,
+      minHeight: 400,
+    },
+    boxShadow: `0 0 10px ${
+      theme.colorScheme === "dark"
+        ? theme.colors.white[3]
+        : theme.colors.white[4]
+    } !important`,
+    borderRadius: 10,
+  },
 }));
 
 export default function Hero() {
   const { classes } = useStyles();
+
   return (
     <Group pr={10}>
       <Grid justify="space-between" align="center">
@@ -186,37 +236,22 @@ export default function Hero() {
           </Center>
         </Grid.Col>
         <Grid.Col lg={6} md={5} sm={12}>
-          <Center>
-            <Paper
-              shadow="lg"
-              p="md"
-              radius="lg"
-              sx={(theme) => ({
-                backgroundColor:
-                  theme.colorScheme === "dark"
-                    ? theme.colors.yellow[2]
-                    : theme.colors.orange[1],
-
-                [theme.fn.smallerThan("sm")]: {
-                  marginTop: 125,
-                  width: 225,
-                  height: 225,
-                },
-                [theme.fn.largerThan("sm")]: {
-                  marginTop: 125,
-                  minWidth: 400,
-                  minHeight: 400,
-                },
-                boxShadow: `0 0 10px ${
-                  theme.colorScheme === "dark"
-                    ? theme.colors.white[3]
-                    : theme.colors.white[4]
-                } !important`,
-              })}
-            >
-              <HeroCanvas />
-            </Paper>
-          </Center>
+          {/* <Center> */}
+          <m.div
+            animate={{
+              backgroundPosition: "400%",
+            }}
+            transition={{
+              repeatType: "reverse",
+              ease: "easeInOut",
+              duration: 20,
+              repeat: Infinity,
+            }}
+            className={classes.gradientBg}
+          >
+            <HeroCanvas />
+          </m.div>
+          {/* </Center> */}
         </Grid.Col>
       </Grid>
     </Group>
