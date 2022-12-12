@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import react from "@vitejs/plugin-react-swc";
 import svgLoader from "vite-svg-loader";
 import svgr from "@honkhonk/vite-plugin-svgr";
 // ------------------------------------
