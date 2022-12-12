@@ -17,8 +17,12 @@ import Type from "./animations/Type";
 import HeroCanvas from "./HeroCanvas";
 import { varFade } from "./animations/variants";
 import { textGradient } from "../utils/cssStyles";
+import MotionContainer from "./animations/MotionContainer";
+import getVariant from "./animations/variants/getVariant";
 
 // --------------------------------------------------
+
+const TEXT = "Hello, I'm ";
 
 const useStyles: any = createStyles((theme) => ({
   title: {
@@ -85,32 +89,32 @@ const useStyles: any = createStyles((theme) => ({
       ${
         theme.colorScheme === "dark"
           ? theme.colors.yellow[4]
-          : theme.colors.orange[3]
+          : theme.colors.orange[4]
       } 0%,
       ${
         theme.colorScheme === "dark"
-          ? theme.colors.lime[5]
-          : theme.colors.lime[3]
+          ? theme.colors.cyan[5]
+          : theme.colors.cyan[3]
+      } 25%,
+      ${
+        theme.colorScheme === "dark"
+          ? theme.colors.yellow[4]
+          : theme.colors.red[4]
       } 50%,
       ${
         theme.colorScheme === "dark"
-        ? theme.colors.yellow[4]
-        : theme.colors.orange[3]
-      } 50%,
-      ${
-        theme.colorScheme === "dark"
-        ? theme.colors.lime[5]
-        : theme.colors.lime[3]
+          ? theme.colors.cyan[5]
+          : theme.colors.cyan[3]
       } 75%,
       ${
         theme.colorScheme === "dark"
-        ? theme.colors.yellow[4]
-        : theme.colors.orange[3]
+          ? theme.colors.yellow[4]
+          : theme.colors.orange[4]
       } 100%`
     ),
     backgroundSize: "400%",
     fontSize: 64 / 14 + "rem",
-    textAlign: 'center',
+    textAlign: "center",
     lineHeight: 1,
     padding: 0,
     marginTop: 24,
@@ -127,11 +131,17 @@ export default function Hero() {
         <Grid.Col lg={6} md={7} sm={12} mt={95}>
           <Center>
             <Box className={classes.box}>
-              <m.div variants={varFade().in}>
-                <Title className={classes.title}>
-                  Hello, I'm <br />
-                </Title>
-              </m.div>
+              <MotionContainer
+                component={m.h1}
+                sx={{ typography: "h1", display: "flex", overflow: "hidden" }}
+                className={classes.title}
+              >
+                {TEXT.split("").map((letter, index) => (
+                  <m.span key={index} variants={getVariant("slideInUp")}>
+                    {letter}
+                  </m.span>
+                ))}
+              </MotionContainer>
               <m.div variants={varFade().in}>
                 <m.h1
                   animate={{
@@ -140,7 +150,7 @@ export default function Hero() {
                   transition={{
                     repeatType: "reverse",
                     ease: "linear",
-                    duration: 1,
+                    duration: 20,
                     repeat: Infinity,
                   }}
                   className={classes.gradientText}
@@ -148,6 +158,7 @@ export default function Hero() {
                   Mrabet saâd
                 </m.h1>
               </m.div>
+
               <m.div variants={varFade().in}>
                 <Title
                   sx={(theme) => ({

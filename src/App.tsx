@@ -10,19 +10,22 @@ import ScrollToTop from "./components/ScrollToTop";
 import ThemeProvider from "./theme/ThemeProvider";
 // config
 import { googleAnlyticId } from "./config";
+import MotionLazyContainer from "./components/animations/MotionLazyContainer";
 
 // -----------------------------------------------------------------------------
 
 function App() {
   ReactGA.initialize(googleAnlyticId);
   return (
-    <ThemeProvider>
-      <NotificationsProvider>
-        <Seo />
-        <ScrollToTop />
-        <Router />
-      </NotificationsProvider>
-    </ThemeProvider>
+    <MotionLazyContainer>
+      <ThemeProvider>
+        <NotificationsProvider>
+          <Seo />
+          <ScrollToTop />
+          <Router />
+        </NotificationsProvider>
+      </ThemeProvider>
+    </MotionLazyContainer>
   );
 }
 
