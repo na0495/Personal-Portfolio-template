@@ -86,32 +86,12 @@ const useStyles: any = createStyles((theme) => ({
 
   gradientText: {
     ...textGradient(
-      `100deg, 
-      ${
-        theme.colorScheme === "dark"
-          ? theme.colors.yellow[4]
-          : theme.colors.orange[4]
-      } 0%,
-      ${
-        theme.colorScheme === "dark"
-          ? theme.colors.cyan[5]
-          : theme.colors.cyan[3]
-      } 25%,
-      ${
-        theme.colorScheme === "dark"
-          ? theme.colors.yellow[4]
-          : theme.colors.red[4]
-      } 50%,
-      ${
-        theme.colorScheme === "dark"
-          ? theme.colors.cyan[5]
-          : theme.colors.cyan[3]
-      } 75%,
-      ${
-        theme.colorScheme === "dark"
-          ? theme.colors.yellow[4]
-          : theme.colors.orange[4]
-      } 100%`
+      `300deg, 
+      #FF9F29 0%,
+      #F4E06D 25%,
+      #FF9F29 50%,
+      #F4E06D 75%,
+      #FF9F29 100%`
     ),
     backgroundSize: "400%",
     fontSize: 64 / 14 + "rem",
@@ -126,31 +106,11 @@ const useStyles: any = createStyles((theme) => ({
   gradientBg: {
     ...backgroundGradient(
       `0deg,
-      ${
-        theme.colorScheme === "dark"
-          ? theme.colors.yellow[4]
-          : theme.colors.orange[4]
-      } 0%,
-      ${
-        theme.colorScheme === "dark"
-          ? theme.colors.yellow[2]
-          : theme.colors.orange[2]
-      } 25%,
-      ${
-        theme.colorScheme === "dark"
-          ? theme.colors.yellow[4]
-          : theme.colors.red[4]
-      } 50%,
-      ${
-        theme.colorScheme === "dark"
-          ? theme.colors.yellow[2]
-          : theme.colors.orange[2]
-      } 75%,
-      ${
-        theme.colorScheme === "dark"
-          ? theme.colors.yellow[4]
-          : theme.colors.orange[4]
-      } 100%`
+        #FF9F29 0%,
+        #F4E06D 25%,
+        #FF9F29 50%,
+        #F4E06D 75%,
+        #FF9F29 100%`
     ),
     backgroundSize: "400%",
     [theme.fn.smallerThan("sm")]: {

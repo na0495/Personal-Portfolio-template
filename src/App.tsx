@@ -6,11 +6,11 @@ import { NotificationsProvider } from "@mantine/notifications";
 import Router from "./routes";
 // components
 import ScrollToTop from "./components/ScrollToTop";
+import MotionLazyContainer from "./components/animations/MotionLazyContainer";
 // providers
 import ThemeProvider from "./theme/ThemeProvider";
 // config
 import { googleAnlyticId } from "./config";
-import MotionLazyContainer from "./components/animations/MotionLazyContainer";
 
 // -----------------------------------------------------------------------------
 
