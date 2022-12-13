@@ -140,13 +140,13 @@ const useStyles = createStyles((theme) => ({
 const socialLinks = [
   {
     label: "Twitter",
-    href: "https://twitter.com/Egon001",
+    href: "https://twitter.com/na0495",
     icon: <BrandTwitter size={28} />,
     color: "#1DA1F2",
   },
   {
     label: "Github",
-    href: "https://github.com/Egon001",
+    href: "https://github.com/na0495",
     icon: <BrandGithub size={28} />,
     color: "#24292e",
   },
