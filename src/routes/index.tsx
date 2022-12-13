@@ -10,7 +10,8 @@ import FallbackLoader from "../components/animations/FallbackLoader";
 
 const Loadable = (Component: ElementType) => (props: any) => {
   return (
-    <Suspense fallback={<FallbackLoader />}>
+    // <Suspense fallback={<FallbackLoader />}>
+    <Suspense fallback={null}>
       <Component {...props} />
     </Suspense>
   );
