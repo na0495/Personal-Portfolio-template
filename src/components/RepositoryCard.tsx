@@ -3,7 +3,7 @@ import {
   Box,
   Group,
   Text,
-  TypographyStylesProvider,
+  TypographyStylesProvider
 } from "@mantine/core";
 import { motion } from "framer-motion";
 import { BrandGithub, GitFork, Star } from "tabler-icons-react";
@@ -42,8 +42,8 @@ export default function RepositoryCard({
           padding: theme.spacing.md,
           maxHeight: 175,
           minHeight: 150,
-          borderRadius: 20,
-          marginTop: theme.spacing.md,
+          borderRadius: 25,
+          // marginTop: theme.spacing.sm,
           border: `1px solid ${
             theme.colorScheme === "dark"
               ? theme.colors.dark[4]
@@ -66,19 +66,19 @@ export default function RepositoryCard({
             <Group position="apart">
               <Group>
                 {forks_count && (
-                  <Box>
-                    <GitFork size={18} />
+                  <Group>
+                    <GitFork size={18} color={"red"} />
                     {forks_count}
-                  </Box>
+                  </Group>
                 )}
-                <Box>
-                  <Star size={18} />
+                <Group>
+                  <Star size={18} color={"orange"}/>
                   {stargazers_count}
-                </Box>
+                </Group>
               </Group>
               {language && (
-                <Badge color={getTagColor(language)} size="sm">
-                  <Text>{language}</Text>
+                <Badge color={getTagColor(language)} size="md">
+                  <Text size="xs">{language}</Text>
                 </Badge>
               )}
             </Group>

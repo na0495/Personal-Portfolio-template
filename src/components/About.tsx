@@ -77,7 +77,7 @@ export default function About() {
           </Title>
           {!match && (
             <Switch
-              label={isTechPersonal ? "Dev view" : "No tech view"}
+              label={isTechPersonal ? "Dev view" : "Non tech view"}
               checked={isTechPersonal}
               onChange={() => setIsTechPersonal(!isTechPersonal)}
               onLabel={
