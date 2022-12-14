@@ -1,22 +1,24 @@
 import { useEffect, useState } from "react";
 // Mantine
 import {
-  Container,
-  Title,
-  Text,
-  Box,
   Avatar,
-  Group,
+  Box,
+  Center,
+  Container,
   createStyles,
-  Skeleton,
   Grid,
+  Group,
+  Skeleton,
+  Text,
+  Title,
 } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 // Components
-import BoxWrapper from "./BoxWrapper";
 import GitHubCalendar from "react-github-calendar";
-// d_mock
-import github from "../_mock/github.json";
+import BoxWrapper from "./BoxWrapper";
+// _mock & config
 import { GITHUB_USERNAME } from "../config";
+import github from "../_mock/github.json";
 
 // ----------------------------------------------------------------------------
 
@@ -52,6 +54,9 @@ export default function Github() {
   const { classes } = useStyles();
   const [loading, setLoading] = useState(true);
   const [totalCommits, setTotalCommits] = useState(0);
+  const matches = useMediaQuery("(min-width: 630px)");
+
+  console.log(matches);
 
   const fetchData = async () => {
     const res = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
@@ -110,8 +115,12 @@ export default function Github() {
                 ? theme.colors.dark[4]
                 : theme.colors.gray[3]
             }`,
-            boxShadow: `${theme.shadows.md} !important`,
             textDecoration: "none",
+            boxShadow: `0 0 10px ${
+              theme.colorScheme === "dark"
+                ? theme.colors.white[3]
+                : theme.colors.white[6]
+            } !important`,
 
             "&:hover": {
               backgroundColor:
@@ -134,15 +143,15 @@ export default function Github() {
                 </Grid.Col>
               </Grid>
             </>
-          ) : (
+          ) : matches ? (
             <Group noWrap>
-              <div>
+              <Box>
                 <Avatar src={user?.avatar_url} size={125} radius="md" />
                 <Text mt={10} mb={-10} ml={15}>
                   {user?.followers} followers
                 </Text>
-              </div>
-              <div>
+              </Box>
+              <Box>
                 <Text size="lg" weight={700} className={classes.name}>
                   {user?.login}
                 </Text>
@@ -152,8 +161,30 @@ export default function Github() {
                     commits.
                   </Text>
                 </Group>
-              </div>
+              </Box>
             </Group>
+          ) : (
+            <>
+              <Center>
+                <div>
+                  <Avatar src={user?.avatar_url} size={125} radius="md" />
+                  <Text mt={10} mb={-10} ml={15}>
+                    {user?.followers} followers
+                  </Text>
+                </div>
+              </Center>
+              <Box mt={25}>
+                <Text size="lg" weight={700} className={classes.name}>
+                  {user?.login}
+                </Text>
+                <Group noWrap spacing={10} mt={3}>
+                  <Text size="md" className="text">
+                    {user?.bio} <br /> My account curently has {totalCommits}{" "}
+                    commits.
+                  </Text>
+                </Group>
+              </Box>
+            </>
           )}
         </Box>
         <Title
@@ -169,7 +200,11 @@ export default function Github() {
           {github.contribution}
         </Title>
         <BoxWrapper withBackground={true}>
-          <GitHubCalendar username="na0495" />
+          <GitHubCalendar
+            username={GITHUB_USERNAME}
+            blockSize={matches ? 15 : 5}
+            fontSize={matches ? 14 : 7}
+          />
         </BoxWrapper>
       </BoxWrapper>
     </Container>

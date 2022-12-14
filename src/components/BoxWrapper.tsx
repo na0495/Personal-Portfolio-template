@@ -9,7 +9,10 @@ const BoxWrapper = forwardRef<HTMLDivElement, any>(
       <Box
         sx={(theme) => ({
           textAlign: align,
-          padding: theme.spacing.xl * 2,
+          [theme.fn.largerThan("xs")]: {
+            padding: theme.spacing.xl * 2,
+          },
+
           borderRadius: theme.radius.md,
           marginTop: theme.spacing.xl,
           marginBottom: theme.spacing.xl,
