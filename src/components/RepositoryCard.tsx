@@ -3,7 +3,7 @@ import {
   Box,
   Group,
   Text,
-  TypographyStylesProvider
+  TypographyStylesProvider,
 } from "@mantine/core";
 import { motion } from "framer-motion";
 import { BrandGithub, GitFork, Star } from "tabler-icons-react";
@@ -72,7 +72,7 @@ export default function RepositoryCard({
                   </Group>
                 )}
                 <Group>
-                  <Star size={18} color={"orange"}/>
+                  <Star size={18} color={"orange"} />
                   {stargazers_count}
                 </Group>
               </Group>
