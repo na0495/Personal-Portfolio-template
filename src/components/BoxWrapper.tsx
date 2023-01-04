@@ -28,7 +28,7 @@ const BoxWrapper = forwardRef<HTMLDivElement, any>(
             : theme.colorScheme === "dark"
             ? theme.colors.dark[5]
             : theme.colors.white[0],
-          zIndex: 5,
+          // zIndex: 9999,
           boxShadow: `0 0 10px ${
             theme.colorScheme === "dark"
               ? theme.colors.white[3]

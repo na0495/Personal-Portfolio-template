@@ -19,6 +19,11 @@ import sqlitePng from "../assets/languages/sqlite.png";
 import tailwindPng from "../assets/languages/tailwind.png";
 import typescriptPng from "../assets/languages/typescript.png";
 import vitePng from "../assets/languages/vite.png";
+import awsPng from "../assets/languages/aws.png";
+import fastapiPng from "../assets/languages/fastapi.png";
+import flaskPng from "../assets/languages/flask.png";
+import dartPng from "../assets/languages/dart.png";
+import flutterPng from "../assets/languages/flutter.png";
 
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -26,7 +31,7 @@ export const tech = [
   {
     title: "Technologies & Tools",
     description:
-      "For me, those are some of the tech & tools that i like to use on my daily work, and which I really enjoy using them on the different projects.",
+      "For me, those are some of the tech & tools that i like to use on my daily work, and which I really enjoy using them on the different projects either personal or professional.",
     data: [
       {
         type: "Programming languages",
@@ -38,6 +43,7 @@ export const tech = [
           cssPng,
           golangPng,
           bashPng,
+          dartPng,
         ],
       },
       {
@@ -48,7 +54,10 @@ export const tech = [
           tailwindPng,
           djangoPng,
           djangoRestFrameworkPng,
+          fastapiPng,
+          flaskPng,
           angularPng,
+          flutterPng,
         ],
       },
       {
@@ -59,6 +68,7 @@ export const tech = [
           gitPng,
           githubPng,
           azurePng,
+          awsPng,
           netlifyPng,
           dockerPng,
           vitePng,

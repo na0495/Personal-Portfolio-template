@@ -12,6 +12,7 @@ import Project from "../components/Project";
 // // icons
 import { ArrowUp } from "tabler-icons-react";
 import ParticlesWrapper from "../components/animations/ParticlesWrapper";
+import GithubWrapped from "../components/GithubWrapped";
 
 // -------------------------------------------------
 
@@ -58,10 +59,13 @@ export default function LandingPage() {
       <Section withBackground={false}>
         <Skills />
       </Section>
-      <Section withBackground={true} height={"200hv"}>
-        <Github />
+      <Section withBackground={true}>
+        <GithubWrapped />
       </Section>
       <Section withBackground={false} height={"200hv"}>
+        <Github />
+      </Section>
+      <Section withBackground={true} height={"200hv"}>
         <Project />
       </Section>
       <div className={classes.sticky}>

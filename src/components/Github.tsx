@@ -56,8 +56,6 @@ export default function Github() {
   const [totalCommits, setTotalCommits] = useState(0);
   const matches = useMediaQuery("(min-width: 630px)");
 
-  console.log(matches);
-
   const fetchData = async () => {
     const res = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
     const data = await res.json();
