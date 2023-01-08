@@ -1,8 +1,16 @@
-// my age
+import { birthDate } from "../config";
+
+// ----------------------------------------------
+
 function getAge() {
-  const birthDate = new Date("1999-03-31");
-  const  birthYear = birthDate.getFullYear();
-  return new Date().getFullYear() - birthYear;
+  const tempBirthDate = new Date(birthDate);
+  const today = new Date();
+  let age = today.getFullYear() - tempBirthDate.getFullYear();
+  const month = today.getMonth() - tempBirthDate.getMonth();
+  if (month < 0 || (month === 0 && today.getDate() < tempBirthDate.getDate())) {
+    age--;
+  }
+  return age;
 }
 
 export const aboutMe = {

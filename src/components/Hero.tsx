@@ -5,8 +5,9 @@ import {
   Center,
   createStyles,
   Grid,
-  Group, ThemeIcon,
-  Title
+  Group,
+  ThemeIcon,
+  Title,
 } from "@mantine/core";
 import { m } from "framer-motion";
 // hooks
@@ -24,7 +25,7 @@ import { Star } from "tabler-icons-react";
 
 // --------------------------------------------------
 
-const STRING: string[] = ["Hello", ",", "I'm"]
+const STRING: string[] = ["Hello", ",", "I'm"];
 
 const useStyles: any = createStyles((theme) => ({
   title: {
@@ -65,7 +66,7 @@ const useStyles: any = createStyles((theme) => ({
         theme.colorScheme === "dark"
           ? theme.colors.dark[9]
           : theme.colors.orange[1],
-    },    
+    },
   },
 
   image: {
@@ -155,17 +156,17 @@ export default function Hero() {
                 sx={{ typography: "h1", display: "flex", overflow: "hidden" }}
                 className={classes.title}
               >
- 
-                {STRING.map((text) => (
-                  text.split("").map((letter, index) => (
-                    letter === "," ? <span>,&nbsp;</span>: (
+                {STRING.map((text) =>
+                  text.split("").map((letter, index) =>
+                    letter === "," ? (
+                      <span>,&nbsp;</span>
+                    ) : (
                       <m.span key={index} variants={getVariant("slideInUp")}>
                         {letter}
                       </m.span>
                     )
-                  ))
-                ))}
-
+                  )
+                )}
               </MotionContainer>
               <m.div variants={varFade().in}>
                 <m.h2
@@ -205,18 +206,17 @@ export default function Hero() {
                   radius="lg"
                   size="md"
                   className={classes.control}
-                  component={'a'}
+                  component={"a"}
                   href="https://github.com/na0495/Personal-Portfolio-template"
                   target={"_blank"}
-                  onClick={() => gaEventTracker({
-                    label: "Preview on Github",
-                  })}
+                  onClick={() =>
+                    gaEventTracker({
+                      label: "Preview on Github",
+                    })
+                  }
                 >
-                  
-                  Preview on Github
-                  &nbsp;
-
-                  <ThemeIcon color="yellow" radius="xl" size="lg" >
+                  Preview on Github &nbsp;
+                  <ThemeIcon color="yellow" radius="xl" size="lg">
                     <Star />
                   </ThemeIcon>
                 </Button>
