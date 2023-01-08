@@ -7,7 +7,7 @@ import BoxWrapper from "./BoxWrapper";
 export default function GithubWrapped() {
   return (
     <BoxWrapper>
-      <video controls style={{ maxWidth: 750 }}>
+      <video controls style={{ maxWidth: 500, maxHeight: 500 }}>
         <source src={na0495Video} type="video/mp4" />
         Sorry, your browser doesn't support videos.
       </video>

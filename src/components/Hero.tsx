@@ -5,25 +5,26 @@ import {
   Center,
   createStyles,
   Grid,
-  Group,
-  Paper,
-  Title,
-  useMantineTheme,
+  Group, ThemeIcon,
+  Title
 } from "@mantine/core";
 import { m } from "framer-motion";
-// icons
-import Type from "./animations/Type";
-// svg
-//
-import HeroCanvas from "./HeroCanvas";
-import { varFade } from "./animations/variants";
-import { textGradient, backgroundGradient } from "../utils/cssStyles";
+// hooks
+import useAnalyticsEventTracker from "../hooks/useAnalyticsEventTracker";
+// components
 import MotionContainer from "./animations/MotionContainer";
+import Type from "./animations/Type";
+import { varFade } from "./animations/variants";
 import getVariant from "./animations/variants/getVariant";
+import HeroCanvas from "./HeroCanvas";
+// utils
+import { backgroundGradient, textGradient } from "../utils/cssStyles";
+// icons
+import { Star } from "tabler-icons-react";
 
 // --------------------------------------------------
 
-const TEXT = "Hello, I'm ";
+const STRING: string[] = ["Hello", ",", "I'm"]
 
 const useStyles: any = createStyles((theme) => ({
   title: {
@@ -32,6 +33,7 @@ const useStyles: any = createStyles((theme) => ({
     fontSize: 44,
     lineHeight: 1.2,
     fontWeight: 800,
+    marginBottom: -50,
 
     [theme.fn.smallerThan("md")]: {
       fontSize: 34,
@@ -55,15 +57,15 @@ const useStyles: any = createStyles((theme) => ({
     },
     background:
       theme.colorScheme === "dark"
-        ? theme.colors.yellow[4]
+        ? theme.colors.dark[9]
         : theme.colors.orange[1],
-    color: theme.colorScheme === "dark" ? theme.colors.gray[9] : theme.white,
+    // color: theme.colorScheme === "dark" ? theme.colors.gray[1] : theme.white,
     "&:hover": {
       background:
         theme.colorScheme === "dark"
-          ? theme.colors.yellow[5]
+          ? theme.colors.dark[9]
           : theme.colors.orange[1],
-    },
+    },    
   },
 
   image: {
@@ -137,6 +139,10 @@ const useStyles: any = createStyles((theme) => ({
 
 export default function Hero() {
   const { classes } = useStyles();
+  const gaEventTracker = useAnalyticsEventTracker({
+    category: "Hero",
+    action: "Click",
+  });
 
   return (
     <Group pr={10}>
@@ -145,18 +151,24 @@ export default function Hero() {
           <Center>
             <Box className={classes.box}>
               <MotionContainer
-                component={m.h1}
+                component={m.h3}
                 sx={{ typography: "h1", display: "flex", overflow: "hidden" }}
                 className={classes.title}
               >
-                {TEXT.split("").map((letter, index) => (
-                  <m.span key={index} variants={getVariant("slideInUp")}>
-                    {letter}
-                  </m.span>
+ 
+                {STRING.map((text) => (
+                  text.split("").map((letter, index) => (
+                    letter === "," ? <span>,&nbsp;</span>: (
+                      <m.span key={index} variants={getVariant("slideInUp")}>
+                        {letter}
+                      </m.span>
+                    )
+                  ))
                 ))}
+
               </MotionContainer>
               <m.div variants={varFade().in}>
-                <m.h1
+                <m.h2
                   animate={{
                     backgroundPosition: "200%",
                   }}
@@ -169,7 +181,7 @@ export default function Hero() {
                   className={classes.gradientText}
                 >
                   Mrabet saâd
-                </m.h1>
+                </m.h2>
               </m.div>
 
               <m.div variants={varFade().in}>
@@ -187,14 +199,31 @@ export default function Hero() {
                   <Type />
                 </Title>
               </m.div>
-              {/* <Group mt={30}>
-                <Button radius="lg" size="md" className={classes.control}>
-                  Find out
+              <Group mt={30}>
+                <Button
+                  variant="default"
+                  radius="lg"
+                  size="md"
+                  className={classes.control}
+                  component={'a'}
+                  href="https://github.com/na0495/Personal-Portfolio-template"
+                  target={"_blank"}
+                  onClick={() => gaEventTracker({
+                    label: "Preview on Github",
+                  })}
+                >
+                  
+                  Preview on Github
+                  &nbsp;
+
+                  <ThemeIcon color="yellow" radius="xl" size="lg" >
+                    <Star />
+                  </ThemeIcon>
                 </Button>
-                <Button variant="default" radius="lg" size="md">
+                {/* <Button variant="default" radius="lg" size="md">
                   Download cv
-                </Button>
-              </Group> */}
+                </Button> */}
+              </Group>
             </Box>
           </Center>
         </Grid.Col>
