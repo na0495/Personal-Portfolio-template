@@ -167,7 +167,6 @@ export default function HeaderResponsive({ links }: HeaderResponsiveProps) {
   const gaEventTracker = useAnalyticsEventTracker({
     category: "Header",
     action: "Click",
-    label: "Header link",
   });
   const [opened, { toggle, close }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);

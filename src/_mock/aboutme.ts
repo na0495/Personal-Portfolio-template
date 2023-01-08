@@ -1,8 +1,8 @@
 // my age
 function getAge() {
-  const birthYear = 1998;
-  const currentYear = new Date().getFullYear();
-  return currentYear - birthYear;
+  const birthDate = new Date("1999-03-31");
+  const  birthYear = birthDate.getFullYear();
+  return new Date().getFullYear() - birthYear;
 }
 
 export const aboutMe = {
