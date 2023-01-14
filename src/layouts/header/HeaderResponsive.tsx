@@ -32,13 +32,12 @@ const HEADER_HEIGHT = 70;
 
 const useStyles = createStyles((theme) => ({
   root: {
-    // position: "relative",
     zIndex: 1,
     boxShadow: theme.shadows.sm,
-    backgroundColor:
-      theme.colorScheme === "dark"
-        ? theme.colors.dark[5]
-        : theme.colors.gray[1],
+    backdropFilter: "blur(10px)",
+    backgroundColor:  theme.colorScheme === "light"
+        ? "rgba(255, 255, 255, 0.5)"
+        : "rgba(0, 0, 0, 0.5)"
   },
 
   dropdown: {
