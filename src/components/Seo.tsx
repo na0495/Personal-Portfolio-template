@@ -1,6 +1,8 @@
 import SEO from "react-seo-component";
 import { metaData } from "../_mock/seo";
 
+// --------------------------------------------------
+
 export default function Seo() {
   return (
     <>
@@ -14,6 +16,7 @@ export default function Seo() {
         siteLanguage={metaData.siteLanguage}
         siteLocale={metaData.siteLocale}
         twitterUsername={metaData.twitterUsername}
+        author={metaData.author}
       />
     </>
   );
