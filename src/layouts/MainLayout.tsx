@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 // Manatine UI
 import { AppShell, useMantineTheme } from "@mantine/core";
 // header
+import Footer from "../components/Footer";
 import HeaderResponsive from "./header/HeaderResponsive";
 
 //-----------------------------------------------------------------------------
@@ -37,12 +38,15 @@ const links = [
 export default function MainLayout(): JSX.Element {
   const theme = useMantineTheme();
   return (
-    <AppShell
-      navbarOffsetBreakpoint={theme.breakpoints.md}
-      fixed
-      header={<HeaderResponsive links={links} />}
-    >
-      <Outlet />
-    </AppShell>
+    <>
+      <AppShell
+        navbarOffsetBreakpoint={theme.breakpoints.md}
+        fixed
+        header={<HeaderResponsive links={links} />}
+      >
+        <Outlet />
+      </AppShell>
+      <Footer />
+    </>
   );
 }

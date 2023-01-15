@@ -25,6 +25,7 @@ import SwitchMode from "./SwitchMode";
 import useSound from "use-sound";
 // assets
 import soundUrl from "/src/assets/sounds/rising-pops.mp3";
+import { socialLinks } from "../../_mock/links";
 
 // -------------------------------------------------
 
@@ -35,9 +36,10 @@ const useStyles = createStyles((theme) => ({
     zIndex: 1,
     boxShadow: theme.shadows.sm,
     backdropFilter: "blur(10px)",
-    backgroundColor:  theme.colorScheme === "light"
+    backgroundColor:
+      theme.colorScheme === "light"
         ? "rgba(255, 255, 255, 0.5)"
-        : "rgba(0, 0, 0, 0.5)"
+        : "rgba(0, 0, 0, 0.5)",
   },
 
   dropdown: {
@@ -136,27 +138,6 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const socialLinks = [
-  {
-    label: "Twitter",
-    href: "https://twitter.com/na0495",
-    icon: <BrandTwitter size={28} />,
-    color: "#1DA1F2",
-  },
-  {
-    label: "Github",
-    href: "https://github.com/na0495",
-    icon: <BrandGithub size={28} />,
-    color: "#24292e",
-  },
-  {
-    label: "Linkedin",
-    href: "https://www.linkedin.com/in/saad-mrabet-978a01188/",
-    icon: <BrandLinkedin size={28} />,
-    color: "#0077B5",
-  },
-];
-
 interface HeaderResponsiveProps {
   links: { link: string; label: string }[];
 }
@@ -239,7 +220,7 @@ export default function HeaderResponsive({ links }: HeaderResponsiveProps) {
                 },
               }}
             >
-              {link.icon}
+              <link.icon size={28} />
             </ActionIcon>
           ))}
         </Group>

@@ -1,33 +1,17 @@
 // Mantine
 import {
-  createStyles,
-  Text,
-  Container,
   ActionIcon,
+  Container,
+  createStyles,
   Group,
+  Text,
 } from "@mantine/core";
 //  Icons
-import { BrandTwitter, BrandGithub, BrandLinkedin } from "tabler-icons-react";
+// hooks
+import useAnalyticsEventTracker from "../hooks/useAnalyticsEventTracker";
+import { socialLinks } from "../_mock/links";
 
 // --------------------------------------------------
-
-const socialLinks = [
-  {
-    label: "Twitter",
-    href: "https://twitter.com/na0495",
-    icon: <BrandTwitter size={28} />,
-  },
-  {
-    label: "Github",
-    href: "https://github.com/na0495",
-    icon: <BrandGithub size={28} />,
-  },
-  {
-    label: "Linkedin",
-    href: "https://www.linkedin.com/in/saad-mrabet-978a01188/",
-    icon: <BrandLinkedin size={28} />,
-  },
-];
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -76,26 +60,52 @@ const useStyles = createStyles((theme) => ({
 
 export default function Footer() {
   const { classes } = useStyles();
+  const gaEventTracker = useAnalyticsEventTracker({
+    category: "Footer",
+    action: "Click",
+  });
   return (
     <footer className={classes.footer}>
       <Container className={classes.afterFooter}>
         <Text color="dimmed" size="sm">
-          Copyright © 2022 na0495 All rights reserved.
+          Copyright © 2022 na0495 All rights reserved, view the source code on{" "}
+          <a
+            href="https://github.com/na0495/Personal-Portfolio-template"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>
+          .
         </Text>
 
         <Group spacing={0} className={classes.social} position="right" noWrap>
           {socialLinks.map((link) => (
             <ActionIcon
               key={link.label}
-              size="xl"
-              ml={20}
-              radius="lg"
-              className={classes.icon}
+              size="lg"
+              ml={15}
+              radius="md"
               component="a"
               href={link.href}
               target="_blank"
+              onClick={() => {
+                gaEventTracker({
+                  label: link.label,
+                });
+              }}
+              sx={{
+                backgroundColor: link.color,
+                color: "white",
+                "&:hover": {
+                  backgroundColor: link.color,
+                  boxShadow: "none",
+                  transform: "scale(1.10)",
+                  borderRadius: "md",
+                },
+              }}
             >
-              {link.icon}
+              <link.icon size={28} />
             </ActionIcon>
           ))}
         </Group>
