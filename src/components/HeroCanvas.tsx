@@ -12,19 +12,17 @@ type BoxProps = {
   color: string;
 };
 
-
-function Box({position, color}: BoxProps) {
-  const ref: any = useRef()
-  useFrame(() => (ref.current.rotation.x = ref.current.rotation.y += 0.01))
+function Box({ position, color }: BoxProps) {
+  const ref: any = useRef();
+  useFrame(() => (ref.current.rotation.x = ref.current.rotation.y += 0.01));
 
   return (
     <mesh position={position} ref={ref}>
       <boxBufferGeometry args={[1, 1, 1]} attach="geometry" />
       <meshPhongMaterial color={color} attach="material" />
     </mesh>
-  )
+  );
 }
-
 
 function Loader() {
   const { active, progress, errors, item, loaded, total } = useProgress();
@@ -54,9 +52,7 @@ export default function HeroCanvas() {
     >
       <ambientLight intensity={1.25} />
       <directionalLight intensity={0.4} />
-      <Suspense fallback={
-        <Box position={[0, 0, 0]} color="red" />
-      }>
+      <Suspense fallback={<Box position={[0, 0, 0]} color="red" />}>
         <Avatar position={[0.025, -0.9, 0]} />
       </Suspense>
       <OrbitControls makeDefault />

@@ -73,6 +73,7 @@ export default function LandingPage() {
           variant="filled"
           color="gray"
           radius={50}
+          aria-label="Scroll to top"
           onClick={handleParallaxNavigationUp}
           // disabled={currentOffset >= 2}
           size={45}

@@ -54,6 +54,11 @@ export default function SwitchMode() {
           onClick={handleClick}
           variant="filled"
           radius="lg"
+          aria-label={
+            colorScheme !== "dark"
+              ? "Switch to Dark Mode"
+              : "Switch to Light Mode"
+          }
           sx={(theme) => ({
             backgroundColor:
               theme.colorScheme === "dark"

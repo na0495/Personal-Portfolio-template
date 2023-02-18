@@ -82,7 +82,7 @@ export default function Github() {
     <Container px="xl" size="lg">
       <BoxWrapper withBackground={false}>
         <Title
-          order={3}
+          order={1}
           sx={(theme) => ({
             marginBottom: 25,
             color:
@@ -144,7 +144,12 @@ export default function Github() {
           ) : matches ? (
             <Group noWrap>
               <Box>
-                <Avatar src={user?.avatar_url} size={125} radius="md" />
+                <Avatar
+                  src={user?.avatar_url}
+                  size={125}
+                  radius="md"
+                  alt="Github Avatar"
+                />
                 <Text mt={10} mb={-10} ml={15}>
                   {user?.followers} followers
                 </Text>
@@ -186,7 +191,7 @@ export default function Github() {
           )}
         </Box>
         <Title
-          order={3}
+          order={1}
           sx={(theme) => ({
             marginBottom: 25,
             color:

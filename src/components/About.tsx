@@ -65,7 +65,7 @@ export default function About() {
       <BoxWrapper withBackground={false}>
         <Group position="apart" mb={25}>
           <Title
-            order={3}
+            order={1}
             sx={(theme) => ({
               color:
                 theme.colorScheme === "dark"
