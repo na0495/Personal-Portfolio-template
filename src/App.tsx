@@ -1,12 +1,12 @@
 import ReactGA from "react-ga4";
-import { Seo } from "tabler-icons-react";
 // mantine
 import { NotificationsProvider } from "@mantine/notifications";
 // routes
 import Router from "./routes";
 // components
-import ScrollToTop from "./components/ScrollToTop";
 import MotionLazyContainer from "./components/animations/MotionLazyContainer";
+import ScrollToTop from "./components/ScrollToTop";
+import Seo from "./components/Seo";
 // providers
 import ThemeProvider from "./theme/ThemeProvider";
 // config

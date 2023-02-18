@@ -1,6 +1,10 @@
-import { useAnimations, useGLTF } from "@react-three/drei";
 import { useEffect, useRef } from "react";
+// drei
+import { useAnimations, useGLTF } from "@react-three/drei";
+// assets
 import modelSrc from "../assets/model.glb?url";
+
+// ----------------------------------------------------------
 
 export function Avatar(props: any) {
   const group = useRef();
