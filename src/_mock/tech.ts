@@ -1,29 +1,29 @@
-import angularPng from "../assets/languages/angular.png";
-import azurePng from "../assets/languages/azure.png";
-import bashPng from "../assets/languages/bash.png";
-import cssPng from "../assets/languages/css.png";
-import djangoRestFrameworkPng from "../assets/languages/django-rest-framework.png";
-import djangoPng from "../assets/languages/django.png";
-import dockerPng from "../assets/languages/docker.png";
-import gitPng from "../assets/languages/git.png";
-import githubPng from "../assets/languages/github.png";
-import golangPng from "../assets/languages/golang.png";
-import htmlPng from "../assets/languages/html.png";
-import jsPng from "../assets/languages/js.png";
-import netlifyPng from "../assets/languages/netlify.png";
-import postgresqlPng from "../assets/languages/postgresql.png";
-import pythonPng from "../assets/languages/python.png";
-import reactPng from "../assets/languages/react.png";
-import reduxPng from "../assets/languages/redux.png";
-import sqlitePng from "../assets/languages/sqlite.png";
-import tailwindPng from "../assets/languages/tailwind.png";
-import typescriptPng from "../assets/languages/typescript.png";
-import vitePng from "../assets/languages/vite.png";
-import awsPng from "../assets/languages/aws.png";
-import fastapiPng from "../assets/languages/fastapi.png";
-import flaskPng from "../assets/languages/flask.png";
-import dartPng from "../assets/languages/dart.png";
-import flutterPng from "../assets/languages/flutter.png";
+import angularWebp from "../assets/languages/angular.webp";
+import azureWebp from "../assets/languages/azure.webp";
+import bashWebp from "../assets/languages/bash.webp";
+import cssWebp from "../assets/languages/css.webp";
+import djangoRestFrameworkWebp from "../assets/languages/django-rest-framework.webp";
+import djangoWebp from "../assets/languages/django.webp";
+import dockerWebp from "../assets/languages/docker.webp";
+import gitWebp from "../assets/languages/git.webp";
+import githubWebp from "../assets/languages/github.webp";
+import golangWebp from "../assets/languages/golang.webp";
+import htmlWebp from "../assets/languages/html.webp";
+import jsWebp from "../assets/languages/js.webp";
+import netlifyWebp from "../assets/languages/netlify.webp";
+import postgresqlWebp from "../assets/languages/postgresql.webp";
+import pythonWebp from "../assets/languages/python.webp";
+import reactWebp from "../assets/languages/react.webp";
+import reduxWebp from "../assets/languages/redux.webp";
+import sqliteWebp from "../assets/languages/sqlite.webp";
+import tailwindWebp from "../assets/languages/tailwind.webp";
+import typescriptWebp from "../assets/languages/typescript.webp";
+import viteWebp from "../assets/languages/vite.webp";
+import awsWebp from "../assets/languages/aws.webp";
+import fastapiWebp from "../assets/languages/fastapi.webp";
+import flaskWebp from "../assets/languages/flask.webp";
+import dartWebp from "../assets/languages/dart.webp";
+import flutterWebp from "../assets/languages/flutter.webp";
 
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -35,43 +35,43 @@ export const tech = [
     data: [
       {
         type: "Programming languages",
-        png: [
-          pythonPng,
-          jsPng,
-          typescriptPng,
-          htmlPng,
-          cssPng,
-          golangPng,
-          bashPng,
-          dartPng,
+        webp: [
+          pythonWebp,
+          jsWebp,
+          typescriptWebp,
+          htmlWebp,
+          cssWebp,
+          golangWebp,
+          bashWebp,
+          dartWebp,
         ],
       },
       {
         type: "Frameworks & libraries",
-        png: [
-          reactPng,
-          reduxPng,
-          tailwindPng,
-          djangoPng,
-          djangoRestFrameworkPng,
-          fastapiPng,
-          flaskPng,
-          angularPng,
-          flutterPng,
+        webp: [
+          reactWebp,
+          reduxWebp,
+          tailwindWebp,
+          djangoWebp,
+          djangoRestFrameworkWebp,
+          fastapiWebp,
+          flaskWebp,
+          angularWebp,
+          flutterWebp,
         ],
       },
       {
         type: "Tools & services",
-        png: [
-          postgresqlPng,
-          sqlitePng,
-          gitPng,
-          githubPng,
-          azurePng,
-          awsPng,
-          netlifyPng,
-          dockerPng,
-          vitePng,
+        webp: [
+          postgresqlWebp,
+          sqliteWebp,
+          gitWebp,
+          githubWebp,
+          azureWebp,
+          awsWebp,
+          netlifyWebp,
+          dockerWebp,
+          viteWebp,
         ],
       },
     ],

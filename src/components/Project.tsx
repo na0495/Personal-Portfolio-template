@@ -30,7 +30,7 @@ export default function Github() {
     <Container px="xl" size="lg">
       <BoxWrapper withBackground={false}>
         <Title
-          order={3}
+          order={1}
           sx={(theme) => ({
             marginBottom: 25,
             color:

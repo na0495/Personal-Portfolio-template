@@ -55,7 +55,7 @@ export default function Skills() {
         {tech.map((item: any, index: number) => (
           <div key={index}>
             <Title
-              order={3}
+              order={1}
               sx={(theme) => ({
                 marginBottom: 10,
                 marginTop: 10,
@@ -81,9 +81,10 @@ export default function Skills() {
                     { maxWidth: 450, cols: 3, spacing: "sm" },
                   ]}
                 >
-                  {dataItem.png.map((subDataitem: any) => (
+                  {dataItem.webp.map((subDataitem: any) => (
                     <motion.img
                       key={subDataitem}
+                      alt={subDataitem}
                       className={classes.img}
                       whileHover={{ scale: 1.3 }}
                       whileTap={{ scale: 0.8 }}

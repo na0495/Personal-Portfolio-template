@@ -48,6 +48,7 @@ export default function MusicMode() {
           onClick={handleClick}
           variant="filled"
           radius="lg"
+          aria-label={playMode ? "Music Off" : "Music On"}
           sx={(theme) => ({
             backgroundColor:
               theme.colorScheme === "dark"

@@ -83,6 +83,7 @@ export default function Footer() {
           {socialLinks.map((link) => (
             <ActionIcon
               key={link.label}
+              aria-label={link.label}
               size="lg"
               ml={15}
               radius="md"
