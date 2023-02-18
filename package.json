@@ -2,7 +2,7 @@
   "name": "napholio",
   "author": "na0495",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "build": "vite build",
     "vite": "vite",
