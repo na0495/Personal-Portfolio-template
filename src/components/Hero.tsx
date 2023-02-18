@@ -25,7 +25,7 @@ import { Star } from "tabler-icons-react";
 
 // --------------------------------------------------
 
-const STRING: string[] = ["Hello", ",", "I'm"];
+const STRING: string[] = ["Hello,", "_", "I'm"];
 
 const useStyles: any = createStyles((theme) => ({
   title: {
@@ -158,8 +158,8 @@ export default function Hero() {
               >
                 {STRING.map((text) =>
                   text.split("").map((letter, index) =>
-                    letter === "," ? (
-                      <span>,&nbsp;</span>
+                    letter === "_" ? (
+                      <span>&nbsp;</span>
                     ) : (
                       <m.span key={index} variants={getVariant("slideInUp")}>
                         {letter}
