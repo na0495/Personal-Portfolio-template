@@ -53,6 +53,11 @@ export default function Routes() {
       element: <MainLayout />,
       children: [{ path: "", element: <PathPage /> }],
     },
+    {
+      path: "/game",
+      element: <MainLayout />,
+      children: [{ path: "", element: <Game /> }],
+    },
     // Main Routes
     {
       path: "*",
@@ -81,3 +86,4 @@ const ProjectsPage = Loadable(lazy(() => import("../pages/ProjectsPage")));
 const ContactPage = Loadable(lazy(() => import("../pages/ContactPage")));
 const HomePage = Loadable(lazy(() => import("../pages/HomePage")));
 const PathPage = Loadable(lazy(() => import("../pages/PathPage")));
+const Game = Loadable(lazy(() => import("../components/Game")));
