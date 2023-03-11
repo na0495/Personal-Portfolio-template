@@ -20,6 +20,7 @@ const Game: React.FC = () => {
 			clearColor: [0, 0, 0, 1],
 			
 			// if you don't want kaboom to create a canvas and insert under document.body
+			// @ts-ignore
 			canvas: canvasRef.current,
 		})
 		// Speed identifiers
