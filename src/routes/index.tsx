@@ -19,7 +19,7 @@ const Loadable = (Component: ElementType) => (props: any) => {
 
 export default function Routes() {
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGA.send(window.location.pathname + window.location.search);
   }, [window.location.pathname, window.location.search]);
 
   return useRoutes([

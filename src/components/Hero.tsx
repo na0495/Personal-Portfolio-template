@@ -159,7 +159,7 @@ export default function Hero() {
                 {STRING.map((text) =>
                   text.split("").map((letter, index) =>
                     letter === "_" ? (
-                      <span>&nbsp;</span>
+                      <span key={index}>&nbsp;</span>
                     ) : (
                       <m.span key={index} variants={getVariant("slideInUp")}>
                         {letter}

@@ -8,6 +8,7 @@ import modelSrc from "../assets/model.glb?url";
 
 export function Avatar(props: any) {
   const group = useRef();
+  // @ts-ignore
   const { nodes, materials, animations } = useGLTF(modelSrc);
   const { actions } = useAnimations(animations, group);
 
