@@ -59,13 +59,10 @@ export default function LandingPage() {
       <Section withBackground={false}>
         <Skills />
       </Section>
-      <Section withBackground={true}>
-        <GithubWrapped />
-      </Section>
-      <Section withBackground={false} height={"200hv"}>
+      <Section withBackground={true} height={"200hv"}>
         <Github />
       </Section>
-      <Section withBackground={true} height={"200hv"}>
+      <Section withBackground={false} height={"200hv"}>
         <Project />
       </Section>
       <div className={classes.sticky}>
