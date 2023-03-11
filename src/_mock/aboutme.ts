@@ -4,10 +4,13 @@ import { birthDate } from "../config";
 
 function getAge() {
   const tempBirthDate = new Date(birthDate);
-  const today = new Date();
-  let age = today.getFullYear() - tempBirthDate.getFullYear();
-  const month = today.getMonth() - tempBirthDate.getMonth();
-  if (month < 0 || (month === 0 && today.getDate() < tempBirthDate.getDate())) {
+  const tempToday = new Date();
+  let age = tempToday.getFullYear() - tempBirthDate.getFullYear();
+  const month = tempToday.getMonth() - tempBirthDate.getMonth();
+  if (
+    month < 0 ||
+    (month === 0 && tempToday.getDate() < tempBirthDate.getDate())
+  ) {
     age--;
   }
   return age;

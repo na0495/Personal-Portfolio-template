@@ -22,6 +22,8 @@ import HeroCanvas from "./HeroCanvas";
 import { backgroundGradient, textGradient } from "../utils/cssStyles";
 // icons
 import { Star } from "tabler-icons-react";
+// data
+import { metaData } from "../_mock/seo";
 
 // --------------------------------------------------
 
@@ -181,7 +183,7 @@ export default function Hero() {
                   }}
                   className={classes.gradientText}
                 >
-                  Mrabet saâd
+                  {metaData.fullName}
                 </m.h2>
               </m.div>
 

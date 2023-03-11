@@ -12,4 +12,5 @@ export const metaData = {
   twitterUsername: "@na0495",
   githubUsername: "na0495",
   author: "Saad Mrabet aka na0495",
+  fullName: "Saâd Mrabet",
 };
