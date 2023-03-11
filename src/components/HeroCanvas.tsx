@@ -77,7 +77,6 @@ export default function HeroCanvas() {
       <directionalLight intensity={0.4} />
       <Suspense fallback={<Box position={[0, 0, 0]} color={color} />}>
         <Avatar position={[0.025, -0.9, 0]} />
-        {/* <Electron position={[0, 0, 0]} speed={6} color={color} /> */}
         <EffectComposer>
           <Bloom mipmapBlur luminanceThreshold={7} radius={0.7} />
         </EffectComposer>
