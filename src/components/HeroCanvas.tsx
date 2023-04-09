@@ -3,9 +3,9 @@ import { Suspense, useRef } from "react";
 import { useMantineTheme } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 // three js
-import { OrbitControls, Stars, Trail } from "@react-three/drei";
+import { OrbitControls, Trail } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { EffectComposer, Bloom } from "@react-three/postprocessing";
+import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import { Avatar } from "../assets/3DAvatar";
 
 // ----------------------------------------------------------
