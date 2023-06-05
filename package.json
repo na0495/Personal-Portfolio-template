@@ -48,7 +48,7 @@
     "react-tsparticles": "^2.0.6",
     "react-vertical-timeline-component": "^3.6.0",
     "tabler-icons-react": "^1.45.0",
-    "tsparticles": "^2.0.6",
+    "tsparticles": "^2.10.1",
     "typewriter-effect": "^2.18.2",
     "use-sound": "^4.0.1",
     "vite-svg-loader": "^3.2.0"
