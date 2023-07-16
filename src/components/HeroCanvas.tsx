@@ -3,40 +3,12 @@ import { Suspense, useRef } from "react";
 import { useMantineTheme } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 // three js
-import { OrbitControls, Trail } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
-import { Avatar } from "../assets/3DAvatar";
+import { Avatar } from "src/assets/3DAvatar";
 
 // ----------------------------------------------------------
-
-function Electron({ radius = 2.75, speed = 6, ...props }) {
-  const ref: any = useRef();
-  useFrame((state) => {
-    const t = state.clock.getElapsedTime() * speed;
-    ref.current.position.set(
-      Math.sin(t) * radius,
-      (Math.cos(t) * radius * Math.atan(t)) / Math.PI / 1.25,
-      0
-    );
-  });
-  return (
-    <group {...props}>
-      <Trail
-        local
-        width={5}
-        length={6}
-        color={props.color}
-        attenuation={(t) => t * t}
-      >
-        <mesh ref={ref}>
-          <sphereGeometry args={[0.25]} />
-          <meshBasicMaterial color={[10, 1, 10]} toneMapped={false} />
-        </mesh>
-      </Trail>
-    </group>
-  );
-}
 
 type BoxProps = {
   position: [number, number, number];
@@ -50,8 +22,6 @@ function Box({ position, color }: BoxProps) {
   return (
     <mesh position={position} ref={ref}>
       <boxBufferGeometry args={[1, 1, 1]} attach="geometry" />
-      <meshPhongMaterial color={color} attach="material" />
-      {/* <Electron position={[0, 0, 0]} speed={6} color={color} /> */}
       <EffectComposer>
         <Bloom mipmapBlur luminanceThreshold={7} radius={0.7} />
       </EffectComposer>

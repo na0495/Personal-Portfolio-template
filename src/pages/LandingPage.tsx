@@ -11,8 +11,6 @@ import Skills from "src/components/Skills";
 import Project from "src/components/Project";
 // // icons
 import { ArrowUp } from "tabler-icons-react";
-import ParticlesWrapper from "src/components/animations/ParticlesWrapper";
-import GithubWrapped from "src/components/GithubWrapped";
 
 // -------------------------------------------------
 
@@ -37,7 +35,6 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export default function LandingPage() {
-  const [currentOffset, setCurrentOffset] = useState(0);
   const { scrollIntoView, targetRef } = useScrollIntoView<HTMLDivElement>({
     offset: 60,
   });
@@ -79,7 +76,6 @@ export default function LandingPage() {
           <ArrowUp />
         </ActionIcon>
       </div>
-      <ParticlesWrapper />
     </>
   );
 }

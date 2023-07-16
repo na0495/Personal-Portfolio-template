@@ -11,7 +11,7 @@ import {
 } from "@mantine/core";
 import { m } from "framer-motion";
 // hooks
-import useAnalyticsEventTracker from "../hooks/useAnalyticsEventTracker";
+import useAnalyticsEventTracker from "src/hooks/useAnalyticsEventTracker";
 // components
 import MotionContainer from "./animations/MotionContainer";
 import Type from "./animations/Type";
@@ -19,11 +19,11 @@ import { varFade } from "./animations/variants";
 import getVariant from "./animations/variants/getVariant";
 import HeroCanvas from "./HeroCanvas";
 // utils
-import { backgroundGradient, textGradient } from "../utils/cssStyles";
+import { backgroundGradient, textGradient } from "src/utils/cssStyles";
 // icons
 import { Star } from "tabler-icons-react";
 // data
-import { metaData } from "../_mock/seo";
+import { metaData } from "src/_mock/seo";
 
 // --------------------------------------------------
 
@@ -222,9 +222,6 @@ export default function Hero() {
                     <Star />
                   </ThemeIcon>
                 </Button>
-                {/* <Button variant="default" radius="lg" size="md">
-                  Download cv
-                </Button> */}
               </Group>
             </Box>
           </Center>
