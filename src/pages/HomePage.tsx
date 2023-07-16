@@ -1,7 +1,7 @@
 // components
-import ParticlesWrapper from "../components/animations/ParticlesWrapper";
-import Hero from "../components/Hero";
-import Page from "../components/Page";
+import ParticlesWrapper from "src/components/animations/ParticlesWrapper";
+import Hero from "src/components/Hero";
+import Page from "src/components/Page";
 
 // ----------------------------------------
 

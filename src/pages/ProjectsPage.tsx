@@ -1,9 +1,9 @@
 // components
-import ParticlesWrapper from "../components/animations/ParticlesWrapper";
-import Github from "../components/Github";
-import CustomHelmet from "../components/CustomHelmet";
-import Project from "../components/Project";
-import Section from "../components/Section";
+import ParticlesWrapper from "src/components/animations/ParticlesWrapper";
+import Github from "src/components/Github";
+import CustomHelmet from "src/components/CustomHelmet";
+import Project from "src/components/Project";
+import Section from "src/components/Section";
 
 // -------------------------------------------------
 

@@ -4,10 +4,10 @@ import { ActionIcon, createStyles } from "@mantine/core";
 // parallex
 import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { ArrowDown, ArrowUp } from "tabler-icons-react";
-import About from "../components/About";
+import About from "src/components/About";
 // components
-import Footer from "../components/Footer";
-import Hero from "../components/Hero";
+import Footer from "src/components/Footer";
+import Hero from "src/components/Hero";
 
 // -------------------------------------------------
 

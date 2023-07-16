@@ -2,16 +2,15 @@ import { ElementType, lazy, Suspense, useEffect } from "react";
 import ReactGA from "react-ga4";
 import { Navigate, useRoutes } from "react-router-dom";
 // layouts
-import MainLayout from "../layouts/MainLayout";
+import MainLayout from "src/layouts/MainLayout";
 // components
-import FallbackLoader from "../components/animations/FallbackLoader";
+import FallbackLoader from "src/components/animations/FallbackLoader";
 
 // ----------------------------------------------------------------------
 
 const Loadable = (Component: ElementType) => (props: any) => {
   return (
     <Suspense fallback={<FallbackLoader />}>
-      {/* <Suspense fallback={null}> */}
       <Component {...props} />
     </Suspense>
   );
@@ -75,15 +74,15 @@ export default function Routes() {
 }
 
 // Main
-const ComingSoon = Loadable(lazy(() => import("../pages/ComingSoon")));
-const Maintenance = Loadable(lazy(() => import("../pages/Maintenance")));
-const Page500 = Loadable(lazy(() => import("../pages/Page500")));
-const NotFound = Loadable(lazy(() => import("../pages/Page404")));
-const LandingPage = Loadable(lazy(() => import("../pages/LandingPage")));
-const AboutPage = Loadable(lazy(() => import("../pages/AboutPage")));
-const SkillsPage = Loadable(lazy(() => import("../pages/SkillsPage")));
-const ProjectsPage = Loadable(lazy(() => import("../pages/ProjectsPage")));
-const ContactPage = Loadable(lazy(() => import("../pages/ContactPage")));
-const HomePage = Loadable(lazy(() => import("../pages/HomePage")));
-const PathPage = Loadable(lazy(() => import("../pages/PathPage")));
-const Game = Loadable(lazy(() => import("../components/Game")));
+const ComingSoon = Loadable(lazy(() => import("src/pages/ComingSoon")));
+const Maintenance = Loadable(lazy(() => import("src/pages/Maintenance")));
+const Page500 = Loadable(lazy(() => import("src/pages/Page500")));
+const NotFound = Loadable(lazy(() => import("src/pages/Page404")));
+const LandingPage = Loadable(lazy(() => import("src/pages/LandingPage")));
+const AboutPage = Loadable(lazy(() => import("src/pages/AboutPage")));
+const SkillsPage = Loadable(lazy(() => import("src/pages/SkillsPage")));
+const ProjectsPage = Loadable(lazy(() => import("src/pages/ProjectsPage")));
+const ContactPage = Loadable(lazy(() => import("src/pages/ContactPage")));
+const HomePage = Loadable(lazy(() => import("src/pages/HomePage")));
+const PathPage = Loadable(lazy(() => import("src/pages/PathPage")));
+const Game = Loadable(lazy(() => import("src/components/Game")));

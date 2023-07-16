@@ -1,7 +1,7 @@
 // components
-import About from "../components/About";
-import ParticlesWrapper from "../components/animations/ParticlesWrapper";
-import Page from "../components/Page";
+import About from "src/components/About";
+import ParticlesWrapper from "src/components/animations/ParticlesWrapper";
+import Page from "src/components/Page";
 
 // -------------------------------------------------
 

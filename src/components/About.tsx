@@ -15,8 +15,9 @@ import github from "prism-react-renderer/themes/github";
 import vsDark from "prism-react-renderer/themes/vsDark";
 // Components
 import BoxWrapper from "./BoxWrapper";
-// d_mock
-import { aboutMe } from "../_mock/aboutme";
+// _mock
+import { aboutMe } from "src/_mock/aboutme";
+// icons
 import { Code, CodeOff } from "tabler-icons-react";
 
 // ----------------------------------------------------------------------------

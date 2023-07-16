@@ -3,16 +3,16 @@ import { useState } from "react";
 import { ActionIcon, createStyles } from "@mantine/core";
 import { useScrollIntoView } from "@mantine/hooks";
 // components
-import About from "../components/About";
-import Github from "../components/Github";
-import Hero from "../components/Hero";
-import Section from "../components/Section";
-import Skills from "../components/Skills";
-import Project from "../components/Project";
+import About from "src/components/About";
+import Github from "src/components/Github";
+import Hero from "src/components/Hero";
+import Section from "src/components/Section";
+import Skills from "src/components/Skills";
+import Project from "src/components/Project";
 // // icons
 import { ArrowUp } from "tabler-icons-react";
-import ParticlesWrapper from "../components/animations/ParticlesWrapper";
-import GithubWrapped from "../components/GithubWrapped";
+import ParticlesWrapper from "src/components/animations/ParticlesWrapper";
+import GithubWrapped from "src/components/GithubWrapped";
 
 // -------------------------------------------------
 

@@ -7,9 +7,9 @@ import { MoonStars, Sun } from "tabler-icons-react";
 // sounds
 import useSound from "use-sound";
 // hooks
-import useAnalyticsEventTracker from "../../hooks/useAnalyticsEventTracker";
+import useAnalyticsEventTracker from "src/hooks/useAnalyticsEventTracker";
 // mp3
-import LightSwitch from "/src/assets/sounds/lightswitch.mp3?url";
+import LightSwitch from "src/assets/sounds/lightswitch.mp3";
 
 // ------------------------------------------------------------
 

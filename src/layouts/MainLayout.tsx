@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 // Manatine UI
 import { AppShell, useMantineTheme } from "@mantine/core";
 // header
-import Footer from "../components/Footer";
+import Footer from "src/components/Footer";
 import HeaderResponsive from "./header/HeaderResponsive";
 
 //-----------------------------------------------------------------------------

@@ -15,17 +15,16 @@ import {
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 // icons
-import { BrandGithub, BrandLinkedin, BrandTwitter } from "tabler-icons-react";
 // hooks
-import useAnalyticsEventTracker from "../../hooks/useAnalyticsEventTracker";
+import useAnalyticsEventTracker from "src/hooks/useAnalyticsEventTracker";
 // buttons
 import MusicMode from "./MusicMode";
 import SwitchMode from "./SwitchMode";
 // sounds
 import useSound from "use-sound";
 // assets
+import { socialLinks } from "src/_mock/links";
 import soundUrl from "/src/assets/sounds/rising-pops.mp3";
-import { socialLinks } from "../../_mock/links";
 
 // -------------------------------------------------
 

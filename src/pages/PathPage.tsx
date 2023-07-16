@@ -1,7 +1,7 @@
 // components
-import Path from "../components/Path";
-import Page from "../components/Page";
-import ParticlesWrapper from "../components/animations/ParticlesWrapper";
+import Path from "src/components/Path";
+import Page from "src/components/Page";
+import ParticlesWrapper from "src/components/animations/ParticlesWrapper";
 
 // -------------------------------------------------
 
