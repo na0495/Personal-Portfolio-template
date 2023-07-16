@@ -1,7 +1,6 @@
 // components
-import Path from "../components/Path";
-import Page from "../components/Page";
-import ParticlesWrapper from "../components/animations/ParticlesWrapper";
+import Path from "src/components/Path";
+import Page from "src/components/Page";
 
 // -------------------------------------------------
 
@@ -9,7 +8,6 @@ export default function PathPage() {
   return (
     <Page title="Path" isFirst={true} withBackground={false}>
       <Path />
-      <ParticlesWrapper />
     </Page>
   );
 }

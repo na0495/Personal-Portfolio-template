@@ -1,8 +1,7 @@
 import { useRef, useState } from "react";
 // @mui
-import { Menu, Image } from "@mantine/core";
 // hooks
-import useLocales from "../../hooks/useLocales";
+import useLocales from "src/hooks/useLocales";
 // components
 
 // ----------------------------------------------------------------------

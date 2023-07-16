@@ -2,13 +2,13 @@ import { useEffect, useRef } from "react";
 // drei
 import { useAnimations, useGLTF } from "@react-three/drei";
 // assets
-import modelSrc from "../assets/model.glb?url";
 
 // ----------------------------------------------------------
 
 export function Avatar(props: any) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF(modelSrc);
+  // @ts-ignore
+  const { nodes, materials, animations } = useGLTF("model.glb");
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => {

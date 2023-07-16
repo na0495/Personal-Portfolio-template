@@ -29,10 +29,10 @@ const useStyles = createStyles((theme) => ({
     boxSizing: "border-box",
     backgroundImage: `linear-gradient(-60deg, ${theme.colors.orange[4]} 0%, ${theme.colors.white[7]} 100%)`,
     borderRadius: theme.radius.md,
-    padding: theme.spacing.xl * 2.5,
+    padding: theme.spacing.xl,
 
     [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-      padding: theme.spacing.xl * 1.5,
+      padding: theme.spacing.xl,
     },
   },
 

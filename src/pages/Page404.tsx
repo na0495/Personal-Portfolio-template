@@ -1,6 +1,8 @@
-import { Text, Box, createStyles, Image } from "@mantine/core";
 import { Link } from "react-router-dom";
-import NotFoundSvg from "/src/assets/not_found.svg?url";
+// mantine
+import { Text, Box, createStyles, Image } from "@mantine/core";
+// assets
+import NotFoundSvg from "src/assets/not_found.svg";
 
 // ----------------------------------------------------------------------
 

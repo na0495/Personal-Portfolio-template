@@ -3,16 +3,14 @@ import { useState } from "react";
 import { ActionIcon, createStyles } from "@mantine/core";
 import { useScrollIntoView } from "@mantine/hooks";
 // components
-import About from "../components/About";
-import Github from "../components/Github";
-import Hero from "../components/Hero";
-import Section from "../components/Section";
-import Skills from "../components/Skills";
-import Project from "../components/Project";
+import About from "src/components/About";
+import Github from "src/components/Github";
+import Hero from "src/components/Hero";
+import Section from "src/components/Section";
+import Skills from "src/components/Skills";
+import Project from "src/components/Project";
 // // icons
 import { ArrowUp } from "tabler-icons-react";
-import ParticlesWrapper from "../components/animations/ParticlesWrapper";
-import GithubWrapped from "../components/GithubWrapped";
 
 // -------------------------------------------------
 
@@ -37,7 +35,6 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export default function LandingPage() {
-  const [currentOffset, setCurrentOffset] = useState(0);
   const { scrollIntoView, targetRef } = useScrollIntoView<HTMLDivElement>({
     offset: 60,
   });
@@ -79,7 +76,6 @@ export default function LandingPage() {
           <ArrowUp />
         </ActionIcon>
       </div>
-      <ParticlesWrapper />
     </>
   );
 }

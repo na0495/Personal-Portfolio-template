@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { Helmet } from "react-helmet-async";
+import { metaData } from "../_mock/seo";
 
 // ----------------------------------------------------------
 
@@ -11,7 +12,7 @@ type Props = {
 export default function CustomHelmet({ meta, title }: Props) {
   return (
     <Helmet>
-      <title>{`${title} | Saad Portfolio`}</title>
+      <title>{`${title} | ${metaData.siteName}`}</title>
       {meta}
     </Helmet>
   );

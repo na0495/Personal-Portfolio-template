@@ -1,6 +1,6 @@
 import ReactGA from "react-ga4";
 // mantine
-import { NotificationsProvider } from "@mantine/notifications";
+import { Notifications } from "@mantine/notifications";
 // routes
 import Router from "./routes";
 // components
@@ -19,11 +19,10 @@ function App() {
   return (
     <MotionLazyContainer>
       <ThemeProvider>
-        <NotificationsProvider>
-          <Seo />
-          <ScrollToTop />
-          <Router />
-        </NotificationsProvider>
+        <Notifications />
+        <Seo />
+        <ScrollToTop />
+        <Router />
       </ThemeProvider>
     </MotionLazyContainer>
   );

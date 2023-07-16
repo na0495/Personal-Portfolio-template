@@ -1,7 +1,6 @@
 // components
-import About from "../components/About";
-import ParticlesWrapper from "../components/animations/ParticlesWrapper";
-import Page from "../components/Page";
+import About from "src/components/About";
+import Page from "src/components/Page";
 
 // -------------------------------------------------
 
@@ -9,7 +8,6 @@ export default function AboutPage() {
   return (
     <Page title="About me" isFirst={true} withBackground={false}>
       <About />
-      <ParticlesWrapper />
     </Page>
   );
 }
