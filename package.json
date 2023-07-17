@@ -25,7 +25,7 @@
     "@react-spring/parallax": "^9.4.4",
     "@react-three/drei": "^9.34.4",
     "@react-three/fiber": "^8.8.10",
-    "@react-three/postprocessing": "^2.7.0",
+    "@react-three/postprocessing": "^2.14.13",
     "@types/node": "^18.14.0",
     "@vitejs/plugin-react-swc": "^3.2.0",
     "emailjs-com": "^3.2.0",
