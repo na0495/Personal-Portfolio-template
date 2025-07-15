@@ -35,7 +35,7 @@
     "kaboom": "^2000.2.10",
     "prettier": "^2.6.2",
     "react": "^18.2.0",
-    "react-countup": "^6.3.0",
+    "react-countup": "^6.5.3",
     "react-dom": "^18.0.0",
     "react-ga4": "^2.1.0",
     "react-github-calendar": "^4.0.1",
