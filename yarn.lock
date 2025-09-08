@@ -604,6 +604,14 @@
   dependencies:
     "@babel/runtime" "^7.13.10"
 
+"@react-spring/animated@~10.0.2":
+  version "10.0.2"
+  resolved "https://registry.yarnpkg.com/@react-spring/animated/-/animated-10.0.2.tgz#51be92eacf3660762e5162adf0f25d9bb1f98bd4"
+  integrity sha512-GaVMfinZ6/Aid1v44ESf45H5jOj7cVbDuNVDDkvsVJAPRLgPl8+q8IJsmZGl77+cHpC/nw2X+4B9fOtil+LIOQ==
+  dependencies:
+    "@react-spring/shared" "~10.0.2"
+    "@react-spring/types" "~10.0.2"
+
 "@react-spring/animated@~9.5.2":
   version "9.5.2"
   resolved "https://registry.yarnpkg.com/@react-spring/animated/-/animated-9.5.2.tgz#42785b4f369d9715e9ee32c04b78483e7bb85489"
@@ -619,6 +627,15 @@
   dependencies:
     "@react-spring/shared" "~9.6.1"
     "@react-spring/types" "~9.6.1"
+
+"@react-spring/core@~10.0.2":
+  version "10.0.2"
+  resolved "https://registry.yarnpkg.com/@react-spring/core/-/core-10.0.2.tgz#0018df725079b29e46386f9051d971684b7a93f8"
+  integrity sha512-GTV2I3cHlE1nGqInn2vWHdMD8Wrszlmfq+G5UYrF8TRK/pWu+oMJE+7SI6NbYuCvLPLY9F2cmCiZsKqBSTXXbQ==
+  dependencies:
+    "@react-spring/animated" "~10.0.2"
+    "@react-spring/shared" "~10.0.2"
+    "@react-spring/types" "~10.0.2"
 
 "@react-spring/core@~9.5.2":
   version "9.5.2"
@@ -660,13 +677,18 @@
     "@react-spring/shared" "~9.5.2"
     "@react-spring/types" "~9.5.2"
 
-"@react-spring/parallax@^9.4.4":
-  version "9.5.2"
-  resolved "https://registry.yarnpkg.com/@react-spring/parallax/-/parallax-9.5.2.tgz#01cd1e323c6c08d470270dc4a38c3cb5385c1f5a"
-  integrity sha512-1LoJODtccFA7EARDJb1ZesI1jx4/HqBUy7f2UQRt1tWHviVG9imoSTP8S0KqDmGxXaA1itUUvo690bpw02pwzQ==
+"@react-spring/parallax@^10.0.2":
+  version "10.0.2"
+  resolved "https://registry.yarnpkg.com/@react-spring/parallax/-/parallax-10.0.2.tgz#0f5062172e981d4bf954f2dbbc0f68e6705619ca"
+  integrity sha512-eyqGSEExxybKa6pVkluZq02LiM8hG2vamL2OhWMIH+y/HKOA+aajolk+Akh13w8pp6l0geqBvSe25wk32sjg3w==
   dependencies:
-    "@react-spring/shared" "~9.5.2"
-    "@react-spring/web" "~9.5.2"
+    "@react-spring/shared" "~10.0.2"
+    "@react-spring/web" "~10.0.2"
+
+"@react-spring/rafz@~10.0.2":
+  version "10.0.2"
+  resolved "https://registry.yarnpkg.com/@react-spring/rafz/-/rafz-10.0.2.tgz#6e85a809c1d2f32159e9bfd1d41df5a159f69a2a"
+  integrity sha512-UaLbq3sE80YqBx5/g3PKE6zQ4R24/UGg/jjXbxhSyt4w+O52m3sj3xZxSru6dkXyC2QciXO1pg8sGWqpn8foUg==
 
 "@react-spring/rafz@~9.5.2":
   version "9.5.2"
@@ -677,6 +699,14 @@
   version "9.6.1"
   resolved "https://registry.yarnpkg.com/@react-spring/rafz/-/rafz-9.6.1.tgz#d71aafb92b78b24e4ff84639f52745afc285c38d"
   integrity sha512-v6qbgNRpztJFFfSE3e2W1Uz+g8KnIBs6SmzCzcVVF61GdGfGOuBrbjIcp+nUz301awVmREKi4eMQb2Ab2gGgyQ==
+
+"@react-spring/shared@~10.0.2":
+  version "10.0.2"
+  resolved "https://registry.yarnpkg.com/@react-spring/shared/-/shared-10.0.2.tgz#68372cc7324cad8fc6478a9c9a989ff65f925009"
+  integrity sha512-fG8UTo7iTx8+pbMIp41rrAYtBxJ56qqcNs6Sqy4meogbSfPlk5kJSSeKAvF02regPpgzi9rWZA+dR3HL240ilw==
+  dependencies:
+    "@react-spring/rafz" "~10.0.2"
+    "@react-spring/types" "~10.0.2"
 
 "@react-spring/shared@~9.5.2":
   version "9.5.2"
@@ -714,6 +744,11 @@
     "@react-spring/shared" "~9.6.1"
     "@react-spring/types" "~9.6.1"
 
+"@react-spring/types@~10.0.2":
+  version "10.0.2"
+  resolved "https://registry.yarnpkg.com/@react-spring/types/-/types-10.0.2.tgz#3a6b4b59df5ebf067dfc37866c21ce031fc5d9d8"
+  integrity sha512-BCJyfNrR0CVsyquRjEXvMFCa+jwFMC+qpdRvT8TNepD+JWB+8lsgbDKrrUbbhexUQhy5pTmk2wHTteYpLPEnig==
+
 "@react-spring/types@~9.5.2":
   version "9.5.2"
   resolved "https://registry.yarnpkg.com/@react-spring/types/-/types-9.5.2.tgz#cce1b03afbafb23edfb9cd8c517cc7462abffb65"
@@ -723,6 +758,16 @@
   version "9.6.1"
   resolved "https://registry.yarnpkg.com/@react-spring/types/-/types-9.6.1.tgz#913d3a68c5cbc1124fdb18eff919432f7b6abdde"
   integrity sha512-POu8Mk0hIU3lRXB3bGIGe4VHIwwDsQyoD1F394OK7STTiX9w4dG3cTLljjYswkQN+hDSHRrj4O36kuVa7KPU8Q==
+
+"@react-spring/web@~10.0.2":
+  version "10.0.2"
+  resolved "https://registry.yarnpkg.com/@react-spring/web/-/web-10.0.2.tgz#7d5e6d33048709d7e309368a020415a3bd170950"
+  integrity sha512-94Gb91dWdua217UskhLYrX61HEn8Tm0xvlIfDiG7HIxXLHcu6sqVfmX2pp2C/n6MxCsWpYcVejVih1PJ2/y4HQ==
+  dependencies:
+    "@react-spring/animated" "~10.0.2"
+    "@react-spring/core" "~10.0.2"
+    "@react-spring/shared" "~10.0.2"
+    "@react-spring/types" "~10.0.2"
 
 "@react-spring/web@~9.5.2":
   version "9.5.2"
