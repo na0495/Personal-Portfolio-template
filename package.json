@@ -22,7 +22,7 @@
     "@mantine/notifications": "^6.0.16",
     "@mantine/prism": "^6.0.16",
     "@mantine/spotlight": "^6.0.16",
-    "@react-spring/parallax": "^9.4.4",
+    "@react-spring/parallax": "^10.0.3",
     "@react-three/drei": "^9.34.4",
     "@react-three/fiber": "^8.8.10",
     "@react-three/postprocessing": "^2.7.0",
