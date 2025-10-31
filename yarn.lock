@@ -1361,10 +1361,10 @@ json-parse-even-better-errors@^2.3.0:
   resolved "https://registry.yarnpkg.com/json-parse-even-better-errors/-/json-parse-even-better-errors-2.3.1.tgz#7c47805a94319928e05777405dc12e1f7a4ee02d"
   integrity sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==
 
-kaboom@^2000.2.10:
-  version "2000.2.10"
-  resolved "https://registry.yarnpkg.com/kaboom/-/kaboom-2000.2.10.tgz#b8b6efa3f0e2d104e81dae5f3900f8f25d34a504"
-  integrity sha512-OHWdRuRMNkTkpO0/1R4ljS4+vpPtf6PvN+S0WTe+PkPB6Z61rmunw4SKTQDkrCt7dDzEIZTnK1G6s7rttd61Bw==
+kaboom@^3000.1.17:
+  version "3000.1.17"
+  resolved "https://registry.yarnpkg.com/kaboom/-/kaboom-3000.1.17.tgz#a05491f9a80a42155276020cd0c024cd4af96e7c"
+  integrity sha512-npAtjGxj9Oj9vLpXfURck9eUPHR2ac1Lhc1bNcZ0NWcs+Lgs40Ty+wjujv1C2DwjWvxaX+3r2G64M35BS/Ry2g==
 
 klona@^2.0.5:
   version "2.0.5"
